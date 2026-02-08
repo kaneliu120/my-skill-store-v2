@@ -1,0 +1,14 @@
+{
+  "HomePage": {
+    "title": "Aking Skill Shop",
+    "subtitle": "Pamilihan para sa mga AI skills.",
+    "searchPlaceholder": "Maghanap ng skills...",
+    "login": "Mag-login",
+    "dashboard": "Dashboard"
+  },
+  "Product": {
+    "price": "Presyo",
+    "buy": "Bumili Ngayon",
+    "download": "I-download"
+  }
+}
