@@ -540,14 +540,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Start Your Journey (Modified Section) */}
+      {/* Start Your Journey (Fixed Responsive Wrapping) */}
       <section className="py-24 px-6 bg-white overflow-hidden">
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-16 relative z-10">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
               {isZh ? '开启智慧之旅' : 'Start Your Journey'}
             </h2>
-            <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+            <p className="text-base md:text-xl text-gray-500 max-w-2xl mx-auto font-medium px-4 md:px-0">
               {isZh ? '只需简单四个步骤，将您的知识转化为持续的数字收益' : 'Four simple steps to transform your knowledge into sustainable digital revenue.'}
             </p>
           </div>
@@ -555,7 +555,7 @@ export default function HomePage() {
           {/* Steps Row with Visual Connectors */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
             {/* Desktop Horizontal Connector Line */}
-            <div className="hidden md:block absolute top-[52px] left-[15%] right-[15%] h-[2px] bg-dashed-gradient z-0 opacity-20" 
+            <div className="hidden md:block absolute top-[52px] left-[15%] right-[15%] h-[2px] z-0 opacity-20" 
                  style={{ backgroundImage: 'linear-gradient(to right, #7c3aed 50%, transparent 50%)', backgroundSize: '12px 100%' }} />
 
             {steps.map((step, idx) => (
@@ -563,7 +563,7 @@ export default function HomePage() {
                 {/* Step Icon Container */}
                 <div className="relative mb-8">
                   {/* Outer White Card-like Circle */}
-                  <div className="w-[110px] h-[110px] bg-white rounded-3xl flex items-center justify-center shadow-[0_8px_30px_rgb(124,58,237,0.12)] border border-purple-50 group-hover:shadow-[0_12px_40px_rgb(124,58,237,0.2)] transition-all duration-300 transform group-hover:-translate-y-1">
+                  <div className="w-[100px] h-[100px] md:w-[110px] md:h-[110px] bg-white rounded-3xl flex items-center justify-center shadow-[0_8px_30px_rgb(124,58,237,0.12)] border border-purple-50 group-hover:shadow-[0_12px_40px_rgb(124,58,237,0.2)] transition-all duration-300 transform group-hover:-translate-y-1">
                     <step.icon className="w-10 h-10 text-purple-600" strokeWidth={2} />
                   </div>
                   
@@ -579,7 +579,7 @@ export default function HomePage() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-500 text-sm leading-relaxed px-4">
+                <p className="text-gray-500 text-sm leading-relaxed px-6 md:px-4">
                   {step.desc}
                 </p>
               </div>
@@ -598,7 +598,7 @@ export default function HomePage() {
             <div className="w-16 h-1 bg-purple-600 mx-auto"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <BlogSection locale={locale} />
           </div>
 
@@ -612,7 +612,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ Section (Fixed Mobile Width) */}
       <section id="faq" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-4 text-purple-600">
@@ -620,18 +620,18 @@ export default function HomePage() {
           </h2>
           <div className="w-16 h-1 bg-purple-600 mx-auto mb-12"></div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="border border-gray-200 rounded-xl overflow-hidden"
+                className="border border-gray-200 rounded-xl overflow-hidden w-full"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-gray-50 transition"
                   aria-expanded={openFaq === idx}
                 >
-                  <span className="font-medium text-gray-900">{faq.q}</span>
+                  <span className="font-semibold text-gray-900 leading-snug pr-4">{faq.q}</span>
                   {openFaq === idx ? (
                     <Minus className="w-5 h-5 text-purple-600 flex-shrink-0" />
                   ) : (
@@ -639,7 +639,7 @@ export default function HomePage() {
                   )}
                 </button>
                 {openFaq === idx && (
-                  <div className="px-5 pb-5 text-gray-600 leading-relaxed">
+                  <div className="px-5 pb-5 md:px-6 md:pb-6 text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-50 pt-4">
                     {faq.a}
                   </div>
                 )}
@@ -648,7 +648,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-gray-500 mb-4">
+            <p className="text-gray-500 mb-4 text-sm md:text-base">
               {isZh ? '还有其他问题？' : 'Still have questions?'}
             </p>
             <Link href={`/${locale}/contact`}>
