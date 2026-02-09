@@ -4,256 +4,168 @@
       "brand": "OpenClaw"
     },
     "hero": {
-      "badge": "Professional On-site Service · Manila",
-      "title": "Get Your Own Private AI Assistant",
-      "subtitle": "A localized \"Jarvis\" that actually understands your files and your intent. Far beyond web-based chatbots."
+      "badge": "Service professionnel sur site · Manille",
+      "title": "Configurez votre assistant IA privé",
+      "subtitle": "Un assistant super local capable de comprendre vos fichiers et vos intentions, bien au-delà de l'expérience de l'IA web."
     },
     "requirements": {
-      "title": "What You Need",
-      "item1": "A Spare Windows or Mac Computer",
-      "item1_desc": "That's it. We handle everything else."
+      "title": "Équipement requis",
+      "item1": "Un ordinateur Windows ou Mac inutilisé",
+      "item1_desc": "C'est tout, je m'occupe du reste."
     },
     "services": {
-      "title": "What's Included",
-      "subtitle": "₱5,000 one-time service fee",
-      "service1_title": "End-to-End Installation",
-      "service1_desc": "I handle the backend, environment setup, database, and deployment. No technical knowledge required from you.",
-      "service2_title": "API Integration",
-      "service2_desc": "I'll guide you through setting up your OpenAI/Google API keys so your AI is connected to the best models available.",
-      "service3_title": "Personalized Tuning",
-      "service3_desc": "I'll configure the system based on your specific needs—business analysis, creative writing, or technical assistance."
+      "title": "Contenu du service",
+      "subtitle": "Frais de service uniques de 5 000 ₱ incluant",
+      "service1_title": "Installation de bout en bout",
+      "service1_desc": "Installation de l'environnement backend, de la base de données et déploiement frontend. Aucune connaissance technique requise.",
+      "service2_title": "Accès agrégé aux API",
+      "service2_desc": "Accompagnement pour l'ouverture et la configuration de vos clés API OpenAI ou Google.",
+      "service3_title": "Configuration par scénario",
+      "service3_desc": "Ajustement du système selon vos besoins spécifiques (analyse commerciale, écriture créative, assistance au code)."
     },
     "pricing": {
-      "label": "Service Fee",
-      "unit": "one-time",
-      "description": "Pay only after you see it working. API usage costs (tokens) are paid directly to OpenAI/Google based on your consumption.",
-      "guarantee": "Pay After Service · See It Working First"
+      "label": "Frais de service",
+      "unit": "Unique",
+      "description": "Paiement au résultat : payez après avoir vérifié que le système fonctionne parfaitement.",
+      "guarantee": "Satisfaction garantie · Démonstration sur place"
     },
     "about": {
-      "title": "About Me",
-      "description": "I'm a 16-year veteran Product Manager (expat) currently living in Manila. I've been using OpenClaw to handle my entire development workflow—building websites and platforms without writing a single line of code."
+      "title": "À propos de moi",
+      "description": "Chef de produit internet à Manille depuis 16 ans. J'utilise OpenClaw pour automatiser mes flux de travail."
     },
     "contact": {
-      "title": "Ready to Level Up Your Productivity?"
+      "title": "Prêt à booster votre productivité ?"
     },
     "footer": {
-      "text": "Stop playing with basic chatbots. Get a real AI assistant that understands your work, your files, and your goals."
+      "text": "Passez des chatbots simples à un véritable système d'IA productif qui comprend votre travail."
     }
   },
   "HomePage": {
     "hero": {
-      "title": "Reconstruct your years of deep industry insights into digital skills, transforming professional wisdom into core tradable intellectual property for the AI era.",
-      "subtitle": "Here, personal intelligence is no longer an isolated experience; it becomes a global, value-adding nexus of wisdom that breaks knowledge boundaries through digital technology.",
-      "tag1_title": "Applicable to All AI Agents",
-      "tag1_desc": "Built on standardized skill interface designs, ensuring your expertise seamlessly powers various mainstream AI Agents—publish once, deploy everywhere.",
-      "tag2_title": "Zero-Friction Transaction Costs",
-      "tag2_desc": "Leveraging a decentralized, minimalist transaction architecture, we minimize friction costs to near zero, ensuring the full value of your creation returns to you."
+      "title": "Transformez votre expertise sectorielle en compétences numériques négociables à l'ère de l'IA.",
+      "subtitle": "Ici, l'intelligence personnelle devient un lien de sagesse mondial, brisant les frontières du savoir grâce à la technologie.",
+      "tag1_title": "Compatible avec tous les agents IA",
+      "tag1_desc": "Conçu selon des interfaces standardisées pour piloter de manière transparente divers agents IA grand public.",
+      "tag2_title": "Coûts de transaction quasi nuls",
+      "tag2_desc": "Grâce à une architecture décentralisée, nous minimisons les frais pour que la valeur revienne aux créateurs."
     },
     "howItWorks": {
-      "title": "How It Works",
-      "step1_title": "Identity Activation & Wallet Setup",
-      "step1_desc": "Activate your expert identity instantly via Google or GitHub. Configure your Crypto wallet address or QR code to ensure your earnings are secure, borderless, and delivered directly to you.",
-      "step2_title": "Encapsulate Your Industry Wisdom",
-      "step2_desc": "Transform your professional expertise into tangible AI skills (Prompts, Workflows, or Model Parameters). Use our intuitive editor to set your pricing, describe features, and upload your digital assets.",
-      "step3_title": "Rights Verification & Global Circulation",
-      "step3_desc": "Once approved, your skills enter the MySkillStore library. Buyers pay you directly; once payment is confirmed, the system triggers delivery, realizing the true value of your digital copyright.",
-      "step4_title": "Build Your Brand & Passive Income",
-      "step4_desc": "Grow your reputation and establish a premier professional brand. In this AI-driven future, turn your intellectual property into a 'value engine' that generates stable, long-term passive income.",
-      "cta": "Encapsulate My Intellectual Assets Now"
+      "title": "Comment ça marche",
+      "step1_title": "Activation et configuration",
+      "step1_desc": "Activez votre profil expert et configurez votre adresse de réception en cryptomonnaie.",
+      "step2_title": "Encapsulez votre savoir",
+      "step2_desc": "Transformez votre expérience en compétences IA concrètes (Prompts, workflows, etc.).",
+      "step3_title": "Mise en ligne et échange",
+      "step3_desc": "Après validation, vos compétences rejoignent la bibliothèque pour être vendues mondialement.",
+      "step4_title": "Marque et revenus passifs",
+      "step4_desc": "Développez votre marque personnelle et générez des revenus stables à long terme.",
+      "cta": "Encapsuler mes actifs maintenant"
     },
     "footer": {
-      "text": "MySkillStore empowers everyone to create, submit, and sell exclusive industry skills. We are dedicated to helping you reconstruct fragmented wisdom into systematic digital property through digital copyright technology, bringing you long-term and substantial economic returns while leading the intelligent revolution."
+      "text": "MySkillStore permet à chacun de créer et vendre ses compétences sectorielles exclusives."
     },
     "nav": {
       "brand": "MySkillStore",
-      "login": "Login",
-      "dashboard": "Dashboard"
+      "login": "Connexion",
+      "dashboard": "Tableau de bord"
     }
   },
   "Auth": {
     "login": {
-      "title": "Welcome Back",
-      "subtitle": "Sign in to your account to continue",
+      "title": "Bon retour",
+      "subtitle": "Connectez-vous pour continuer",
       "email": "Email",
-      "password": "Password",
-      "forgot": "Forgot password?",
-      "submit": "Sign In",
-      "noAccount": "Don't have an account?",
-      "signUp": "Sign up",
-      "or": "or continue with"
+      "password": "Mot de passe",
+      "forgot": "Mot de passe oublié ?",
+      "submit": "Se connecter",
+      "noAccount": "Pas de compte ?",
+      "signUp": "S'inscrire",
+      "or": "Ou utiliser"
     },
     "register": {
-      "title": "Create Account",
-      "subtitle": "Start selling your AI skills today",
-      "username": "Username",
-      "confirmPassword": "Confirm Password",
-      "terms": "I agree to the",
-      "termsLink": "Terms of Service",
-      "submit": "Create Account",
-      "hasAccount": "Already have an account?",
-      "signIn": "Sign in"
+      "title": "Créer un compte",
+      "subtitle": "Commencez à vendre vos compétences IA dès aujourd'hui",
+      "username": "Nom d'utilisateur",
+      "confirmPassword": "Confirmer le mot de passe",
+      "terms": "J'accepte les",
+      "termsLink": "Conditions d'utilisation",
+      "submit": "Créer le compte",
+      "hasAccount": "Déjà un compte ?",
+      "signIn": "Se connecter"
     }
   },
   "Dashboard": {
     "nav": {
-      "newProduct": "New Product"
+      "newProduct": "Nouveau produit"
     },
     "stats": {
-      "balance": "Balance",
-      "totalSales": "Total Sales",
-      "purchases": "Purchases"
+      "balance": "Solde",
+      "totalSales": "Ventes totales",
+      "purchases": "Achats"
     },
     "tabs": {
-      "myProducts": "My Products",
-      "myOrders": "My Orders",
-      "mySales": "Sales History"
+      "myProducts": "Mes produits",
+      "myOrders": "Mes commandes",
+      "mySales": "Mes ventes"
     },
     "products": {
-      "title": "My Products",
-      "description": "Manage your listed skills and products",
-      "add": "Add Product",
-      "sales": "Sales",
-      "created": "Created",
-      "edit": "Edit",
-      "view": "View"
+      "title": "Mes produits",
+      "description": "Gérez vos compétences et produits en ligne",
+      "add": "Ajouter",
+      "sales": "Ventes",
+      "created": "Créé le",
+      "edit": "Modifier",
+      "view": "Voir"
     },
     "orders": {
-      "title": "My Orders",
-      "description": "Your purchase history",
-      "seller": "Seller",
-      "view": "View"
+      "title": "Mes commandes",
+      "description": "Historique de vos achats",
+      "seller": "Vendeur",
+      "view": "Voir"
     },
     "sales": {
-      "title": "Sales History",
-      "description": "Your earnings from sold products",
-      "buyer": "Buyer"
+      "title": "Ventes",
+      "description": "Revenus de vos ventes",
+      "buyer": "Acheteur"
     }
   },
   "ProductDetail": {
     "nav": {
-      "dashboard": "Dashboard"
+      "dashboard": "Tableau de bord"
     },
-    "reviews": "reviews",
-    "sales": "sales",
+    "reviews": "avis",
+    "sales": "ventes",
     "description": "Description",
-    "oneTime": "One-time payment",
-    "buyNow": "Buy Now",
+    "oneTime": "Paiement unique",
+    "buyNow": "Acheter maintenant",
     "delivery": {
-      "auto": "Instant Delivery",
-      "autoDesc": "File will be delivered automatically after payment confirmation",
-      "manual": "Manual Delivery",
-      "manualDesc": "Seller will contact you via Telegram after payment"
+      "auto": "Livraison instantanée",
+      "autoDesc": "Fichier envoyé automatiquement après confirmation du paiement",
+      "manual": "Livraison manuelle",
+      "manualDesc": "Le vendeur vous contactera via Telegram après le paiement"
     },
     "payment": {
-      "instruction": "Send exact amount to the wallet address below, then click confirm:",
-      "wallet": "Wallet Address",
-      "confirm": "I've Made Payment"
+      "instruction": "Envoyez le montant exact à l'adresse suivante :",
+      "wallet": "Adresse du portefeuille",
+      "confirm": "J'ai payé"
     },
     "trust": {
-      "secure": "Secure",
-      "direct": "Direct Payment"
+      "secure": "Sécurisé",
+      "direct": "Paiement direct"
     },
     "seller": {
-      "title": "About the Seller",
-      "sales": "sales",
-      "joined": "Joined",
-      "contact": "Contact Seller"
+      "title": "À propos du vendeur",
+      "sales": "ventes",
+      "joined": "Rejoint le",
+      "contact": "Contacter"
     }
   },
   "HelpCenter": {
-    "title": "Help Center",
-    "subtitle": "Find answers to common questions and learn how to use MySkillStore",
-    "q1": "How do I create an account?",
-    "a1": "Click the \"Login / Register\" button in the top right corner. You can sign up with your email address, or use GitHub/Google for quick registration.",
-    "q2": "How do I publish a skill?",
-    "a2": "After logging in, click \"Publish Skill\" from the navigation bar. Fill in your product details across 3 steps: basic info, pricing & delivery, and payment setup. Once submitted, our team will review your skill within 24 hours.",
-    "q3": "How does payment work?",
-    "a3": "MySkillStore uses direct crypto payments (USDT/USDC). Buyers pay directly to your wallet address — we never hold your funds. After the buyer reports payment, you confirm receipt, and the system handles delivery.",
-    "q4": "What delivery methods are available?",
-    "a4": "Two delivery methods: Auto Delivery (system automatically sends the file after payment confirmation) and Manual Delivery (you contact the buyer via Telegram or chat to deliver personally).",
-    "q5": "How long does product review take?",
-    "a5": "Most products are reviewed within 24 hours. You'll be notified once your product is approved or if changes are needed.",
-    "q6": "What file types can I sell?",
-    "a6": "You can sell any digital product: AI prompts, agent configurations, workflows, code scripts, design assets, datasets, and more. File size limit is 10MB per upload.",
-    "still_need_help": "Still need help?",
-    "contact_us": "Contact Us"
-  },
-  "AboutPage": {
-    "title": "About MySkillStore",
-    "subtitle": "Empowering the AI era's knowledge economy",
-    "mission_title": "Our Mission",
-    "mission_desc": "We believe everyone's professional expertise has value. MySkillStore is building the bridge between human wisdom and AI capability — a marketplace where industry professionals can monetize their knowledge as digital skills that power AI agents worldwide.",
-    "vision_title": "Our Vision",
-    "vision_desc": "To become the world's leading C2C marketplace for AI skills, where every professional can transform their deep industry knowledge into a sustainable source of passive income in the AI-driven future.",
-    "why_title": "Why MySkillStore?",
-    "why1_title": "Direct Payments",
-    "why1_desc": "No middleman. Buyers pay you directly via crypto. You receive 100% of your earnings.",
-    "why2_title": "Zero Custody Risk",
-    "why2_desc": "We never hold your funds. Payments go straight from buyer to your wallet.",
-    "why3_title": "Global Reach",
-    "why3_desc": "Your skills are accessible to AI users worldwide, breaking geographical boundaries.",
-    "why4_title": "IP Protection",
-    "why4_desc": "Every skill goes through a review process. Your intellectual property is respected and protected.",
-    "team_title": "Our Team",
-    "team_desc": "We are a global team of product builders, AI enthusiasts, and blockchain advocates based across Asia and beyond. United by the belief that knowledge should flow freely and creators should be fairly compensated.",
-    "stats_products": "Skills Listed",
-    "stats_users": "Active Users",
-    "stats_countries": "Countries",
-    "stats_payout": "Creator Payouts"
-  },
-  "ContactPage": {
-    "title": "Contact Us",
-    "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "form_name": "Your Name",
-    "form_email": "Email Address",
-    "form_subject": "Subject",
-    "form_message": "Message",
-    "form_submit": "Send Message",
-    "form_success": "Message sent successfully! We'll get back to you within 24 hours.",
-    "info_title": "Other Ways to Reach Us",
-    "email_title": "Email",
-    "telegram_title": "Telegram",
-    "hours_title": "Business Hours",
-    "hours_value": "Mon - Fri, 9:00 AM - 6:00 PM (GMT+8)",
-    "faq_hint": "Before reaching out, check our",
-    "faq_link": "Help Center",
-    "faq_hint_end": "for quick answers."
-  },
-  "CreateProduct": {
-    "title": "Create New Product",
-    "step": "Step",
-    "next": "Continue",
-    "back": "Back",
-    "submit": "Submit for Review",
-    "step1": {
-      "title": "Basic Information",
-      "description": "Tell us about your skill or product",
-      "productTitle": "Product Title",
-      "category": "Category",
-      "description_label": "Description",
-      "tags": "Tags",
-      "tags_hint": "Separate tags with commas"
-    },
-    "step2": {
-      "title": "Pricing & Delivery",
-      "description": "Set your price and delivery method",
-      "price": "Price (USD)",
-      "price_hint": "You receive 100% - buyers pay you directly",
-      "delivery": "Delivery Method",
-      "upload": "Upload Skill File",
-      "upload_hint": "Drag and drop or click to upload",
-      "preview": "Preview Image",
-      "preview_hint": "Upload a preview image for your product"
-    },
-    "step3": {
-      "title": "Payment Setup",
-      "description": "Configure how you receive payments",
-      "info": "Buyers will pay you directly using crypto. We never hold your funds - payments go straight to your wallet.",
-      "wallet": "Wallet Address",
-      "wallet_hint": "Enter your USDT/USDC wallet address (TRC20, BEP20, or ERC20)",
-      "qr": "Payment QR Code (Optional)",
-      "qr_hint": "Upload your wallet QR code for easier payments",
-      "coins": "Accepted Cryptocurrencies"
-    }
+    "title": "Centre d'aide",
+    "subtitle": "Réponses aux questions fréquentes",
+    "q1": "Comment créer un compte ?",
+    "a1": "Cliquez sur le bouton connexion en haut à droite.",
+    "still_need_help": "Besoin d'aide ?",
+    "contact_us": "Contactez-nous"
   }
 }
