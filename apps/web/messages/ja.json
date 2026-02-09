@@ -4,256 +4,256 @@
       "brand": "OpenClaw"
     },
     "hero": {
-      "badge": "Professional On-site Service · Manila",
-      "title": "Get Your Own Private AI Assistant",
-      "subtitle": "A localized \"Jarvis\" that actually understands your files and your intent. Far beyond web-based chatbots."
+      "badge": "プロフェッショナル・オンサイトサービス · マニラ",
+      "title": "プライベート AI アシスタントを構築",
+      "subtitle": "ローカルに配置された「ジャービス」が、あなたのファイルと意図を深く理解します。ウェブベースのチャットボットを遥かに超える体験を。"
     },
     "requirements": {
-      "title": "What You Need",
-      "item1": "A Spare Windows or Mac Computer",
-      "item1_desc": "That's it. We handle everything else."
+      "title": "必要なもの",
+      "item1": "空いている Windows または Mac コンピュータ",
+      "item1_desc": "それだけです。あとの設定はすべてお任せください。"
     },
     "services": {
-      "title": "What's Included",
-      "subtitle": "₱5,000 one-time service fee",
-      "service1_title": "End-to-End Installation",
-      "service1_desc": "I handle the backend, environment setup, database, and deployment. No technical knowledge required from you.",
-      "service2_title": "API Integration",
-      "service2_desc": "I'll guide you through setting up your OpenAI/Google API keys so your AI is connected to the best models available.",
-      "service3_title": "Personalized Tuning",
-      "service3_desc": "I'll configure the system based on your specific needs—business analysis, creative writing, or technical assistance."
+      "title": "サービス内容",
+      "subtitle": "₱5,000 一時的なサービス料金に含まれるもの",
+      "service1_title": "エンドツーエンドのインストール",
+      "service1_desc": "バックエンド、環境設定、データベース、デプロイメントをすべて担当します。技術的な知識は一切不要です。",
+      "service2_title": "API 統合",
+      "service2_desc": "OpenAI や Google の API キーの設定をガイドし、最高の AI モデルに接続します。",
+      "service3_title": "パーソナライズされた調整",
+      "service3_desc": "ビジネス分析、クリエイティブライティング、技術支援など、具体的なニーズに合わせてシステムを微調整します。"
     },
     "pricing": {
-      "label": "Service Fee",
-      "unit": "one-time",
-      "description": "Pay only after you see it working. API usage costs (tokens) are paid directly to OpenAI/Google based on your consumption.",
-      "guarantee": "Pay After Service · See It Working First"
+      "label": "サービス料",
+      "unit": "一回限り",
+      "description": "効果を確認した後にお支払いください。API 使用料（トークン）は、消費量に応じて OpenAI/Google に直接支払われます。",
+      "guarantee": "サービス後払い · 動作確認後の支払い"
     },
     "about": {
-      "title": "About Me",
-      "description": "I'm a 16-year veteran Product Manager (expat) currently living in Manila. I've been using OpenClaw to handle my entire development workflow—building websites and platforms without writing a single line of code."
+      "title": "私について",
+      "description": "マニラ在住 16 年のベテラン・プロダクトマネージャーです。最近は OpenClaw を使用して、コードを一行も書かずにウェブサイトやプラットフォームを構築するなど、開発ワークフロー全体を自動化しています。"
     },
     "contact": {
-      "title": "Ready to Level Up Your Productivity?"
+      "title": "生産性を次のレベルに引き上げる準備はできましたか？"
     },
     "footer": {
-      "text": "Stop playing with basic chatbots. Get a real AI assistant that understands your work, your files, and your goals."
+      "text": "基本的なチャットボットで遊ぶのはもうやめましょう。あなたの仕事、ファイル、目標を真に理解する本物の AI アシスタントを手に入れてください。"
     }
   },
   "HomePage": {
     "hero": {
-      "title": "Reconstruct your years of deep industry insights into digital skills, transforming professional wisdom into core tradable intellectual property for the AI era.",
-      "subtitle": "Here, personal intelligence is no longer an isolated experience; it becomes a global, value-adding nexus of wisdom that breaks knowledge boundaries through digital technology.",
-      "tag1_title": "Applicable to All AI Agents",
-      "tag1_desc": "Built on standardized skill interface designs, ensuring your expertise seamlessly powers various mainstream AI Agents—publish once, deploy everywhere.",
-      "tag2_title": "Zero-Friction Transaction Costs",
-      "tag2_desc": "Leveraging a decentralized, minimalist transaction architecture, we minimize friction costs to near zero, ensuring the full value of your creation returns to you."
+      "title": "長年の深い業界知識をデジタルスキルに再構築し、専門的な知恵を AI 時代の自由に取引可能な知的財産へと変貌させます。",
+      "subtitle": "ここでは、個人の知性は孤立した経験ではなく、デジタル技術を通じて世界を繋ぎ、知識の境界を打ち破る、価値を生み出し続ける知恵の絆となります。",
+      "tag1_title": "あらゆる AI エージェントに対応",
+      "tag1_desc": "標準化されたスキルインターフェース設計に基づき、あなたの専門知識が主流の AI エージェントをシームレスに駆動します。一度公開すれば、どこでも展開可能です。",
+      "tag2_title": "摩擦ゼロの取引コスト",
+      "tag2_desc": "分散型のミニマリスト取引アーキテクチャを活用し、取引摩擦コストを極限まで抑え、あなたの創造物の価値がすべてあなたに還元されるようにします。"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "step1_title": "Identity Activation & Wallet Setup",
-      "step1_desc": "Activate your expert identity instantly via Google or GitHub. Configure your Crypto wallet address or QR code to ensure your earnings are secure, borderless, and delivered directly to you.",
-      "step2_title": "Encapsulate Your Industry Wisdom",
-      "step2_desc": "Transform your professional expertise into tangible AI skills (Prompts, Workflows, or Model Parameters). Use our intuitive editor to set your pricing, describe features, and upload your digital assets.",
-      "step3_title": "Rights Verification & Global Circulation",
-      "step3_desc": "Once approved, your skills enter the MySkillStore library. Buyers pay you directly; once payment is confirmed, the system triggers delivery, realizing the true value of your digital copyright.",
-      "step4_title": "Build Your Brand & Passive Income",
-      "step4_desc": "Grow your reputation and establish a premier professional brand. In this AI-driven future, turn your intellectual property into a 'value engine' that generates stable, long-term passive income.",
-      "cta": "Encapsulate My Intellectual Assets Now"
+      "title": "利用の流れ",
+      "step1_title": "アイデンティティの有効化とウォレット設定",
+      "step1_desc": "Google または GitHub アカウントでエキスパート ID を即座に有効化。暗号通貨ウォレットアドレスや QR コードを設定し、収益が安全かつボーダレスに直接届くようにします。",
+      "step2_title": "業界の知恵をカプセル化",
+      "step2_desc": "専門知識を具体的な AI スキル（プロンプト、ワークフロー、モデルパラメータ）に変換。直感的なエディタを使用して、価格設定、機能説明、デジタルアセットのアップロードを行います。",
+      "step3_title": "権利確認とグローバル流通",
+      "step3_desc": "承認されると、あなたのスキルは MySkillStore ライブラリに登録されます。購入者はあなたに直接支払い、確認されるとシステムが納品を実行し、デジタル著作権の真の価値を実現します。",
+      "step4_title": "ブランド構築と不労所得",
+      "step4_desc": "評判を高め、一流のプロフェッショナルブランドを確立。AI 駆動の未来において、あなたの知的財産を長期的に安定した不労所得を生み出す「価値エンジン」に変えましょう。",
+      "cta": "今すぐ知的資産をカプセル化する"
     },
     "footer": {
-      "text": "MySkillStore empowers everyone to create, submit, and sell exclusive industry skills. We are dedicated to helping you reconstruct fragmented wisdom into systematic digital property through digital copyright technology, bringing you long-term and substantial economic returns while leading the intelligent revolution."
+      "text": "MySkillStore は、誰もが独自の業界スキルを作成、提出、販売できるようにします。デジタル著作権技術を通じて、断片的な知恵を体系的なデジタル財産に再構築し、インテリジェント革命をリードしながら、長期的かつ多額の経済的還元をもたらすことを目指しています。"
     },
     "nav": {
       "brand": "MySkillStore",
-      "login": "Login",
-      "dashboard": "Dashboard"
+      "login": "ログイン",
+      "dashboard": "ダッシュボード"
     }
   },
   "Auth": {
     "login": {
-      "title": "Welcome Back",
-      "subtitle": "Sign in to your account to continue",
-      "email": "Email",
-      "password": "Password",
-      "forgot": "Forgot password?",
-      "submit": "Sign In",
-      "noAccount": "Don't have an account?",
-      "signUp": "Sign up",
-      "or": "or continue with"
+      "title": "おかえりなさい",
+      "subtitle": "アカウントにサインインして続行してください",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "forgot": "パスワードを忘れましたか？",
+      "submit": "サインイン",
+      "noAccount": "アカウントをお持ちでないですか？",
+      "signUp": "新規登録",
+      "or": "または以下で継続"
     },
     "register": {
-      "title": "Create Account",
-      "subtitle": "Start selling your AI skills today",
-      "username": "Username",
-      "confirmPassword": "Confirm Password",
-      "terms": "I agree to the",
-      "termsLink": "Terms of Service",
-      "submit": "Create Account",
-      "hasAccount": "Already have an account?",
-      "signIn": "Sign in"
+      "title": "アカウント作成",
+      "subtitle": "今日から AI スキルの販売を始めましょう",
+      "username": "ユーザー名",
+      "confirmPassword": "パスワードの確認",
+      "terms": "同意する",
+      "termsLink": "利用規約",
+      "submit": "アカウント作成",
+      "hasAccount": "既にアカウントをお持ちですか？",
+      "signIn": "サインイン"
     }
   },
   "Dashboard": {
     "nav": {
-      "newProduct": "New Product"
+      "newProduct": "新規出品"
     },
     "stats": {
-      "balance": "Balance",
-      "totalSales": "Total Sales",
-      "purchases": "Purchases"
+      "balance": "残高",
+      "totalSales": "総売上",
+      "purchases": "購入数"
     },
     "tabs": {
-      "myProducts": "My Products",
-      "myOrders": "My Orders",
-      "mySales": "Sales History"
+      "myProducts": "マイプロダクト",
+      "myOrders": "注文履歴",
+      "mySales": "販売履歴"
     },
     "products": {
-      "title": "My Products",
-      "description": "Manage your listed skills and products",
-      "add": "Add Product",
-      "sales": "Sales",
-      "created": "Created",
-      "edit": "Edit",
-      "view": "View"
+      "title": "マイプロダクト",
+      "description": "出品中のスキルと製品を管理します",
+      "add": "製品を追加",
+      "sales": "売上",
+      "created": "作成日",
+      "edit": "編集",
+      "view": "表示"
     },
     "orders": {
-      "title": "My Orders",
-      "description": "Your purchase history",
-      "seller": "Seller",
-      "view": "View"
+      "title": "注文履歴",
+      "description": "あなたの購入記録",
+      "seller": "販売者",
+      "view": "表示"
     },
     "sales": {
-      "title": "Sales History",
-      "description": "Your earnings from sold products",
-      "buyer": "Buyer"
+      "title": "販売履歴",
+      "description": "製品販売からの収益",
+      "buyer": "購入者"
     }
   },
   "ProductDetail": {
     "nav": {
-      "dashboard": "Dashboard"
+      "dashboard": "ダッシュボード"
     },
-    "reviews": "reviews",
-    "sales": "sales",
-    "description": "Description",
-    "oneTime": "One-time payment",
-    "buyNow": "Buy Now",
+    "reviews": "件のレビュー",
+    "sales": "個の販売",
+    "description": "製品説明",
+    "oneTime": "一括払い",
+    "buyNow": "今すぐ購入",
     "delivery": {
-      "auto": "Instant Delivery",
-      "autoDesc": "File will be delivered automatically after payment confirmation",
-      "manual": "Manual Delivery",
-      "manualDesc": "Seller will contact you via Telegram after payment"
+      "auto": "即時納品",
+      "autoDesc": "支払い確認後、ファイルは自動的に配信されます",
+      "manual": "手動納品",
+      "manualDesc": "支払い後、販売者が Telegram を通じて連絡します"
     },
     "payment": {
-      "instruction": "Send exact amount to the wallet address below, then click confirm:",
-      "wallet": "Wallet Address",
-      "confirm": "I've Made Payment"
+      "instruction": "以下のウォレットアドレスに正確な金額を送信し、確認をクリックしてください：",
+      "wallet": "ウォレットアドレス",
+      "confirm": "支払いを完了しました"
     },
     "trust": {
-      "secure": "Secure",
-      "direct": "Direct Payment"
+      "secure": "安全",
+      "direct": "直接支払い"
     },
     "seller": {
-      "title": "About the Seller",
-      "sales": "sales",
-      "joined": "Joined",
-      "contact": "Contact Seller"
+      "title": "販売者について",
+      "sales": "販売数",
+      "joined": "入会日",
+      "contact": "販売者に連絡"
     }
   },
   "HelpCenter": {
-    "title": "Help Center",
-    "subtitle": "Find answers to common questions and learn how to use MySkillStore",
-    "q1": "How do I create an account?",
-    "a1": "Click the \"Login / Register\" button in the top right corner. You can sign up with your email address, or use GitHub/Google for quick registration.",
-    "q2": "How do I publish a skill?",
-    "a2": "After logging in, click \"Publish Skill\" from the navigation bar. Fill in your product details across 3 steps: basic info, pricing & delivery, and payment setup. Once submitted, our team will review your skill within 24 hours.",
-    "q3": "How does payment work?",
-    "a3": "MySkillStore uses direct crypto payments (USDT/USDC). Buyers pay directly to your wallet address — we never hold your funds. After the buyer reports payment, you confirm receipt, and the system handles delivery.",
-    "q4": "What delivery methods are available?",
-    "a4": "Two delivery methods: Auto Delivery (system automatically sends the file after payment confirmation) and Manual Delivery (you contact the buyer via Telegram or chat to deliver personally).",
-    "q5": "How long does product review take?",
-    "a5": "Most products are reviewed within 24 hours. You'll be notified once your product is approved or if changes are needed.",
-    "q6": "What file types can I sell?",
-    "a6": "You can sell any digital product: AI prompts, agent configurations, workflows, code scripts, design assets, datasets, and more. File size limit is 10MB per upload.",
-    "still_need_help": "Still need help?",
-    "contact_us": "Contact Us"
+    "title": "ヘルプセンター",
+    "subtitle": "よくある質問への回答を見つけ、MySkillStore の使い方を学びましょう",
+    "q1": "アカウントを作成するには？",
+    "a1": "右上の「ログイン / 新規登録」ボタンをクリックしてください。メールアドレスで登録するか、GitHub/Google を使用して素早く登録できます。",
+    "q2": "スキルを出品するには？",
+    "a2": "ログイン後、ナビゲーションバーの「スキル出品」をクリックします。基本情報、価格と納品、支払い設定の 3 ステップで製品詳細を入力してください。提出後、チームが 24 時間以内に審査します。",
+    "q3": "支払いはどのように行われますか？",
+    "a3": "MySkillStore は暗号通貨（USDT/USDC）による直接支払いを使用します。購入者はあなたのウォレットアドレスに直接支払います。私たちが資金を預かることはありません。購入者が支払いを報告した後、あなたが受領を確認すると、システムが納品を処理します。",
+    "q4": "どのような納品方法がありますか？",
+    "a4": "2 つの方法があります。自動納品（支払い確認後にシステムが自動的にファイルを送信）と手動納品（Telegram やチャットで直接購入者に連絡して納品）です。",
+    "q5": "製品の審査にはどのくらい時間がかかりますか？",
+    "a5": "ほとんどの製品は 24 時間以内に審査されます。承認された場合、または修正が必要な場合は通知されます。",
+    "q6": "どのようなファイル形式を販売できますか？",
+    "a6": "あらゆるデジタル製品を販売できます：AI プロンプト、エージェント設定、ワークフロー、コードスクリプト、デザイン素材、データセットなど。ファイルサイズの上限は 1 アップロードにつき 10MB です。",
+    "still_need_help": "まだ助けが必要ですか？",
+    "contact_us": "お問い合わせ"
   },
   "AboutPage": {
-    "title": "About MySkillStore",
-    "subtitle": "Empowering the AI era's knowledge economy",
-    "mission_title": "Our Mission",
-    "mission_desc": "We believe everyone's professional expertise has value. MySkillStore is building the bridge between human wisdom and AI capability — a marketplace where industry professionals can monetize their knowledge as digital skills that power AI agents worldwide.",
-    "vision_title": "Our Vision",
-    "vision_desc": "To become the world's leading C2C marketplace for AI skills, where every professional can transform their deep industry knowledge into a sustainable source of passive income in the AI-driven future.",
-    "why_title": "Why MySkillStore?",
-    "why1_title": "Direct Payments",
-    "why1_desc": "No middleman. Buyers pay you directly via crypto. You receive 100% of your earnings.",
-    "why2_title": "Zero Custody Risk",
-    "why2_desc": "We never hold your funds. Payments go straight from buyer to your wallet.",
-    "why3_title": "Global Reach",
-    "why3_desc": "Your skills are accessible to AI users worldwide, breaking geographical boundaries.",
-    "why4_title": "IP Protection",
-    "why4_desc": "Every skill goes through a review process. Your intellectual property is respected and protected.",
-    "team_title": "Our Team",
-    "team_desc": "We are a global team of product builders, AI enthusiasts, and blockchain advocates based across Asia and beyond. United by the belief that knowledge should flow freely and creators should be fairly compensated.",
-    "stats_products": "Skills Listed",
-    "stats_users": "Active Users",
-    "stats_countries": "Countries",
-    "stats_payout": "Creator Payouts"
+    "title": "MySkillStore について",
+    "subtitle": "AI 時代の知識経済を支援する",
+    "mission_title": "私たちの使命",
+    "mission_desc": "私たちは、すべての人の専門知識には価値があると信じています。MySkillStore は、人間の知恵と AI 能力の間の架け橋を築いています。業界のプロフェッショナルが自分の知識をデジタルスキルとして収益化し、世界中の AI エージェントを強化できるマーケットプレイスです。",
+    "vision_title": "私たちのビジョン",
+    "vision_desc": "AI スキルの世界をリードする C2C マーケットプレイスになり、すべてのプロフェッショナルが AI 駆動の未来において、深い業界知識を持続可能な不労所得源に変えられるようにすることです。",
+    "why_title": "なぜ MySkillStore なのか？",
+    "why1_title": "直接支払い",
+    "why1_desc": "仲介者はいません。購入者は暗号通貨を介してあなたに直接支払います。あなたは売上の 100% を受け取ります。",
+    "why2_title": "保管リスクゼロ",
+    "why2_desc": "私たちがあなたの資金を預かることはありません。支払いは購入者からあなたのウォレットへ直接行われます。",
+    "why3_title": "グローバルな展開",
+    "why3_desc": "あなたのスキルは世界中の AI ユーザーが利用可能であり、地理的な境界を打破します。",
+    "why4_title": "知的財産の保護",
+    "why4_desc": "すべてのスキルは審査プロセスを経ます。あなたの知的財産は尊重され、保護されます。",
+    "team_title": "私たちのチーム",
+    "team_desc": "私たちは、アジアをはじめ世界中に拠点を置く、プロダクトビルダー、AI 愛好家、ブロックチェーン推進派のグローバルチームです。知識は自由に流れるべきであり、クリエイターは正当に報われるべきであるという信念で結ばれています。",
+    "stats_products": "出品スキル数",
+    "stats_users": "アクティブユーザー",
+    "stats_countries": "展開国数",
+    "stats_payout": "クリエイター収益"
   },
   "ContactPage": {
-    "title": "Contact Us",
-    "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "form_name": "Your Name",
-    "form_email": "Email Address",
-    "form_subject": "Subject",
-    "form_message": "Message",
-    "form_submit": "Send Message",
-    "form_success": "Message sent successfully! We'll get back to you within 24 hours.",
-    "info_title": "Other Ways to Reach Us",
-    "email_title": "Email",
+    "title": "お問い合わせ",
+    "subtitle": "皆様からのご連絡をお待ちしております。メッセージをお送りいただければ、できるだけ早く返信いたします。",
+    "form_name": "お名前",
+    "form_email": "メールアドレス",
+    "form_subject": "件名",
+    "form_message": "メッセージ内容",
+    "form_submit": "メッセージを送信",
+    "form_success": "メッセージは正常に送信されました。24 時間以内に返信いたします。",
+    "info_title": "その他の連絡方法",
+    "email_title": "メール",
     "telegram_title": "Telegram",
-    "hours_title": "Business Hours",
-    "hours_value": "Mon - Fri, 9:00 AM - 6:00 PM (GMT+8)",
-    "faq_hint": "Before reaching out, check our",
-    "faq_link": "Help Center",
-    "faq_hint_end": "for quick answers."
+    "hours_title": "営業時間",
+    "hours_value": "月曜日 - 金曜日、9:00 AM - 6:00 PM (GMT+8)",
+    "faq_hint": "お問い合わせの前に、私たちの",
+    "faq_link": "ヘルプセンター",
+    "faq_hint_end": "をご確認ください。"
   },
   "CreateProduct": {
-    "title": "Create New Product",
-    "step": "Step",
-    "next": "Continue",
-    "back": "Back",
-    "submit": "Submit for Review",
+    "title": "新規製品の作成",
+    "step": "ステップ",
+    "next": "次へ",
+    "back": "戻る",
+    "submit": "審査に提出",
     "step1": {
-      "title": "Basic Information",
-      "description": "Tell us about your skill or product",
-      "productTitle": "Product Title",
-      "category": "Category",
-      "description_label": "Description",
-      "tags": "Tags",
-      "tags_hint": "Separate tags with commas"
+      "title": "基本情報",
+      "description": "あなたのスキルや製品について教えてください",
+      "productTitle": "製品タイトル",
+      "category": "カテゴリー",
+      "description_label": "説明",
+      "tags": "タグ",
+      "tags_hint": "タグはカンマで区切ってください"
     },
     "step2": {
-      "title": "Pricing & Delivery",
-      "description": "Set your price and delivery method",
-      "price": "Price (USD)",
-      "price_hint": "You receive 100% - buyers pay you directly",
-      "delivery": "Delivery Method",
-      "upload": "Upload Skill File",
-      "upload_hint": "Drag and drop or click to upload",
-      "preview": "Preview Image",
-      "preview_hint": "Upload a preview image for your product"
+      "title": "価格と納品",
+      "description": "価格と納品方法を設定します",
+      "price": "価格 (USD)",
+      "price_hint": "あなたは 100% を受け取ります - 購入者はあなたに直接支払います",
+      "delivery": "納品方法",
+      "upload": "スキルファイルをアップロード",
+      "upload_hint": "ドラッグ＆ドロップまたはクリックしてアップロード",
+      "preview": "プレビュー画像",
+      "preview_hint": "製品のプレビュー画像をアップロードしてください"
     },
     "step3": {
-      "title": "Payment Setup",
-      "description": "Configure how you receive payments",
-      "info": "Buyers will pay you directly using crypto. We never hold your funds - payments go straight to your wallet.",
-      "wallet": "Wallet Address",
-      "wallet_hint": "Enter your USDT/USDC wallet address (TRC20, BEP20, or ERC20)",
-      "qr": "Payment QR Code (Optional)",
-      "qr_hint": "Upload your wallet QR code for easier payments",
-      "coins": "Accepted Cryptocurrencies"
+      "title": "支払い設定",
+      "description": "支払い受け取り方法を設定します",
+      "info": "購入者は暗号通貨を使用してあなたに直接支払います。私たちが資金を預かることはありません。支払いは直接あなたのウォレットに届きます。",
+      "wallet": "ウォレットアドレス",
+      "wallet_hint": "USDT/USDC ウォレットアドレス（TRC20、BEP20、または ERC20）を入力してください",
+      "qr": "支払い QR コード（任意）",
+      "qr_hint": "支払いをスムーズにするためにウォレットの QR コードをアップロードしてください",
+      "coins": "受け入れ可能な暗号通貨"
     }
   }
 }
