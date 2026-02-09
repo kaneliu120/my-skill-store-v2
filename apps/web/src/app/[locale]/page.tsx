@@ -154,6 +154,7 @@ export default function HomePage() {
             <button
               className="md:hidden text-gray-600"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X /> : <Menu />}
             </button>
@@ -234,6 +235,7 @@ export default function HomePage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyDown={handleSearch}
+                aria-label="Search skills"
               />
             </div>
             {isLoggedIn ? (
@@ -487,7 +489,7 @@ export default function HomePage() {
             {isZh ? '最新上架' : 'Latest Arrivals'}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {products.length > 0 ? (
               products.slice(0, 8).map(product => (
                 <ProductCard
@@ -612,6 +614,7 @@ export default function HomePage() {
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                  aria-expanded={openFaq === idx}
                 >
                   <span className="font-medium text-gray-900">{faq.q}</span>
                   {openFaq === idx ? (

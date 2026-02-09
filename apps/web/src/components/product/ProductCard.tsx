@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -20,7 +21,13 @@ export default function ProductCard({ id, title, price, author, authorAvatar, co
         {/* Cover Image Placeholder */}
         <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-700 relative flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500">
           {coverUrl ? (
-            <img src={coverUrl} alt={title} className="w-full h-full object-cover" />
+            <Image
+              src={coverUrl}
+              alt={title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           ) : (
             <div className="text-slate-500 font-mono text-sm">NO PREVIEW</div>
           )}

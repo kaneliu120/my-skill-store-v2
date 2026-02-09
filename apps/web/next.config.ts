@@ -11,10 +11,18 @@ const nextConfig: NextConfig = {
       bodySizeLimit: '10mb',
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
   async rewrites() {
     // ⚠️ 终极方案：由于 Render 环境变量注入不稳定，直接硬编码后端地址
     const apiUrl = process.env.SERVER_API_URL || process.env.NEXT_PUBLIC_API_URL || 'https://my-skill-api-kane.onrender.com';
-    
+
     console.log(`[Next.js Rewrite] Configuring proxy to: ${apiUrl}`);
 
     return [
