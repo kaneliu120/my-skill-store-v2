@@ -540,33 +540,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-24 px-6 bg-gray-100">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-4 text-purple-600">
-            {isZh ? '如何开始' : 'How It Works'}
-          </h2>
-          <div className="w-16 h-1 bg-purple-600 mx-auto mb-20"></div>
+      {/* Start Your Journey (Modified Section) */}
+      <section className="py-24 px-6 bg-white overflow-hidden">
+        <div className="container mx-auto max-w-6xl relative">
+          <div className="text-center mb-16 relative z-10">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+              {isZh ? '开启智慧之旅' : 'Start Your Journey'}
+            </h2>
+            <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+              {isZh ? '只需简单四个步骤，将您的知识转化为持续的数字收益' : 'Four simple steps to transform your knowledge into sustainable digital revenue.'}
+            </p>
+          </div>
 
-          {/* Steps Row */}
-          <div className="grid md:grid-cols-4 gap-8">
+          {/* Steps Row with Visual Connectors */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+            {/* Desktop Horizontal Connector Line */}
+            <div className="hidden md:block absolute top-[52px] left-[15%] right-[15%] h-[2px] bg-dashed-gradient z-0 opacity-20" 
+                 style={{ backgroundImage: 'linear-gradient(to right, #7c3aed 50%, transparent 50%)', backgroundSize: '12px 100%' }} />
+
             {steps.map((step, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center relative">
-                {/* Connector Line (Desktop only, between steps) */}
-                {idx < 3 && (
-                  <div className="hidden md:block absolute top-[70px] -right-1/2 w-full h-[2px] bg-purple-100 z-0" />
-                )}
-
-                {/* Icon Circle */}
-                <div className="w-[140px] h-[140px] bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center shadow-xl shadow-purple-200 mb-8 relative z-10">
-                  <step.icon className="w-16 h-16 text-white" strokeWidth={1.5} />
+              <div key={idx} className="flex flex-col items-center text-center group relative z-10">
+                {/* Step Icon Container */}
+                <div className="relative mb-8">
+                  {/* Outer White Card-like Circle */}
+                  <div className="w-[110px] h-[110px] bg-white rounded-3xl flex items-center justify-center shadow-[0_8px_30px_rgb(124,58,237,0.12)] border border-purple-50 group-hover:shadow-[0_12px_40px_rgb(124,58,237,0.2)] transition-all duration-300 transform group-hover:-translate-y-1">
+                    <step.icon className="w-10 h-10 text-purple-600" strokeWidth={2} />
+                  </div>
+                  
+                  {/* Step Number Badge */}
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg border-2 border-white">
+                    {step.num}
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">
+                  {step.title}
+                </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-500 leading-6 max-w-[240px]">{step.desc}</p>
+                <p className="text-gray-500 text-sm leading-relaxed px-4">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
