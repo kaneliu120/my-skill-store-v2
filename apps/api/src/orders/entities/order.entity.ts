@@ -12,9 +12,12 @@ import { Product } from '../../products/entities/product.entity';
 export enum OrderStatus {
   CREATED = 'created',
   PAID_REPORTED = 'paid_reported',
+  PAYMENT_VERIFIED = 'payment_verified',
   CONFIRMED = 'confirmed',
   COMPLETED = 'completed',
   CANCELLED = 'cancelled',
+  REFUND_REQUESTED = 'refund_requested',
+  REFUNDED = 'refunded',
 }
 
 @Entity('orders')
@@ -51,6 +54,15 @@ export class Order {
 
   @Column({ nullable: true })
   transaction_hash: string;
+
+  @Column({ nullable: true })
+  payment_network: string;
+
+  @Column({ default: false })
+  payment_verified: boolean;
+
+  @Column({ type: 'jsonb', nullable: true })
+  verification_details: Record<string, any>;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

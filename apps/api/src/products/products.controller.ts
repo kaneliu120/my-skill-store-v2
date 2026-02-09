@@ -35,16 +35,49 @@ export class ProductsController {
     });
   }
 
+  /**
+   * GET /products?status=approved&search=keyword&category=X&tags=a,b
+   *   &minPrice=10&maxPrice=100&deliveryType=auto_hosted
+   *   &sortBy=price&sortOrder=ASC&page=1&limit=20
+   */
   @Get()
   findAll(
     @Query('status') status?: string,
     @Query('search') search?: string,
     @Query('category') category?: string,
+    @Query('tags') tags?: string,
+    @Query('minPrice') minPrice?: string,
+    @Query('maxPrice') maxPrice?: string,
+    @Query('deliveryType') deliveryType?: string,
+    @Query('sellerId') sellerId?: string,
+    @Query('sortBy') sortBy?: string,
+    @Query('sortOrder') sortOrder?: string,
+    @Query('page') page?: string,
+    @Query('limit') limit?: string,
   ) {
+    const query = {
+      search,
+      category,
+      tags,
+      minPrice: minPrice ? +minPrice : undefined,
+      maxPrice: maxPrice ? +maxPrice : undefined,
+      deliveryType,
+      sellerId: sellerId ? +sellerId : undefined,
+      sortBy,
+      sortOrder: sortOrder as 'ASC' | 'DESC',
+      page: page ? +page : 1,
+      limit: limit ? +limit : 20,
+    };
+
     if (status === 'approved') {
-      return this.productsService.findApproved({ search, category });
+      return this.productsService.findApproved(query);
     }
-    return this.productsService.findAll({ search, category });
+    return this.productsService.findAll(query);
+  }
+
+  @Get('categories')
+  getCategories() {
+    return this.productsService.getCategories();
   }
 
   // Static routes must come before :id param route

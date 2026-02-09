@@ -10,6 +10,10 @@ import { AuthModule } from './auth/auth.module';
 import { UploadModule } from './upload/upload.module';
 import { TrackingModule } from './tracking/tracking.module';
 import { BlogModule } from './blog/blog.module';
+import { PaymentsModule } from './payments/payments.module';
+import { NotificationsModule } from './notifications/notifications.module';
+import { RefundsModule } from './refunds/refunds.module';
+import { ReviewsModule } from './reviews/reviews.module';
 
 @Module({
   imports: [
@@ -19,25 +23,26 @@ import { BlogModule } from './blog/blog.module';
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (config: ConfigService) => {
+        const isProduction = config.get<string>('NODE_ENV') === 'production';
         const dbUrl = config.get<string>('DATABASE_URL');
         if (dbUrl) {
           return {
-            type: 'postgres',
+            type: 'postgres' as const,
             url: dbUrl,
             entities: [__dirname + '/**/*.entity{.ts,.js}'],
-            synchronize: true, // ⚠️ Prod: set to false and use migrations
-            ssl: { rejectUnauthorized: false }, // Render DB needs SSL
+            synchronize: !isProduction,
+            ssl: isProduction ? { rejectUnauthorized: false } : false,
           };
         }
         return {
-          type: 'postgres',
+          type: 'postgres' as const,
           host: config.get<string>('DB_HOST', 'localhost'),
           port: config.get<number>('DB_PORT', 5432),
           username: config.get<string>('DB_USERNAME', 'postgres'),
           password: config.get<string>('DB_PASSWORD', 'postgres'),
           database: config.get<string>('DB_DATABASE', 'postgres'),
           entities: [__dirname + '/**/*.entity{.ts,.js}'],
-          synchronize: true,
+          synchronize: !isProduction,
         };
       },
       inject: [ConfigService],
@@ -49,6 +54,10 @@ import { BlogModule } from './blog/blog.module';
     UploadModule,
     TrackingModule,
     BlogModule,
+    PaymentsModule,
+    NotificationsModule,
+    RefundsModule,
+    ReviewsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

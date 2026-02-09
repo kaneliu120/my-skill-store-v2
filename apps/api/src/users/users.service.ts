@@ -16,7 +16,18 @@ export class UsersService {
   }
 
   findAll() {
-    return this.usersRepository.find();
+    return this.usersRepository.find({
+      select: [
+        'id',
+        'email',
+        'nickname',
+        'avatar_url',
+        'role',
+        'crypto_wallet_address',
+        'crypto_qr_code_url',
+        'created_at',
+      ],
+    });
   }
 
   findOne(id: number) {
@@ -32,6 +43,11 @@ export class UsersService {
   }
 
   async update(id: number, updateData: Partial<User>) {
+    // Prevent role escalation - remove role from update data
+    delete updateData.role;
+    // Prevent password_hash from being set directly
+    delete updateData.password_hash;
+
     await this.usersRepository.update(id, updateData);
     return this.findOne(id);
   }

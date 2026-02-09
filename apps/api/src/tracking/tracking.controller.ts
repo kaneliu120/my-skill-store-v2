@@ -1,5 +1,7 @@
 import { Controller, Post, Get, Body, Req, UseGuards } from '@nestjs/common';
 import { TrackingService } from './tracking.service';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { AdminGuard } from '../auth/guards/admin.guard';
 import type { Request } from 'express';
 
 @Controller('tracking')
@@ -23,9 +25,9 @@ export class TrackingController {
     });
   }
 
+  @UseGuards(JwtAuthGuard, AdminGuard)
   @Get('stats')
   async getStats() {
-    // In a real app, you'd add AdminGuard here used in other modules
     return this.trackingService.getStats();
   }
 }

@@ -8,6 +8,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Order, OrderStatus } from './entities/order.entity';
 import { Product, DeliveryType } from '../products/entities/product.entity';
+import { CryptoVerificationService } from '../payments/crypto-verification.service';
 
 @Injectable()
 export class OrdersService {
@@ -16,6 +17,7 @@ export class OrdersService {
     private ordersRepository: Repository<Order>,
     @InjectRepository(Product)
     private productsRepository: Repository<Product>,
+    private cryptoVerification: CryptoVerificationService,
   ) {}
 
   async create(buyerId: number, productId: number) {
@@ -78,6 +80,7 @@ export class OrdersService {
     orderId: number,
     buyerId: number,
     transactionHash?: string,
+    paymentNetwork?: string,
   ) {
     const order = await this.findOne(orderId);
     if (order.buyer_id !== buyerId) {
@@ -91,6 +94,61 @@ export class OrdersService {
     if (transactionHash) {
       order.transaction_hash = transactionHash;
     }
+    if (paymentNetwork) {
+      order.payment_network = paymentNetwork;
+    }
+
+    // Auto-verify on blockchain if tx hash and network are provided
+    if (transactionHash && paymentNetwork) {
+      const verification = await this.cryptoVerification.verifyTransaction(
+        transactionHash,
+        paymentNetwork,
+      );
+      order.payment_verified = verification.verified;
+      order.verification_details = verification as any;
+
+      if (verification.verified) {
+        order.status = OrderStatus.PAYMENT_VERIFIED;
+      }
+    }
+
+    return this.ordersRepository.save(order);
+  }
+
+  /**
+   * Buyer can manually retry verification (e.g. after blockchain confirms).
+   */
+  async verifyPayment(orderId: number, buyerId: number) {
+    const order = await this.findOne(orderId);
+    if (order.buyer_id !== buyerId) {
+      throw new ForbiddenException('Not authorized');
+    }
+    if (
+      order.status !== OrderStatus.PAID_REPORTED &&
+      order.status !== OrderStatus.PAYMENT_VERIFIED
+    ) {
+      throw new BadRequestException(
+        'Order must be in PAID_REPORTED or PAYMENT_VERIFIED status',
+      );
+    }
+    if (!order.transaction_hash || !order.payment_network) {
+      throw new BadRequestException(
+        'Transaction hash and payment network are required for verification',
+      );
+    }
+
+    const verification = await this.cryptoVerification.verifyTransaction(
+      order.transaction_hash,
+      order.payment_network,
+    );
+
+    order.payment_verified = verification.verified;
+    order.verification_details = verification as any;
+
+    if (verification.verified) {
+      order.status = OrderStatus.PAYMENT_VERIFIED;
+    }
+
     return this.ordersRepository.save(order);
   }
 
@@ -99,7 +157,10 @@ export class OrdersService {
     if (order.seller_id !== sellerId) {
       throw new ForbiddenException('Not authorized');
     }
-    if (order.status !== OrderStatus.PAID_REPORTED) {
+    if (
+      order.status !== OrderStatus.PAID_REPORTED &&
+      order.status !== OrderStatus.PAYMENT_VERIFIED
+    ) {
       throw new BadRequestException('Order payment has not been reported');
     }
 
@@ -133,8 +194,13 @@ export class OrdersService {
     if (order.buyer_id !== userId && order.seller_id !== userId) {
       throw new ForbiddenException('Not authorized');
     }
-    if (order.status === OrderStatus.COMPLETED) {
-      throw new BadRequestException('Cannot cancel a completed order');
+    if (
+      order.status === OrderStatus.COMPLETED ||
+      order.status === OrderStatus.REFUNDED
+    ) {
+      throw new BadRequestException(
+        'Cannot cancel a completed or refunded order',
+      );
     }
     order.status = OrderStatus.CANCELLED;
     return this.ordersRepository.save(order);

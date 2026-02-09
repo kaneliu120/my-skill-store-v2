@@ -31,6 +31,7 @@ export default function HomePage() {
   const [langOpen, setLangOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
   const isZh = locale === 'zh';
@@ -308,21 +309,30 @@ export default function HomePage() {
             </div>
 
             {/* Mobile Language Switcher */}
-            <div className="pt-2">
-              <p className="text-xs text-gray-400 mb-2">Language</p>
-              <div className="grid grid-cols-2 gap-2">
-                {languages.map(lang => (
-                  <Link
-                    key={lang.code}
-                    href={`/${lang.code}`}
-                    className={`flex items-center gap-2 px-3 py-2 text-sm rounded-lg border ${locale === lang.code ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-100 text-gray-600'}`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span>{lang.flag}</span>
-                    <span>{lang.label}</span>
-                  </Link>
-                ))}
-              </div>
+            <div className="pt-2 border-t border-gray-100 mt-2">
+              <button
+                onClick={() => setMobileLangOpen(!mobileLangOpen)}
+                className="flex items-center justify-between w-full py-2 text-sm text-gray-500"
+              >
+                <span>Language ({currentLang.label})</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileLangOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {mobileLangOpen && (
+                <div className="grid grid-cols-2 gap-2 mt-2 max-h-60 overflow-y-auto">
+                  {languages.map(lang => (
+                    <Link
+                      key={lang.code}
+                      href={`/${lang.code}`}
+                      className={`flex items-center gap-2 px-3 py-2 text-sm rounded-lg border ${locale === lang.code ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-100 text-gray-600'}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             {!isLoggedIn && (
@@ -346,19 +356,19 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-white via-gray-50 to-purple-50/30">
+      <section className="pt-24 pb-12 md:pt-32 md:pb-20 px-6 bg-gradient-to-br from-white via-gray-50 to-purple-50/30">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Text */}
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 text-gray-900">
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-gray-900">
                 {t('hero.title')}
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 {t('hero.subtitle')}
               </p>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center lg:justify-start">
                 <Button
                   className="h-12 bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 text-base font-medium shadow-lg shadow-purple-200"
                   onClick={handlePublishClick}
@@ -373,8 +383,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Laptop Mockup */}
-            <div className="relative">
+            {/* Right: Laptop Mockup - Hidden on Mobile */}
+            <div className="relative hidden lg:block">
               <div className="bg-gradient-to-br from-purple-100/50 to-blue-100/50 rounded-3xl p-8">
                 <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl">
                   {/* Browser Chrome */}
@@ -429,7 +439,7 @@ export default function HomePage() {
 
       {/* Features Section */}
       <section className="py-20 px-6 bg-gray-100/50">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Feature 1 */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -477,7 +487,7 @@ export default function HomePage() {
             {isZh ? '最新上架' : 'Latest Arrivals'}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {products.length > 0 ? (
               products.slice(0, 8).map(product => (
                 <ProductCard
@@ -537,31 +547,24 @@ export default function HomePage() {
           <div className="w-16 h-1 bg-purple-600 mx-auto mb-20"></div>
 
           {/* Steps Row */}
-          <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-2">
+          <div className="grid md:grid-cols-4 gap-8">
             {steps.map((step, idx) => (
-              <div key={idx} className="flex items-center flex-1">
-                {/* Step Card */}
-                <div className="flex flex-col items-center text-center w-full max-w-[280px] mx-auto">
-                  {/* Icon Circle */}
-                  <div className="w-[140px] h-[140px] bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center shadow-xl shadow-purple-200 mb-8">
-                    <step.icon className="w-16 h-16 text-white" strokeWidth={1.5} />
-                  </div>
+              <div key={idx} className="flex flex-col items-center text-center relative">
+                {/* Connector Line (Desktop only, between steps) */}
+                {idx < 3 && (
+                  <div className="hidden md:block absolute top-[70px] -right-1/2 w-full h-[2px] bg-purple-100 z-0" />
+                )}
 
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-
-                  {/* Description - 完整显示 */}
-                  <p className="text-sm text-gray-500 leading-6">{step.desc}</p>
+                {/* Icon Circle */}
+                <div className="w-[140px] h-[140px] bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center shadow-xl shadow-purple-200 mb-8 relative z-10">
+                  <step.icon className="w-16 h-16 text-white" strokeWidth={1.5} />
                 </div>
 
-                {/* Arrow Connector */}
-                {idx < 3 && (
-                  <div className="hidden md:flex items-center justify-center w-8 -mt-24 flex-shrink-0">
-                    <svg width="24" height="12" viewBox="0 0 24 12" fill="none" className="text-purple-300">
-                      <path d="M0 6H20M20 6L15 1M20 6L15 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                )}
+                {/* Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+
+                {/* Description */}
+                <p className="text-sm text-gray-500 leading-6 max-w-[240px]">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -592,8 +595,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Section - Full Screen Height */}
-      <section id="faq" className="min-h-screen py-20 px-6 bg-white flex items-center">
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-4 text-purple-600">
             {isZh ? '常见问题' : 'Frequently Asked Questions'}
@@ -641,7 +644,7 @@ export default function HomePage() {
 
       {/* Footer - Dark Space Gray */}
       <footer className="py-16 bg-[#1a1a2e] text-white">
-        <div className="container mx-auto px-6 max-w-5xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             {/* Brand */}
             <div>

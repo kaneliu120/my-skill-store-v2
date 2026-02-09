@@ -60,18 +60,34 @@ export class OrdersController {
       +id,
       req.user.sub,
       dto.transaction_hash,
+      dto.payment_network,
     );
   }
 
   @UseGuards(JwtAuthGuard)
+  @Put(':id/verify')
+  verifyPayment(
+    @Req() req: Request & { user: any },
+    @Param('id') id: string,
+  ) {
+    return this.ordersService.verifyPayment(+id, req.user.sub);
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Put(':id/confirm')
-  confirmPayment(@Req() req: Request & { user: any }, @Param('id') id: string) {
+  confirmPayment(
+    @Req() req: Request & { user: any },
+    @Param('id') id: string,
+  ) {
     return this.ordersService.confirmPayment(+id, req.user.sub);
   }
 
   @UseGuards(JwtAuthGuard)
   @Put(':id/complete')
-  completeOrder(@Req() req: Request & { user: any }, @Param('id') id: string) {
+  completeOrder(
+    @Req() req: Request & { user: any },
+    @Param('id') id: string,
+  ) {
     return this.ordersService.completeOrder(+id, req.user.sub);
   }
 
