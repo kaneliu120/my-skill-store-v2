@@ -35,7 +35,7 @@ export class UsersService {
   }
 
   findByEmail(email: string) {
-    return this.usersRepository.findOneBy({ email });
+    return this.usersRepository.findOne({ where: { email: email.toLowerCase() } });
   }
 
   findOneByEmail(email: string) {
