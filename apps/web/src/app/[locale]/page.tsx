@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Boxes, DollarSign, Wallet, Brain, Globe, TrendingUp, Search, User, ChevronDown, Check, Plus, Minus, Menu, X } from 'lucide-react';
+import { Boxes, DollarSign, FileEdit, Brain, Globe, TrendingUp, Search, User, ChevronDown, Check, Plus, Minus, Menu, X } from 'lucide-react';
 import ProductCard from '@/components/product/ProductCard';
 import BlogSection from '@/components/blog/BlogSection';
 import { Input } from '@/components/ui/input';
@@ -34,8 +34,6 @@ export default function HomePage() {
   const [mobileLangOpen, setMobileLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
-  const isZh = locale === 'zh';
-
   const handlePublishClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (requireAuth(() => router.push(`/${locale}/products/create`))) {
@@ -48,7 +46,7 @@ export default function HomePage() {
       const response = await api.get('/products', {
         params: { status: 'approved', search: searchQuery }
       });
-      setProducts(response.data);
+      setProducts(response.data.items || response.data || []);
     } catch (error) {
       console.error('Failed to fetch products', error);
     }
@@ -97,50 +95,30 @@ export default function HomePage() {
 
   const currentLang = languages.find(l => l.code === locale) || languages[0];
 
-  const faqs = isZh ? [
-    { q: '我如何注册或登录？', a: '点击右上角的"登录/注册"按钮，使用邮箱注册新账户或登录现有账户。' },
-    { q: '我如何创建和发布我的技能文件？', a: '登录后，前往"技能发布"页面，填写技能信息、设置价格、上传文件即可提交审核。' },
-    { q: '平台如何收费？', a: '我们采用极低的平台服务费，让创作者获得最大收益。具体费率请查看技能发布页。' },
-    { q: '支持哪些支付方式？', a: '目前支持 USDT/USDC 等主流加密货币，买家直接支付到您的钱包地址。' },
-    { q: '如何保护我的知识产权？', a: '平台采用区块链技术进行版权确权，智能合约保障交易安全。' },
-  ] : [
-    { q: 'How do I register or log in?', a: 'Click the "Login / Register" button in the top right corner to create a new account with your email or sign in to an existing account.' },
-    { q: 'How do I create and publish my skill?', a: 'After logging in, go to the "Publish Skill" page, fill in your skill details, set your price, upload your files, and submit for review.' },
-    { q: 'What are the platform fees?', a: 'We charge minimal platform fees to maximize creator earnings. Check the Publish Skill page for specific rates.' },
-    { q: 'What payment methods are supported?', a: 'We currently support major cryptocurrencies like USDT/USDC. Buyers pay directly to your wallet address.' },
-    { q: 'How is my intellectual property protected?', a: 'The platform uses blockchain technology for copyright verification, with smart contracts ensuring secure transactions.' },
+  const faqs = [
+    { q: t('faq.q1'), a: t('faq.a1') },
+    { q: t('faq.q2'), a: t('faq.a2') },
+    { q: t('faq.q3'), a: t('faq.a3') },
+    { q: t('faq.q4'), a: t('faq.a4') },
+    { q: t('faq.q5'), a: t('faq.a5') },
   ];
 
-  const demoProducts = isZh ? [
-    { title: '智能文案撰写助手', author: '李明', price: 99, category: '文本生成', color: 'bg-amber-100' },
-    { title: '科幻场景生成器', author: '王晓华', price: 129, category: '图像创作', color: 'bg-purple-100' },
-    { title: '商业数据洞察', author: '张伟', price: 150, category: '数据分析', color: 'bg-blue-100' },
-    { title: '多语种语音克隆', author: '陈静', price: 199, category: '语音合成', color: 'bg-pink-100' },
-    { title: 'Python 自动化脚本', author: '刘强', price: 89, category: '编程开发', color: 'bg-green-100' },
-    { title: 'AI 法律顾问 Prompt', author: '赵敏', price: 299, category: '法律咨询', color: 'bg-red-100' },
-    { title: '跨境电商选品模型', author: '孙浩', price: 199, category: '电商运营', color: 'bg-orange-100' },
-    { title: '虚拟人直播配置', author: '周杰', price: 350, category: '直播技术', color: 'bg-indigo-100' },
-  ] : [
-    { title: 'Smart Copywriting Assistant', author: 'Alex Chen', price: 99, category: 'Text Generation', color: 'bg-amber-100' },
-    { title: 'Sci-Fi Scene Generator', author: 'Maria Wang', price: 129, category: 'Image Creation', color: 'bg-purple-100' },
-    { title: 'Business Data Insights', author: 'James Liu', price: 150, category: 'Data Analysis', color: 'bg-blue-100' },
-    { title: 'Multi-Language Voice Clone', author: 'Sarah Kim', price: 199, category: 'Voice Synthesis', color: 'bg-pink-100' },
-    { title: 'Python Automation Script', author: 'David Liu', price: 89, category: 'Development', color: 'bg-green-100' },
-    { title: 'AI Legal Advisor Prompt', author: 'Emily Zhao', price: 299, category: 'Legal', color: 'bg-red-100' },
-    { title: 'Cross-border E-commerce Model', author: 'Kevin Sun', price: 199, category: 'E-commerce', color: 'bg-orange-100' },
-    { title: 'Virtual Streamer Setup', author: 'Jay Zhou', price: 350, category: 'Live Streaming', color: 'bg-indigo-100' },
+  const demoProducts = [
+    { title: t('demo.product1'), author: 'Alex Chen', price: 99, category: t('demo.cat1') },
+    { title: t('demo.product2'), author: 'Maria Wang', price: 129, category: t('demo.cat2') },
+    { title: t('demo.product3'), author: 'James Liu', price: 150, category: t('demo.cat3') },
+    { title: t('demo.product4'), author: 'Sarah Kim', price: 199, category: t('demo.cat4') },
+    { title: t('demo.product5'), author: 'David Liu', price: 89, category: t('demo.cat5') },
+    { title: t('demo.product6'), author: 'Emily Zhao', price: 299, category: t('demo.cat6') },
+    { title: t('demo.product7'), author: 'Kevin Sun', price: 199, category: t('demo.cat7') },
+    { title: t('demo.product8'), author: 'Jay Zhou', price: 350, category: t('demo.cat8') },
   ];
 
-  const steps = isZh ? [
-    { icon: Wallet, num: '01', title: '创建账户', desc: '注册您的账户，开启智慧创造者之旅' },
-    { icon: Brain, num: '02', title: '封装智慧', desc: '将你的天赋与知识技能转化为AI 智能体可使用的技能功能' },
-    { icon: Globe, num: '03', title: '轻松发布', desc: '利用平台的功能，轻松将您的技能知识产权，发布到全球市场' },
-    { icon: TrendingUp, num: '04', title: '建立品牌', desc: '随着您的客户规模的成长，让您的知识产权为您带来长期且稳定的被动收入。' },
-  ] : [
-    { icon: Wallet, num: '01', title: 'Create Account', desc: 'Register your account and start your journey as a wisdom creator.' },
-    { icon: Brain, num: '02', title: 'Package Wisdom', desc: 'Transform your talents and knowledge into functional skills usable by AI agents.' },
-    { icon: Globe, num: '03', title: 'Easy Publish', desc: 'Use platform features to easily publish your intellectual property to the global market.' },
-    { icon: TrendingUp, num: '04', title: 'Build Your Brand', desc: 'As your client base grows, let your intellectual property bring you long-term, stable passive income.' },
+  const steps = [
+    { icon: FileEdit, num: '01', title: t('howItWorks.step1_title'), desc: t('howItWorks.step1_desc') },
+    { icon: Brain, num: '02', title: t('howItWorks.step2_title'), desc: t('howItWorks.step2_desc') },
+    { icon: Globe, num: '03', title: t('howItWorks.step3_title'), desc: t('howItWorks.step3_desc') },
+    { icon: TrendingUp, num: '04', title: t('howItWorks.step4_title'), desc: t('howItWorks.step4_desc') },
   ];
 
   return (
@@ -201,14 +179,14 @@ export default function HomePage() {
           {/* Center: Nav Links (Desktop) */}
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
             <Link href="/" className="text-purple-600 font-medium border-b-2 border-purple-600 pb-5 -mb-5">
-              {isZh ? '首页' : 'Home'}
+              {t('nav.home')}
             </Link>
             <Link
               href="/products"
               className="hover:text-purple-600 transition"
               onClick={() => trackEvent({ event_name: 'click_nav_explore', element_id: 'nav_explore' })}
             >
-              {isZh ? '技能探索' : 'Explore'}
+              {t('nav.explore')}
             </Link>
             <a
               href="#"
@@ -218,10 +196,10 @@ export default function HomePage() {
               }}
               className="hover:text-purple-600 transition cursor-pointer"
             >
-              {isZh ? '技能发布' : 'Publish Skill'}
+              {t('nav.publishSkill')}
             </a>
             <Link href="#faq" className="hover:text-purple-600 transition">
-              {isZh ? '常见问题' : 'FAQ'}
+              {t('nav.faq')}
             </Link>
           </div>
 
@@ -230,7 +208,7 @@ export default function HomePage() {
             <div className="hidden lg:flex items-center relative">
               <Search className="absolute left-3 w-4 h-4 text-gray-400" />
               <Input
-                placeholder={isZh ? '搜索技能...' : 'Search skills...'}
+                placeholder={t('nav.searchPlaceholder')}
                 className="pl-9 bg-gray-100 border-gray-200 focus-visible:ring-purple-500 rounded-lg h-10 w-64 text-sm"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -260,7 +238,7 @@ export default function HomePage() {
                   className="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-lg h-10 px-4 text-sm hidden sm:flex"
                   onClick={() => { openAuthModal('login'); trackEvent({ event_name: 'click_nav_login', element_id: 'nav_login_btn' }); }}
                 >
-                  {isZh ? '登录 / 注册' : 'Login / Register'}
+                  {t('nav.loginRegister')}
                 </Button>
                 <div
                   className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-300 transition sm:hidden"
@@ -279,7 +257,7 @@ export default function HomePage() {
             <div className="relative">
               <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
               <Input
-                placeholder={isZh ? '搜索技能...' : 'Search skills...'}
+                placeholder={t('nav.searchPlaceholder')}
                 className="pl-9 bg-gray-100 border-gray-200 focus-visible:ring-purple-500 rounded-lg h-10 w-full text-sm"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -288,25 +266,25 @@ export default function HomePage() {
             </div>
             <div className="flex flex-col space-y-4">
               <Link href="/" className="text-gray-900 font-medium py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
-                {isZh ? '首页' : 'Home'}
+                {t('nav.home')}
               </Link>
               <Link href="/products" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
-                {isZh ? '技能探索' : 'Explore'}
+                {t('nav.explore')}
               </Link>
               <a href="#" onClick={(e) => { handlePublishClick(e); setMobileMenuOpen(false); }} className="text-gray-600 py-2 border-b border-gray-100">
-                {isZh ? '技能发布' : 'Publish Skill'}
+                {t('nav.publishSkill')}
               </a>
               <Link href={`/${locale}/blog`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
-                {isZh ? '博客' : 'Blog'}
+                {t('nav.blog')}
               </Link>
               <Link href="#faq" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
-                {isZh ? '常见问题' : 'FAQ'}
+                {t('nav.faq')}
               </Link>
               <Link href={`/${locale}/about`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
-                {isZh ? '关于我们' : 'About Us'}
+                {t('nav.aboutUs')}
               </Link>
               <Link href={`/${locale}/contact`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
-                {isZh ? '联系我们' : 'Contact Us'}
+                {t('nav.contactUs')}
               </Link>
             </div>
 
@@ -342,7 +320,7 @@ export default function HomePage() {
                 className="w-full bg-purple-600 hover:bg-purple-700 text-white mt-4"
                 onClick={() => { openAuthModal('login'); setMobileMenuOpen(false); }}
               >
-                {isZh ? '登录 / 注册' : 'Login / Register'}
+                {t('nav.loginRegister')}
               </Button>
             )}
             {isLoggedIn && (
@@ -375,11 +353,11 @@ export default function HomePage() {
                   className="h-12 bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 text-base font-medium shadow-lg shadow-purple-200"
                   onClick={handlePublishClick}
                 >
-                  {isZh ? '技能发布' : 'Publish Skill'}
+                  {t('hero.publishSkill')}
                 </Button>
                 <Link href="#explore">
                   <Button variant="outline" className="h-12 border-2 border-purple-200 text-purple-600 hover:bg-purple-50 rounded-full px-8 text-base font-medium">
-                    {isZh ? '探索技能' : 'Explore Skills'}
+                    {t('hero.exploreSkills')}
                   </Button>
                 </Link>
               </div>
@@ -406,27 +384,27 @@ export default function HomePage() {
                   <div className="bg-gray-900 p-4 min-h-[200px]">
                     <div className="grid grid-cols-3 gap-3 mb-4">
                       <div className="bg-purple-600/20 rounded-lg p-3">
-                        <div className="text-purple-400 text-xs mb-1">{isZh ? '总收益' : 'Revenue'}</div>
+                        <div className="text-purple-400 text-xs mb-1">{t('hero.revenue')}</div>
                         <div className="text-white font-bold">$52,598</div>
                       </div>
                       <div className="bg-blue-600/20 rounded-lg p-3">
-                        <div className="text-blue-400 text-xs mb-1">{isZh ? '订单数' : 'Orders'}</div>
+                        <div className="text-blue-400 text-xs mb-1">{t('hero.orders')}</div>
                         <div className="text-white font-bold">36</div>
                       </div>
                       <div className="bg-emerald-600/20 rounded-lg p-3">
-                        <div className="text-emerald-400 text-xs mb-1">{isZh ? '技能数' : 'Skills'}</div>
+                        <div className="text-emerald-400 text-xs mb-1">{t('hero.skills')}</div>
                         <div className="text-white font-bold">62</div>
                       </div>
                     </div>
                     <div className="bg-gray-800 rounded-lg p-3">
-                      <div className="text-gray-400 text-xs mb-2">{isZh ? '我的技能' : 'My Skills'}</div>
+                      <div className="text-gray-400 text-xs mb-2">{t('hero.mySkills')}</div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-xs">
-                          <span className="text-white">{isZh ? '智能文案撰写助手' : 'Smart Copywriting Assistant'}</span>
+                          <span className="text-white">{t('hero.demoDashboardSkill1')}</span>
                           <span className="text-purple-400">$99</span>
                         </div>
                         <div className="flex items-center justify-between text-xs">
-                          <span className="text-white">{isZh ? '科幻场景生成器' : 'Sci-Fi Scene Generator'}</span>
+                          <span className="text-white">{t('hero.demoDashboardSkill2')}</span>
                           <span className="text-purple-400">$129</span>
                         </div>
                       </div>
@@ -450,11 +428,9 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold text-center mb-4 text-gray-900">{t('hero.tag1_title')}</h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                {isZh ? (
-                  <>作为<span className="text-purple-600 font-medium">商业技能平台</span>的标准，这里可以获得<span className="text-purple-600 font-medium">各类AI智能体</span>所需的<span className="text-purple-600 font-medium">各领域技能</span>。</>
-                ) : (
-                  <>As the standard for <span className="text-purple-600 font-medium">commercial skill platforms</span>, access skills across <span className="text-purple-600 font-medium">all domains</span> required by <span className="text-purple-600 font-medium">various AI agents</span>.</>
-                )}
+                {t.rich('hero.feature1_desc', {
+                  purple: (chunks) => <span className="text-purple-600 font-medium">{chunks}</span>
+                })}
               </p>
             </div>
 
@@ -465,11 +441,9 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold text-center mb-4 text-gray-900">{t('hero.tag2_title')}</h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                {isZh ? (
-                  <>为了<span className="text-purple-600 font-medium">AI科技</span>与<span className="text-purple-600 font-medium">人类共赢</span>，我们将努力将<span className="text-purple-600 font-medium">交易成本</span>做到<span className="text-purple-600 font-medium">最低</span>。</>
-                ) : (
-                  <>For the mutual benefit of <span className="text-purple-600 font-medium">AI technology</span> and <span className="text-purple-600 font-medium">humanity</span>, we strive to keep <span className="text-purple-600 font-medium">transaction costs</span> to the <span className="text-purple-600 font-medium">absolute minimum</span>.</>
-                )}
+                {t.rich('hero.feature2_desc', {
+                  purple: (chunks) => <span className="text-purple-600 font-medium">{chunks}</span>
+                })}
               </p>
             </div>
           </div>
@@ -486,7 +460,7 @@ export default function HomePage() {
       <section id="explore" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12 text-purple-600">
-            {isZh ? '最新上架' : 'Latest Arrivals'}
+            {t('sections.latestArrivals')}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -505,26 +479,14 @@ export default function HomePage() {
               /* Demo Cards when no products */
               <>
                 {demoProducts.map((demo, idx) => (
-                  <div key={idx} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition group">
-                    <div className="relative">
-                      <span className="absolute top-3 left-3 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
-                        {demo.category}
-                      </span>
-                      <div className={`h-40 ${demo.color} flex items-center justify-center`}>
-                        <Brain className="w-16 h-16 text-purple-300" />
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <h3 className="font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition">{demo.title}</h3>
-                      <p className="text-sm text-gray-500 mb-3">{isZh ? '创作者：' : 'By '}{demo.author}</p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xl font-bold text-purple-600">${demo.price}.00</span>
-                        <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white rounded-full text-xs px-4">
-                          {isZh ? '查看详情' : 'View'}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
+                  <ProductCard
+                    key={`demo-${idx}`}
+                    id={`demo-${idx}`}
+                    title={demo.title}
+                    price={demo.price}
+                    author={demo.author}
+                    category={demo.category}
+                  />
                 ))}
               </>
             )}
@@ -533,40 +495,55 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link href="/products">
               <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 rounded-full px-8">
-                {isZh ? '查看全部 →' : 'View All →'}
+                {t('sections.viewAll')}
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-24 px-6 bg-gray-100">
+      {/* How It Works - Start Your Journey */}
+      <section className="py-24 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-4 text-purple-600">
-            {isZh ? '如何开始' : 'How It Works'}
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+            {t('sections.startJourney')}
           </h2>
-          <div className="w-16 h-1 bg-purple-600 mx-auto mb-20"></div>
+          <p className="text-gray-500 text-center mb-16 max-w-2xl mx-auto">
+            {t('sections.startJourneyDesc')}
+          </p>
 
           {/* Steps Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-6 relative">
             {steps.map((step, idx) => (
               <div key={idx} className="flex flex-col items-center text-center relative">
-                {/* Connector Line (Desktop only, between steps) */}
+                {/* Dashed Connector Line (Desktop only, between steps) */}
                 {idx < 3 && (
-                  <div className="hidden lg:block absolute top-[70px] left-[calc(50%+70px)] w-[calc(100%-140px)] h-[2px] bg-purple-200 z-0" />
+                  <div
+                    className="hidden lg:block absolute top-[50px] left-[calc(50%+60px)] z-0"
+                    style={{
+                      width: 'calc(100% - 120px)',
+                      height: '2px',
+                      backgroundImage: 'repeating-linear-gradient(to right, #d1d5db 0, #d1d5db 8px, transparent 8px, transparent 16px)',
+                    }}
+                  />
                 )}
 
-                {/* Icon Circle */}
-                <div className="w-[140px] h-[140px] bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center shadow-xl shadow-purple-200 mb-6 relative z-10">
-                  <step.icon className="w-16 h-16 text-white" strokeWidth={1.5} />
+                {/* Icon Card */}
+                <div className="relative mb-6 z-10">
+                  <div className="w-[100px] h-[100px] bg-white rounded-2xl border-2 border-gray-200 flex items-center justify-center shadow-sm hover:shadow-md hover:border-purple-300 transition-all duration-300">
+                    <step.icon className="w-10 h-10 text-purple-600" strokeWidth={1.5} />
+                  </div>
+                  {/* Numbered Badge */}
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-purple-600 text-white text-xs font-bold rounded-full flex items-center justify-center shadow-md">
+                    {step.num}
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-500 leading-6 max-w-[240px]">{step.desc}</p>
+                <p className="text-sm text-gray-500 leading-6 max-w-[220px]">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -578,7 +555,7 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {isZh ? '最新动态' : 'Latest from Blog'}
+              {t('sections.latestBlog')}
             </h2>
             <div className="w-16 h-1 bg-purple-600 mx-auto"></div>
           </div>
@@ -590,7 +567,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link href={`/${locale}/blog`}>
               <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 rounded-full px-8">
-                {isZh ? '阅读更多文章 →' : 'Read More Articles →'}
+                {t('sections.readMore')}
               </Button>
             </Link>
           </div>
@@ -601,7 +578,7 @@ export default function HomePage() {
       <section id="faq" className="py-16 md:py-20 px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-4 text-purple-600">
-            {isZh ? '常见问题' : 'Frequently Asked Questions'}
+            {t('sections.faqTitle')}
           </h2>
           <div className="w-16 h-1 bg-purple-600 mx-auto mb-12"></div>
 
@@ -634,11 +611,11 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <p className="text-gray-500 mb-4">
-              {isZh ? '还有其他问题？' : 'Still have questions?'}
+              {t('sections.stillQuestions')}
             </p>
             <Link href={`/${locale}/contact`}>
               <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 rounded-full px-8">
-                {isZh ? '联系我们' : 'Contact Us'}
+                {t('sections.contactUs')}
               </Button>
             </Link>
           </div>
@@ -658,33 +635,33 @@ export default function HomePage() {
                 <span className="font-bold text-white">{t('nav.brand')}</span>
               </div>
               <p className="text-sm text-gray-400">
-                {isZh ? 'AI驱动的专业技能变现平台' : 'AI-powered professional skill monetization platform'}
+                {t('footer.tagline')}
               </p>
             </div>
 
             {/* Links */}
             <div>
-              <h4 className="font-bold text-white mb-4">{isZh ? '产品' : 'Product'}</h4>
+              <h4 className="font-bold text-white mb-4">{t('footer.product')}</h4>
               <div className="space-y-2 text-sm">
-                <Link href="/products" className="block text-gray-400 hover:text-purple-400 transition">{isZh ? '技能探索' : 'Explore Skills'}</Link>
-                <a href="#" onClick={handlePublishClick} className="block text-gray-400 hover:text-purple-400 transition cursor-pointer">{isZh ? '技能发布' : 'Publish Skill'}</a>
+                <Link href="/products" className="block text-gray-400 hover:text-purple-400 transition">{t('footer.exploreSkills')}</Link>
+                <a href="#" onClick={handlePublishClick} className="block text-gray-400 hover:text-purple-400 transition cursor-pointer">{t('footer.publishSkill')}</a>
               </div>
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4">{isZh ? '资源' : 'Resources'}</h4>
+              <h4 className="font-bold text-white mb-4">{t('footer.resources')}</h4>
               <div className="space-y-2 text-sm">
-                <Link href={`/${locale}/blog`} className="block text-gray-400 hover:text-purple-400 transition">{isZh ? '博客' : 'Blog'}</Link>
-                <Link href="#faq" className="block text-gray-400 hover:text-purple-400 transition">{isZh ? '帮助中心' : 'Help Center'}</Link>
-                <Link href="#" className="block text-gray-400 hover:text-purple-400 transition">{isZh ? '开发者文档' : 'Developer Docs'}</Link>
+                <Link href={`/${locale}/blog`} className="block text-gray-400 hover:text-purple-400 transition">{t('footer.blog')}</Link>
+                <Link href="#faq" className="block text-gray-400 hover:text-purple-400 transition">{t('footer.helpCenter')}</Link>
+                <Link href="#" className="block text-gray-400 hover:text-purple-400 transition">{t('footer.developerDocs')}</Link>
               </div>
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4">{isZh ? '关于' : 'About'}</h4>
+              <h4 className="font-bold text-white mb-4">{t('footer.about')}</h4>
               <div className="space-y-2 text-sm">
-                <Link href={`/${locale}/about`} className="block text-gray-400 hover:text-purple-400 transition">{isZh ? '关于我们' : 'About Us'}</Link>
-                <Link href={`/${locale}/contact`} className="block text-gray-400 hover:text-purple-400 transition">{isZh ? '联系我们' : 'Contact'}</Link>
+                <Link href={`/${locale}/about`} className="block text-gray-400 hover:text-purple-400 transition">{t('footer.aboutUs')}</Link>
+                <Link href={`/${locale}/contact`} className="block text-gray-400 hover:text-purple-400 transition">{t('footer.contact')}</Link>
               </div>
             </div>
           </div>

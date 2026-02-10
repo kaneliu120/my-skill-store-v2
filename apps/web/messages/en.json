@@ -47,7 +47,17 @@
       "tag1_title": "Applicable to All AI Agents",
       "tag1_desc": "Built on standardized skill interface designs, ensuring your expertise seamlessly powers various mainstream AI Agents—publish once, deploy everywhere.",
       "tag2_title": "Zero-Friction Transaction Costs",
-      "tag2_desc": "Leveraging a decentralized, minimalist transaction architecture, we minimize friction costs to near zero, ensuring the full value of your creation returns to you."
+      "tag2_desc": "Leveraging a decentralized, minimalist transaction architecture, we minimize friction costs to near zero, ensuring the full value of your creation returns to you.",
+      "publishSkill": "Publish Skill",
+      "exploreSkills": "Explore Skills",
+      "revenue": "Revenue",
+      "orders": "Orders",
+      "skills": "Skills",
+      "mySkills": "My Skills",
+      "demoDashboardSkill1": "Smart Copywriting Assistant",
+      "demoDashboardSkill2": "Sci-Fi Scene Generator",
+      "feature1_desc": "As the standard for <purple>commercial skill platforms</purple>, access skills across <purple>all domains</purple> required by <purple>various AI agents</purple>.",
+      "feature2_desc": "For the mutual benefit of <purple>AI technology</purple> and <purple>humanity</purple>, we strive to keep <purple>transaction costs</purple> to the <purple>absolute minimum</purple>."
     },
     "howItWorks": {
       "title": "How It Works",
@@ -61,13 +71,84 @@
       "step4_desc": "Grow your reputation and establish a premier professional brand. In this AI-driven future, turn your intellectual property into a 'value engine' that generates stable, long-term passive income.",
       "cta": "Encapsulate My Intellectual Assets Now"
     },
-    "footer": {
-      "text": "MySkillStore empowers everyone to create, submit, and sell exclusive industry skills. We are dedicated to helping you reconstruct fragmented wisdom into systematic digital property through digital copyright technology, bringing you long-term and substantial economic returns while leading the intelligent revolution."
-    },
     "nav": {
       "brand": "MySkillStore",
+      "home": "Home",
+      "explore": "Explore",
+      "publishSkill": "Publish Skill",
+      "faq": "FAQ",
+      "blog": "Blog",
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us",
+      "searchPlaceholder": "Search skills...",
+      "loginRegister": "Login / Register",
       "login": "Login",
       "dashboard": "Dashboard"
+    },
+    "sections": {
+      "latestArrivals": "Latest Arrivals",
+      "viewAll": "View All →",
+      "startJourney": "Start Your Journey",
+      "startJourneyDesc": "Four simple steps to transform your knowledge into sustainable digital revenue.",
+      "latestBlog": "Latest from Blog",
+      "readMore": "Read More Articles →",
+      "faqTitle": "Frequently Asked Questions",
+      "stillQuestions": "Still have questions?",
+      "contactUs": "Contact Us"
+    },
+    "steps": {
+      "step1_title": "Create Account",
+      "step1_desc": "Register your account and start your journey as a wisdom creator.",
+      "step2_title": "Package Wisdom",
+      "step2_desc": "Transform your talents and knowledge into functional skills usable by AI agents.",
+      "step3_title": "Easy Publish",
+      "step3_desc": "Use platform features to easily publish your intellectual property to the global market.",
+      "step4_title": "Build Your Brand",
+      "step4_desc": "As your client base grows, let your intellectual property bring you long-term, stable passive income."
+    },
+    "faq": {
+      "q1": "How do I register or log in?",
+      "a1": "Click the \"Login / Register\" button in the top right corner to create a new account with your email or sign in to an existing account.",
+      "q2": "How do I create and publish my skill?",
+      "a2": "After logging in, go to the \"Publish Skill\" page, fill in your skill details, set your price, upload your files, and submit for review.",
+      "q3": "What are the platform fees?",
+      "a3": "We charge minimal platform fees to maximize creator earnings. Check the Publish Skill page for specific rates.",
+      "q4": "What payment methods are supported?",
+      "a4": "We currently support major cryptocurrencies like USDT/USDC. Buyers pay directly to your wallet address.",
+      "q5": "How is my intellectual property protected?",
+      "a5": "The platform uses blockchain technology for copyright verification, with smart contracts ensuring secure transactions."
+    },
+    "footer": {
+      "text": "MySkillStore empowers everyone to create, submit, and sell exclusive industry skills. We are dedicated to helping you reconstruct fragmented wisdom into systematic digital property through digital copyright technology, bringing you long-term and substantial economic returns while leading the intelligent revolution.",
+      "tagline": "AI-powered professional skill monetization platform",
+      "product": "Product",
+      "exploreSkills": "Explore Skills",
+      "publishSkill": "Publish Skill",
+      "resources": "Resources",
+      "blog": "Blog",
+      "helpCenter": "Help Center",
+      "developerDocs": "Developer Docs",
+      "about": "About",
+      "aboutUs": "About Us",
+      "contact": "Contact"
+    },
+    "demo": {
+      "product1": "Smart Copywriting Assistant",
+      "product2": "Sci-Fi Scene Generator",
+      "product3": "Business Data Insights",
+      "product4": "Multi-Language Voice Clone",
+      "product5": "Python Automation Script",
+      "product6": "AI Legal Advisor Prompt",
+      "product7": "Cross-border E-commerce Model",
+      "product8": "Virtual Streamer Setup",
+      "cat1": "Text Generation",
+      "cat2": "Image Creation",
+      "cat3": "Data Analysis",
+      "cat4": "Voice Synthesis",
+      "cat5": "Development",
+      "cat6": "Legal",
+      "cat7": "E-commerce",
+      "cat8": "Live Streaming"
     }
   },
   "Auth": {

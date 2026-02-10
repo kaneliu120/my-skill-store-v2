@@ -47,7 +47,17 @@
       "tag1_title": "适用各类AI智能体",
       "tag1_desc": "遵循标准化技能接口设计，确保您的智慧结晶能够无缝驱动各类主流 AI 智能体（Agents），实现一次发布，多端调用。",
       "tag2_title": "零感交易成本",
-      "tag2_desc": "依托去中心化的极简交易架构，我们将交易摩擦成本降至微乎其微，确保每一分价值产出都能完整回归创作者。"
+      "tag2_desc": "依托去中心化的极简交易架构，我们将交易摩擦成本降至微乎其微，确保每一分价值产出都能完整回归创作者。",
+      "publishSkill": "技能发布",
+      "exploreSkills": "探索技能",
+      "revenue": "总收益",
+      "orders": "订单数",
+      "skills": "技能数",
+      "mySkills": "我的技能",
+      "demoDashboardSkill1": "智能文案撰写助手",
+      "demoDashboardSkill2": "科幻场景生成器",
+      "feature1_desc": "作为<purple>商业技能平台</purple>的标准，这里可以获得<purple>各类AI智能体</purple>所需的<purple>各领域技能</purple>。",
+      "feature2_desc": "为了<purple>AI科技</purple>与<purple>人类共赢</purple>，我们将努力将<purple>交易成本</purple>做到<purple>最低</purple>。"
     },
     "howItWorks": {
       "title": "运作流程",
@@ -61,13 +71,84 @@
       "step4_desc": "随着技能被更多用户购买与好评，您将建立起独特的个人专业品牌。在这个 AI 驱动的新时代，让您的知识产权成为一台持续运转的价值引擎，为您带来长期且稳定的被动收入。",
       "cta": "立即封装我的智慧资产"
     },
-    "footer": {
-      "text": "AI 时代不应有门槛，MySkillStore 赋予每个人创建、提交并出售专属行业技能的权利。我们致力于通过数字版权技术，助您将碎片化的智慧重构为系统化的数字产权，在引领智能变革的同时，为您带来长效且丰厚的经济回报。"
-    },
     "nav": {
       "brand": "MySkillStore",
+      "home": "首页",
+      "explore": "技能探索",
+      "publishSkill": "技能发布",
+      "faq": "常见问题",
+      "blog": "博客",
+      "aboutUs": "关于我们",
+      "contactUs": "联系我们",
+      "searchPlaceholder": "搜索技能...",
+      "loginRegister": "登录 / 注册",
       "login": "登录",
       "dashboard": "控制台"
+    },
+    "sections": {
+      "latestArrivals": "最新上架",
+      "viewAll": "查看全部 →",
+      "startJourney": "开启您的旅程",
+      "startJourneyDesc": "四个简单步骤，将您的知识转化为可持续的数字收入。",
+      "latestBlog": "最新动态",
+      "readMore": "阅读更多文章 →",
+      "faqTitle": "常见问题",
+      "stillQuestions": "还有其他问题？",
+      "contactUs": "联系我们"
+    },
+    "steps": {
+      "step1_title": "创建账户",
+      "step1_desc": "注册您的账户，开启智慧创造者之旅",
+      "step2_title": "封装智慧",
+      "step2_desc": "将你的天赋与知识技能转化为AI 智能体可使用的技能功能",
+      "step3_title": "轻松发布",
+      "step3_desc": "利用平台的功能，轻松将您的技能知识产权，发布到全球市场",
+      "step4_title": "建立品牌",
+      "step4_desc": "随着您的客户规模的成长，让您的知识产权为您带来长期且稳定的被动收入。"
+    },
+    "faq": {
+      "q1": "我如何注册或登录？",
+      "a1": "点击右上角的\"登录/注册\"按钮，使用邮箱注册新账户或登录现有账户。",
+      "q2": "我如何创建和发布我的技能文件？",
+      "a2": "登录后，前往\"技能发布\"页面，填写技能信息、设置价格、上传文件即可提交审核。",
+      "q3": "平台如何收费？",
+      "a3": "我们采用极低的平台服务费，让创作者获得最大收益。具体费率请查看技能发布页。",
+      "q4": "支持哪些支付方式？",
+      "a4": "目前支持 USDT/USDC 等主流加密货币，买家直接支付到您的钱包地址。",
+      "q5": "如何保护我的知识产权？",
+      "a5": "平台采用区块链技术进行版权确权，智能合约保障交易安全。"
+    },
+    "footer": {
+      "text": "AI 时代不应有门槛，MySkillStore 赋予每个人创建、提交并出售专属行业技能的权利。我们致力于通过数字版权技术，助您将碎片化的智慧重构为系统化的数字产权，在引领智能变革的同时，为您带来长效且丰厚的经济回报。",
+      "tagline": "AI驱动的专业技能变现平台",
+      "product": "产品",
+      "exploreSkills": "技能探索",
+      "publishSkill": "技能发布",
+      "resources": "资源",
+      "blog": "博客",
+      "helpCenter": "帮助中心",
+      "developerDocs": "开发者文档",
+      "about": "关于",
+      "aboutUs": "关于我们",
+      "contact": "联系我们"
+    },
+    "demo": {
+      "product1": "智能文案撰写助手",
+      "product2": "科幻场景生成器",
+      "product3": "商业数据洞察",
+      "product4": "多语种语音克隆",
+      "product5": "Python 自动化脚本",
+      "product6": "AI 法律顾问 Prompt",
+      "product7": "跨境电商选品模型",
+      "product8": "虚拟人直播配置",
+      "cat1": "文本生成",
+      "cat2": "图像创作",
+      "cat3": "数据分析",
+      "cat4": "语音合成",
+      "cat5": "编程开发",
+      "cat6": "法律咨询",
+      "cat7": "电商运营",
+      "cat8": "直播技术"
     }
   },
   "Auth": {

@@ -25,7 +25,8 @@ export default function BlogSection({ locale }: { locale: string }) {
         const fetchPosts = async () => {
             try {
                 const res = await api.get('/blog', { params: { status: 'published' } });
-                setPosts(res.data.slice(0, 3));
+                const data = res.data.items || res.data || [];
+                setPosts(Array.isArray(data) ? data.slice(0, 3) : []);
             } catch (error) {
                 console.error('Failed to fetch blog posts', error);
             } finally {
