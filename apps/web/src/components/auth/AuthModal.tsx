@@ -24,25 +24,20 @@ export default function AuthModal() {
   const locale = useLocale();
   const isZh = locale === 'zh';
   const { showAuthModal, authModalTab, closeAuthModal, login } = useAuth();
-  const [tab, setTab] = useState<'login' | 'register'>(authModalTab);
+  const [tab, setTab] = useState<'login' | 'register'>('login');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
-  // Sync tab with parent
-  const currentTab = showAuthModal ? (tab !== authModalTab && tab === 'login' ? tab : authModalTab) : tab;
 
   // Reset on open
   const handleOpenChange = (open: boolean) => {
     if (!open) {
       closeAuthModal();
       setError('');
+    } else {
+      // Sync tab when modal opens
+      setTab(authModalTab);
     }
   };
-
-  // Sync internal tab when modal tab changes
-  if (showAuthModal && tab !== authModalTab) {
-    setTab(authModalTab);
-  }
 
   const switchTab = (newTab: 'login' | 'register') => {
     setTab(newTab);

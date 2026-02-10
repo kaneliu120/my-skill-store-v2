@@ -39,6 +39,8 @@ export default function ProductsPage() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -61,6 +63,12 @@ export default function ProductsPage() {
     const matchSearch = !search || p.title.toLowerCase().includes(search.toLowerCase());
     return matchCategory && matchSearch;
   });
+
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const paginatedProducts = filteredProducts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   const demoProducts = isZh ? [
     { title: '智能文案撰写助手', author: '李明', price: 99, category: '文本生成' },
@@ -95,13 +103,14 @@ export default function ProductsPage() {
               MySkillStore
             </Link>
           </div>
-          
+
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
             <Link href="/" className="hover:text-purple-600 transition">{isZh ? '首页' : 'Home'}</Link>
-            <Link href="/products" className="text-purple-600 font-medium">{isZh ? '技能探索' : 'Explore'}</Link>
+            <Link href="/products" className="text-purple-600 font-medium border-b-2 border-purple-600 pb-5 -mb-5">{isZh ? '技能探索' : 'Explore'}</Link>
             <Link href="/products/create" className="hover:text-purple-600 transition">{isZh ? '技能发布' : 'Publish Skill'}</Link>
+            <Link href="#faq" className="hover:text-purple-600 transition">{isZh ? '常见问题' : 'FAQ'}</Link>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <Link href="/user">
               <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-lg h-10 px-4 text-sm">
@@ -119,7 +128,7 @@ export default function ProductsPage() {
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
               {isZh ? '探索AI技能' : 'Explore AI Skills'}
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               {isZh ? '发现由全球创作者打造的优质AI技能、提示词和工作流' : 'Discover quality AI skills, prompts and workflows built by creators worldwide'}
             </p>
           </div>
@@ -164,44 +173,67 @@ export default function ProductsPage() {
             <div className="flex justify-center items-center min-h-[300px]">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
             </div>
-          ) : filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {filteredProducts.map((product) => (
-                <ProductCard 
-                  key={product.id} 
-                  id={String(product.id)} 
-                  title={product.title}
-                  price={parseFloat(product.price)}
-                  author={product.seller?.username || 'Anonymous'}
-                  coverUrl={product.image_url || undefined}
-                  category={product.category}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {demoProducts.map((demo, idx) => (
-                <div key={idx} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition group">
-                  <div className="relative">
-                    <span className="absolute top-3 left-3 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
-                      {demo.category}
-                    </span>
-                    <div className="h-40 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-                      <Brain className="w-16 h-16 text-purple-300" />
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition">{demo.title}</h3>
-                    <p className="text-sm text-gray-500 mb-3">{isZh ? '创作者：' : 'By '}{demo.author}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xl font-bold text-purple-600">${demo.price}.00</span>
-                      <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white rounded-full text-xs px-4">
-                        {isZh ? '查看' : 'View'}
+          ) : paginatedProducts.length > 0 ? (
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {paginatedProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    id={String(product.id)}
+                    title={product.title}
+                    price={parseFloat(product.price)}
+                    author={product.seller?.username || 'Anonymous'}
+                    coverUrl={product.image_url || undefined}
+                    category={product.category}
+                  />
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-2 mt-12">
+                  <Button
+                    variant="outline"
+                    onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                    disabled={currentPage === 1}
+                    className="border-gray-300 disabled:opacity-50"
+                  >
+                    {isZh ? '上一页' : 'Previous'}
+                  </Button>
+
+                  <div className="flex gap-2">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                      <Button
+                        key={page}
+                        variant={currentPage === page ? 'default' : 'outline'}
+                        onClick={() => setCurrentPage(page)}
+                        className={currentPage === page ? 'bg-purple-600 hover:bg-purple-700' : 'border-gray-300'}
+                      >
+                        {page}
                       </Button>
-                    </div>
+                    ))}
                   </div>
+
+                  <Button
+                    variant="outline"
+                    onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                    disabled={currentPage === totalPages}
+                    className="border-gray-300 disabled:opacity-50"
+                  >
+                    {isZh ? '下一页' : 'Next'}
+                  </Button>
                 </div>
-              ))}
+              )}
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <Brain className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {isZh ? '暂无技能' : 'No Skills Found'}
+              </h3>
+              <p className="text-gray-500">
+                {isZh ? '尝试调整搜索条件或类别筛选' : 'Try adjusting your search or category filter'}
+              </p>
             </div>
           )}
         </div>

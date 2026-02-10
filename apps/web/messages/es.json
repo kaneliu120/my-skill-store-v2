@@ -44,22 +44,26 @@
     "hero": {
       "title": "Reconstruye tus años de profundos conocimientos de la industria en habilidades digitales, transformando la sabiduría profesional en propiedad intelectual comercializable central para la era de la IA.",
       "subtitle": "Aquí, la inteligencia personal ya no es una experiencia aislada; se convierte en un nexo global de sabiduría que agrega valor y rompe los límites del conocimiento a través de la tecnología digital.",
-      "tag1_title": "Aplicable a Todos los Agentes de IA",
-      "tag1_desc": "Construido sobre diseños de interfaz de habilidades estandarizados, asegurando que tu experiencia impulse sin problemas varios Agentes de IA principales: publica una vez, despliega en todas partes.",
-      "tag2_title": "Costos de Transacción Cero Fricción",
-      "tag2_desc": "Aprovechando una arquitectura de transacción descentralizada y minimalista, minimizamos los costos de fricción a casi cero, asegurando que el valor total de tu creación regrese a ti."
+      "tag1_title": "Create Account",
+      "tag1_desc": "Register your account and start your journey as a wisdom creator",
+      "tag2_title": "Encapsulate Wisdom",
+      "tag2_desc": "Transform your talent and knowledge into AI Agent-compatible skill functions",
+      "tag3_title": "Easy Publishing",
+      "tag3_desc": "Leverage platform features to easily publish your intellectual property to the global market",
+      "tag4_title": "Build Brand",
+      "tag4_desc": "As your customer base grows, let your intellectual property bring you long-term and stable passive income."
     },
     "howItWorks": {
-      "title": "Cómo Funciona",
-      "step1_title": "Activación de Identidad y Configuración de Billetera",
-      "step1_desc": "Activa tu identidad de experto al instante a través de Google o GitHub. Configura tu dirección de billetera Crypto o código QR para asegurar que tus ganancias sean seguras, sin fronteras y entregadas directamente a ti.",
-      "step2_title": "Encapsula tu Sabiduría de la Industria",
-      "step2_desc": "Transforma tu experiencia profesional en habilidades de IA tangibles (Prompts, Flujos de trabajo o Parámetros de Modelo). Usa nuestro editor intuitivo para establecer tu precio, describir características y subir tus activos digitales.",
-      "step3_title": "Verificación de Derechos y Circulación Global",
-      "step3_desc": "Una vez aprobado, tus habilidades entran en la biblioteca de MySkillStore. Los compradores te pagan directamente; una vez confirmado el pago, el sistema activa la entrega, realizando el verdadero valor de tu derecho de autor digital.",
-      "step4_title": "Construye tu Marca e Ingresos Pasivos",
-      "step4_desc": "Haz crecer tu reputación y establece una marca profesional de primer nivel. En este futuro impulsado por la IA, convierte tu propiedad intelectual en un 'motor de valor' que genere ingresos pasivos estables a largo plazo.",
-      "cta": "Encapsular Mis Activos Intelectuales Ahora"
+      "title": "How It Works",
+      "step1_title": "Create Account",
+      "step1_desc": "Register your account and start your journey as a wisdom creator",
+      "step2_title": "Encapsulate Wisdom",
+      "step2_desc": "Transform your talent and knowledge into AI Agent-compatible skill functions",
+      "step3_title": "Easy Publishing",
+      "step3_desc": "Leverage platform features to easily publish your intellectual property to the global market",
+      "step4_title": "Build Brand",
+      "step4_desc": "As your customer base grows, let your intellectual property bring you long-term and stable passive income.",
+      "cta": "Encapsulate My Intellectual Assets Now"
     },
     "footer": {
       "text": "MySkillStore empodera a todos para crear, enviar y vender habilidades exclusivas de la industria. Estamos dedicados a ayudarte a reconstruir la sabiduría fragmentada en propiedad digital sistemática a través de la tecnología de derechos de autor digitales, brindándote retornos económicos a largo plazo y sustanciales mientras lideras la revolución inteligente."
@@ -255,5 +259,13 @@
       "qr_hint": "Sube el código QR de tu billetera para pagos más fáciles",
       "coins": "Criptomonedas Aceptadas"
     }
+  },
+  "AdminLogin": {
+    "title": "Consola de Administración",
+    "subtitle": "Platform Management Access",
+    "email": "Correo Electrónico del Administrador",
+    "password": "Contraseña",
+    "submit": "Inicio de Sesión Seguro",
+    "back": "Volver al Inicio"
   }
 }

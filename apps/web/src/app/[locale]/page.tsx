@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Boxes, DollarSign, FileEdit, Brain, Globe, TrendingUp, Search, User, ChevronDown, Check, Plus, Minus, Menu, X } from 'lucide-react';
+import { Boxes, DollarSign, FileEdit, Brain, Globe, TrendingUp, Search, User, ChevronDown, Check, Plus, Minus, Menu, X, Wallet, BookOpen } from 'lucide-react';
 import ProductCard from '@/components/product/ProductCard';
 import BlogSection from '@/components/blog/BlogSection';
 import { Input } from '@/components/ui/input';

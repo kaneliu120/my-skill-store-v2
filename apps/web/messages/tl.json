@@ -255,5 +255,13 @@
       "qr_hint": "I-upload ang iyong wallet QR code para sa mas madaling bayad",
       "coins": "Mga Tinatanggap na Cryptocurrency"
     }
+  },
+  "AdminLogin": {
+    "title": "Admin Console",
+    "subtitle": "Platform Management Access",
+    "email": "Admin Email",
+    "password": "Password",
+    "submit": "Secure na Login",
+    "back": "Bumalik sa Home"
   }
 }

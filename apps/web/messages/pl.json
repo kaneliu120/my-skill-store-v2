@@ -44,21 +44,25 @@
     "hero": {
       "title": "Reconstruct your years of deep industry insights into digital skills, transforming professional wisdom into core tradable intellectual property for the AI era.",
       "subtitle": "Here, personal intelligence is no longer an isolated experience; it becomes a global, value-adding nexus of wisdom that breaks knowledge boundaries through digital technology.",
-      "tag1_title": "Applicable to All AI Agents",
-      "tag1_desc": "Built on standardized skill interface designs, ensuring your expertise seamlessly powers various mainstream AI Agents—publish once, deploy everywhere.",
-      "tag2_title": "Zero-Friction Transaction Costs",
-      "tag2_desc": "Leveraging a decentralized, minimalist transaction architecture, we minimize friction costs to near zero, ensuring the full value of your creation returns to you."
+      "tag1_title": "Create Account",
+      "tag1_desc": "Register your account and start your journey as a wisdom creator",
+      "tag2_title": "Encapsulate Wisdom",
+      "tag2_desc": "Transform your talent and knowledge into AI Agent-compatible skill functions",
+      "tag3_title": "Easy Publishing",
+      "tag3_desc": "Leverage platform features to easily publish your intellectual property to the global market",
+      "tag4_title": "Build Brand",
+      "tag4_desc": "As your customer base grows, let your intellectual property bring you long-term and stable passive income."
     },
     "howItWorks": {
       "title": "How It Works",
-      "step1_title": "Identity Activation & Wallet Setup",
-      "step1_desc": "Activate your expert identity instantly via Google or GitHub. Configure your Crypto wallet address or QR code to ensure your earnings are secure, borderless, and delivered directly to you.",
-      "step2_title": "Encapsulate Your Industry Wisdom",
-      "step2_desc": "Transform your professional expertise into tangible AI skills (Prompts, Workflows, or Model Parameters). Use our intuitive editor to set your pricing, describe features, and upload your digital assets.",
-      "step3_title": "Rights Verification & Global Circulation",
-      "step3_desc": "Once approved, your skills enter the MySkillStore library. Buyers pay you directly; once payment is confirmed, the system triggers delivery, realizing the true value of your digital copyright.",
-      "step4_title": "Build Your Brand & Passive Income",
-      "step4_desc": "Grow your reputation and establish a premier professional brand. In this AI-driven future, turn your intellectual property into a 'value engine' that generates stable, long-term passive income.",
+      "step1_title": "Create Account",
+      "step1_desc": "Register your account and start your journey as a wisdom creator",
+      "step2_title": "Encapsulate Wisdom",
+      "step2_desc": "Transform your talent and knowledge into AI Agent-compatible skill functions",
+      "step3_title": "Easy Publishing",
+      "step3_desc": "Leverage platform features to easily publish your intellectual property to the global market",
+      "step4_title": "Build Brand",
+      "step4_desc": "As your customer base grows, let your intellectual property bring you long-term and stable passive income.",
       "cta": "Encapsulate My Intellectual Assets Now"
     },
     "footer": {
@@ -255,5 +259,13 @@
       "qr_hint": "Upload your wallet QR code for easier payments",
       "coins": "Accepted Cryptocurrencies"
     }
+  },
+  "AdminLogin": {
+    "title": "Konsola Administratora",
+    "subtitle": "Platform Management Access",
+    "email": "Email Administratora",
+    "password": "Hasło",
+    "submit": "Bezpieczne Logowanie",
+    "back": "Powrót do Strony Głównej"
   }
 }
