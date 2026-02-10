@@ -78,10 +78,10 @@ export default function AdminDashboard() {
           api.get('/users'),
         ]);
 
-        if (pendingRes.status === 'fulfilled') setPendingProducts(pendingRes.value.data);
-        if (productsRes.status === 'fulfilled') setAllProducts(productsRes.value.data);
-        if (ordersRes.status === 'fulfilled') setAllOrders(ordersRes.value.data);
-        if (usersRes.status === 'fulfilled') setAllUsers(usersRes.value.data);
+        if (pendingRes.status === 'fulfilled') setPendingProducts(pendingRes.value.data.items || pendingRes.value.data || []);
+        if (productsRes.status === 'fulfilled') setAllProducts(productsRes.value.data.items || productsRes.value.data || []);
+        if (ordersRes.status === 'fulfilled') setAllOrders(ordersRes.value.data.items || ordersRes.value.data || []);
+        if (usersRes.status === 'fulfilled') setAllUsers(usersRes.value.data.items || usersRes.value.data || []);
       } catch (err) {
         console.error('Admin data load failed', err);
         window.location.href = `/${locale}/admin/login`;

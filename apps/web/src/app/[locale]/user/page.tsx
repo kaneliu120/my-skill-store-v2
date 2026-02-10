@@ -97,9 +97,9 @@ export default function UserDashboard() {
           setUser(profileRes.value.data);
           setWalletAddress(profileRes.value.data.crypto_wallet_address || '');
         }
-        if (productsRes.status === 'fulfilled') setProducts(productsRes.value.data);
-        if (purchasesRes.status === 'fulfilled') setPurchases(purchasesRes.value.data);
-        if (salesRes.status === 'fulfilled') setSales(salesRes.value.data);
+        if (productsRes.status === 'fulfilled') setProducts(productsRes.value.data.items || productsRes.value.data || []);
+        if (purchasesRes.status === 'fulfilled') setPurchases(purchasesRes.value.data.items || purchasesRes.value.data || []);
+        if (salesRes.status === 'fulfilled') setSales(salesRes.value.data.items || salesRes.value.data || []);
       } catch (err) {
         console.error('Failed to load dashboard data', err);
       } finally {
