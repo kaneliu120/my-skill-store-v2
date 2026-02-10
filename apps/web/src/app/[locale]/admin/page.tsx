@@ -57,7 +57,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
-      window.location.href = `/${locale}/login`;
+      window.location.href = `/${locale}/admin/login`;
       return;
     }
 
@@ -84,7 +84,7 @@ export default function AdminDashboard() {
         if (usersRes.status === 'fulfilled') setAllUsers(usersRes.value.data);
       } catch (err) {
         console.error('Admin data load failed', err);
-        window.location.href = `/${locale}/login`;
+        window.location.href = `/${locale}/admin/login`;
       } finally {
         setLoading(false);
       }
@@ -295,9 +295,9 @@ export default function AdminDashboard() {
                           <h4 className="font-medium text-gray-900">{product.title}</h4>
                           <Badge variant="outline" className={
                             product.status === 'approved' ? 'bg-emerald-100 text-emerald-700 border-emerald-200' :
-                            product.status === 'pending_review' ? 'bg-amber-100 text-amber-700 border-amber-200' :
-                            product.status === 'rejected' ? 'bg-red-100 text-red-700 border-red-200' :
-                            'bg-gray-100 text-gray-700 border-gray-200'
+                              product.status === 'pending_review' ? 'bg-amber-100 text-amber-700 border-amber-200' :
+                                product.status === 'rejected' ? 'bg-red-100 text-red-700 border-red-200' :
+                                  'bg-gray-100 text-gray-700 border-gray-200'
                           }>
                             {product.status.replace('_', ' ')}
                           </Badge>
@@ -333,8 +333,8 @@ export default function AdminDashboard() {
                             <h4 className="font-medium text-gray-900">#{order.id} - {order.product?.title || 'N/A'}</h4>
                             <Badge variant="outline" className={
                               order.status === 'completed' ? 'bg-emerald-100 text-emerald-700 border-emerald-200' :
-                              order.status === 'cancelled' ? 'bg-red-100 text-red-700 border-red-200' :
-                              'bg-amber-100 text-amber-700 border-amber-200'
+                                order.status === 'cancelled' ? 'bg-red-100 text-red-700 border-red-200' :
+                                  'bg-amber-100 text-amber-700 border-amber-200'
                             }>
                               {order.status.replace('_', ' ')}
                             </Badge>
@@ -370,7 +370,7 @@ export default function AdminDashboard() {
                           <h4 className="font-medium text-gray-900">{user.nickname || user.email}</h4>
                           <Badge variant="outline" className={
                             user.role === 'admin' ? 'bg-red-100 text-red-700 border-red-200' :
-                            'bg-gray-100 text-gray-700 border-gray-200'
+                              'bg-gray-100 text-gray-700 border-gray-200'
                           }>
                             {user.role}
                           </Badge>

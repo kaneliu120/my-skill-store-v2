@@ -255,5 +255,13 @@
       "qr_hint": "上传您的钱包二维码方便买家付款",
       "coins": "接受的加密货币"
     }
+  },
+  "AdminLogin": {
+    "title": "管理后台",
+    "subtitle": "安全登录以管理平台",
+    "email": "管理员邮箱",
+    "password": "密码",
+    "submit": "安全登录",
+    "back": "返回首页"
   }
 }

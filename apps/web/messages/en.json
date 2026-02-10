@@ -255,5 +255,13 @@
       "qr_hint": "Upload your wallet QR code for easier payments",
       "coins": "Accepted Cryptocurrencies"
     }
+  },
+  "AdminLogin": {
+    "title": "Admin Console",
+    "subtitle": "Secure login to manage the platform",
+    "email": "Admin Email",
+    "password": "Password",
+    "submit": "Secure Login",
+    "back": "Back to Home"
   }
 }

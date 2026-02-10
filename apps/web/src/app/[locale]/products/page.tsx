@@ -46,7 +46,6 @@ export default function ProductsPage() {
         const response = await api.get('/products', {
           params: { status: 'approved' }
         });
-        // Fix: API returns paginated response { items: [], total: ... }
         setProducts(response.data.items || response.data || []);
       } catch (error) {
         console.error('Failed to fetch products:', error);
