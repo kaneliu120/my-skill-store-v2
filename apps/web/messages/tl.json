@@ -1,0 +1,259 @@
+{
+  "ServicePage": {
+    "nav": {
+      "brand": "OpenClaw"
+    },
+    "hero": {
+      "badge": "Propesyonal na On-site na Serbisyo · Maynila",
+      "title": "Kumuha ng Sarili Mong Pribadong AI Assistant",
+      "subtitle": "Isang lokal na \"Jarvis\" na tunay na naiintindihan ang iyong mga file at iyong layunin. Higit pa sa mga web-based na chatbot."
+    },
+    "requirements": {
+      "title": "Ano ang Kailangan Mo",
+      "item1": "Isang Extrang Windows o Mac na Computer",
+      "item1_desc": "Iyon lang. Kami ang bahala sa lahat."
+    },
+    "services": {
+      "title": "Ano ang Kasama",
+      "subtitle": "₱5,000 isang beses na bayad sa serbisyo",
+      "service1_title": "End-to-End na Pag-install",
+      "service1_desc": "Ako ang bahala sa backend, environment setup, database, at deployment. Hindi kailangan ng teknikal na kaalaman mula sa iyo.",
+      "service2_title": "API Integration",
+      "service2_desc": "Gagabayan kita sa pag-setup ng iyong OpenAI/Google API keys para konektado ang iyong AI sa pinakamahusay na mga modelo.",
+      "service3_title": "Personalized na Pag-tune",
+      "service3_desc": "Iko-configure ko ang sistema batay sa iyong mga partikular na pangangailangan—business analysis, creative writing, o teknikal na tulong."
+    },
+    "pricing": {
+      "label": "Bayad sa Serbisyo",
+      "unit": "isang beses",
+      "description": "Magbayad lang pagkatapos mong makita na gumagana. Ang gastos sa paggamit ng API (tokens) ay direktang binabayaran sa OpenAI/Google batay sa iyong konsumo.",
+      "guarantee": "Bayad Pagkatapos ng Serbisyo · Makita Munang Gumagana"
+    },
+    "about": {
+      "title": "Tungkol sa Akin",
+      "description": "Ako ay isang 16-taong beteranong Product Manager (expat) na kasalukuyang nakatira sa Maynila. Ginagamit ko ang OpenClaw para pangasiwaan ang aking buong workflow sa pag-develop—nagtatayo ng mga website at platform nang hindi nagsusulat ng kahit isang linya ng code."
+    },
+    "contact": {
+      "title": "Handa Ka Na Bang I-level Up ang Iyong Produktibidad?"
+    },
+    "footer": {
+      "text": "Itigil na ang paglalaro sa mga basic na chatbot. Kumuha ng tunay na AI assistant na naiintindihan ang iyong trabaho, mga file, at mga layunin."
+    }
+  },
+  "HomePage": {
+    "hero": {
+      "title": "I-reconstruct ang iyong mga taon ng malalim na kaalaman sa industriya bilang mga digital skill, binabago ang propesyonal na karunungan sa pangunahing mabibiling intelektwal na ari-arian para sa panahon ng AI.",
+      "subtitle": "Dito, ang personal na katalinuhan ay hindi na isang isolated na karanasan; ito ay nagiging isang pandaigdigang, nagdadagdag-halaga na nexus ng karunungan na bumubukas ng mga hangganan ng kaalaman sa pamamagitan ng digital na teknolohiya.",
+      "tag1_title": "Angkop sa Lahat ng AI Agent",
+      "tag1_desc": "Binuo sa standardized na skill interface na disenyo, tinitiyak na ang iyong kadalubhasaan ay walang hadlang na nagpapatakbo ng iba't ibang pangunahing AI Agent—i-publish nang isang beses, i-deploy kahit saan.",
+      "tag2_title": "Zero-Friction na Gastos sa Transaksyon",
+      "tag2_desc": "Gamit ang decentralized, minimalist na arkitektura ng transaksyon, binabawasan namin ang mga gastos sa friction sa halos zero, tinitiyak na ang buong halaga ng iyong likha ay bumabalik sa iyo."
+    },
+    "howItWorks": {
+      "title": "Paano Ito Gumagana",
+      "step1_title": "Identity Activation at Wallet Setup",
+      "step1_desc": "I-activate ang iyong expert identity agad-agad sa pamamagitan ng Google o GitHub. I-configure ang iyong Crypto wallet address o QR code para matiyak na ang iyong kita ay ligtas, walang hangganan, at direktang ipapadala sa iyo.",
+      "step2_title": "I-encapsulate ang Iyong Karunungan sa Industriya",
+      "step2_desc": "Baguhin ang iyong propesyonal na kadalubhasaan sa mga tangible na AI skill (Prompts, Workflows, o Model Parameters). Gamitin ang aming intuitive na editor para itakda ang iyong presyo, ilarawan ang mga feature, at i-upload ang iyong mga digital asset.",
+      "step3_title": "Pag-verify ng Karapatan at Pandaigdigang Pag-ikot",
+      "step3_desc": "Kapag na-approve, ang iyong mga skill ay papasok sa MySkillStore library. Direktang magbabayad sa iyo ang mga buyer; kapag nakumpirma ang bayad, isi-trigger ng sistema ang delivery, na nagre-realize ng tunay na halaga ng iyong digital copyright.",
+      "step4_title": "Buuin ang Iyong Brand at Passive Income",
+      "step4_desc": "Palakihin ang iyong reputasyon at magtatag ng premier na propesyonal na brand. Sa AI-driven na hinaharap na ito, gawing 'value engine' ang iyong intelektwal na ari-arian na nagge-generate ng stable at pangmatagalang passive income.",
+      "cta": "I-encapsulate ang Aking mga Intellectual Asset Ngayon"
+    },
+    "footer": {
+      "text": "Pinapalakas ng MySkillStore ang bawat isa na lumikha, magsumite, at magbenta ng mga eksklusibong skill sa industriya. Nakatuon kami sa pagtulong sa iyo na i-reconstruct ang nakakalat na karunungan bilang sistematikong digital na ari-arian sa pamamagitan ng digital copyright technology, na nagdadala sa iyo ng pangmatagalan at malaking ekonomikong kita habang pinangungunahan ang intelligent revolution."
+    },
+    "nav": {
+      "brand": "MySkillStore",
+      "login": "Mag-login",
+      "dashboard": "Dashboard"
+    }
+  },
+  "Auth": {
+    "login": {
+      "title": "Maligayang Pagbabalik",
+      "subtitle": "Mag-sign in sa iyong account para magpatuloy",
+      "email": "Email",
+      "password": "Password",
+      "forgot": "Nakalimutan ang password?",
+      "submit": "Mag-Sign In",
+      "noAccount": "Wala pang account?",
+      "signUp": "Mag-sign up",
+      "or": "o magpatuloy gamit ang"
+    },
+    "register": {
+      "title": "Gumawa ng Account",
+      "subtitle": "Simulan ang pagbebenta ng iyong AI skills ngayon",
+      "username": "Username",
+      "confirmPassword": "Kumpirmahin ang Password",
+      "terms": "Sumasang-ayon ako sa",
+      "termsLink": "Mga Tuntunin ng Serbisyo",
+      "submit": "Gumawa ng Account",
+      "hasAccount": "May account na?",
+      "signIn": "Mag-sign in"
+    }
+  },
+  "Dashboard": {
+    "nav": {
+      "newProduct": "Bagong Produkto"
+    },
+    "stats": {
+      "balance": "Balanse",
+      "totalSales": "Kabuuang Benta",
+      "purchases": "Mga Binili"
+    },
+    "tabs": {
+      "myProducts": "Aking mga Produkto",
+      "myOrders": "Aking mga Order",
+      "mySales": "Kasaysayan ng Benta"
+    },
+    "products": {
+      "title": "Aking mga Produkto",
+      "description": "Pamahalaan ang iyong mga nakalista na skill at produkto",
+      "add": "Magdagdag ng Produkto",
+      "sales": "Mga Benta",
+      "created": "Nilikha",
+      "edit": "I-edit",
+      "view": "Tingnan"
+    },
+    "orders": {
+      "title": "Aking mga Order",
+      "description": "Kasaysayan ng iyong mga pagbili",
+      "seller": "Nagbebenta",
+      "view": "Tingnan"
+    },
+    "sales": {
+      "title": "Kasaysayan ng Benta",
+      "description": "Ang iyong kita mula sa mga naibentang produkto",
+      "buyer": "Bumibili"
+    }
+  },
+  "ProductDetail": {
+    "nav": {
+      "dashboard": "Dashboard"
+    },
+    "reviews": "mga review",
+    "sales": "mga benta",
+    "description": "Deskripsyon",
+    "oneTime": "Isang beses na bayad",
+    "buyNow": "Bumili Ngayon",
+    "delivery": {
+      "auto": "Instant Delivery",
+      "autoDesc": "Awtomatikong ipapadala ang file pagkatapos makumpirma ang bayad",
+      "manual": "Manual Delivery",
+      "manualDesc": "Makikipag-ugnayan sa iyo ang nagbebenta sa pamamagitan ng Telegram pagkatapos ng bayad"
+    },
+    "payment": {
+      "instruction": "Ipadala ang eksaktong halaga sa wallet address sa ibaba, pagkatapos ay i-click ang kumpirma:",
+      "wallet": "Wallet Address",
+      "confirm": "Nagbayad na Ako"
+    },
+    "trust": {
+      "secure": "Ligtas",
+      "direct": "Direktang Bayad"
+    },
+    "seller": {
+      "title": "Tungkol sa Nagbebenta",
+      "sales": "mga benta",
+      "joined": "Sumali",
+      "contact": "Makipag-ugnayan sa Nagbebenta"
+    }
+  },
+  "HelpCenter": {
+    "title": "Help Center",
+    "subtitle": "Maghanap ng mga sagot sa mga karaniwang tanong at alamin kung paano gamitin ang MySkillStore",
+    "q1": "Paano ako gagawa ng account?",
+    "a1": "I-click ang \"Login / Register\" na button sa kanang itaas na sulok. Maaari kang mag-sign up gamit ang iyong email address, o gamitin ang GitHub/Google para sa mabilis na registration.",
+    "q2": "Paano ako mag-publish ng skill?",
+    "a2": "Pagkatapos mag-log in, i-click ang \"Publish Skill\" mula sa navigation bar. Punan ang mga detalye ng iyong produkto sa 3 hakbang: basic info, pricing at delivery, at payment setup. Kapag naisumite, rerebyuhin ng aming team ang iyong skill sa loob ng 24 oras.",
+    "q3": "Paano gumagana ang bayad?",
+    "a3": "Gumagamit ang MySkillStore ng direktang crypto payment (USDT/USDC). Direktang nagbabayad ang mga buyer sa iyong wallet address — hindi namin hawak ang iyong pondo. Pagkatapos mag-report ng bayad ang buyer, kikumpirmahin mo ang pagtanggap, at hahawakan ng sistema ang delivery.",
+    "q4": "Anong mga paraan ng delivery ang available?",
+    "a4": "Dalawang paraan ng delivery: Auto Delivery (awtomatikong ipinapadala ng sistema ang file pagkatapos makumpirma ang bayad) at Manual Delivery (makikipag-ugnayan ka sa buyer sa pamamagitan ng Telegram o chat para personal na i-deliver).",
+    "q5": "Gaano katagal ang review ng produkto?",
+    "a5": "Karamihan sa mga produkto ay nare-review sa loob ng 24 oras. Aabisuhan ka kapag na-approve na ang iyong produkto o kung kailangan ng mga pagbabago.",
+    "q6": "Anong mga uri ng file ang maaari kong ibenta?",
+    "a6": "Maaari kang magbenta ng anumang digital na produkto: AI prompts, agent configurations, workflows, code scripts, design assets, datasets, at marami pa. Ang limitasyon sa laki ng file ay 10MB bawat upload.",
+    "still_need_help": "Kailangan pa rin ng tulong?",
+    "contact_us": "Makipag-ugnayan sa Amin"
+  },
+  "AboutPage": {
+    "title": "Tungkol sa MySkillStore",
+    "subtitle": "Pinapalakas ang knowledge economy ng panahon ng AI",
+    "mission_title": "Ang Aming Misyon",
+    "mission_desc": "Naniniwala kami na ang propesyonal na kadalubhasaan ng bawat tao ay may halaga. Itinatayo ng MySkillStore ang tulay sa pagitan ng karunungan ng tao at kakayahan ng AI — isang marketplace kung saan maaaring gawing pera ng mga propesyonal sa industriya ang kanilang kaalaman bilang mga digital skill na nagpapatakbo ng mga AI agent sa buong mundo.",
+    "vision_title": "Ang Aming Pananaw",
+    "vision_desc": "Maging ang nangungunang C2C marketplace sa mundo para sa AI skills, kung saan maaaring gawing sustainable na pinagmulan ng passive income ng bawat propesyonal ang kanilang malalim na kaalaman sa industriya sa AI-driven na hinaharap.",
+    "why_title": "Bakit MySkillStore?",
+    "why1_title": "Direktang Bayad",
+    "why1_desc": "Walang middleman. Direktang nagbabayad sa iyo ang mga buyer sa pamamagitan ng crypto. Natatanggap mo ang 100% ng iyong kita.",
+    "why2_title": "Zero Custody Risk",
+    "why2_desc": "Hindi namin hawak ang iyong pondo. Direkta ang bayad mula sa buyer patungo sa iyong wallet.",
+    "why3_title": "Pandaigdigang Abot",
+    "why3_desc": "Accessible ang iyong mga skill sa mga gumagamit ng AI sa buong mundo, bumubukas ng mga geographical na hangganan.",
+    "why4_title": "Proteksyon ng IP",
+    "why4_desc": "Bawat skill ay dumadaan sa proseso ng review. Ang iyong intelektwal na ari-arian ay iginagalang at pinoprotektahan.",
+    "team_title": "Ang Aming Koponan",
+    "team_desc": "Kami ay isang pandaigdigang koponan ng mga product builder, AI enthusiast, at blockchain advocate na nakabase sa buong Asia at higit pa. Nagkakaisa sa paniniwala na ang kaalaman ay dapat malayang dumaloy at ang mga creator ay patas na bayaran.",
+    "stats_products": "Mga Nakalista na Skill",
+    "stats_users": "Mga Active na User",
+    "stats_countries": "Mga Bansa",
+    "stats_payout": "Mga Payout sa Creator"
+  },
+  "ContactPage": {
+    "title": "Makipag-ugnayan sa Amin",
+    "subtitle": "Gusto naming marinig mula sa iyo. Magpadala ng mensahe at tutugon kami sa lalong madaling panahon.",
+    "form_name": "Pangalan Mo",
+    "form_email": "Email Address",
+    "form_subject": "Paksa",
+    "form_message": "Mensahe",
+    "form_submit": "Ipadala ang Mensahe",
+    "form_success": "Matagumpay na naipadala ang mensahe! Tutugon kami sa loob ng 24 oras.",
+    "info_title": "Iba Pang Paraan para Maabot Kami",
+    "email_title": "Email",
+    "telegram_title": "Telegram",
+    "hours_title": "Oras ng Negosyo",
+    "hours_value": "Lun - Biy, 9:00 AM - 6:00 PM (GMT+8)",
+    "faq_hint": "Bago makipag-ugnayan, tingnan ang aming",
+    "faq_link": "Help Center",
+    "faq_hint_end": "para sa mabilis na mga sagot."
+  },
+  "CreateProduct": {
+    "title": "Gumawa ng Bagong Produkto",
+    "step": "Hakbang",
+    "next": "Magpatuloy",
+    "back": "Bumalik",
+    "submit": "Isumite para sa Review",
+    "step1": {
+      "title": "Basic na Impormasyon",
+      "description": "Sabihin sa amin ang tungkol sa iyong skill o produkto",
+      "productTitle": "Pamagat ng Produkto",
+      "category": "Kategorya",
+      "description_label": "Deskripsyon",
+      "tags": "Mga Tag",
+      "tags_hint": "Paghiwalayin ang mga tag gamit ang mga kuwit"
+    },
+    "step2": {
+      "title": "Presyo at Delivery",
+      "description": "Itakda ang iyong presyo at paraan ng delivery",
+      "price": "Presyo (USD)",
+      "price_hint": "Natatanggap mo ang 100% - direktang nagbabayad sa iyo ang mga buyer",
+      "delivery": "Paraan ng Delivery",
+      "upload": "I-upload ang Skill File",
+      "upload_hint": "I-drag and drop o i-click para mag-upload",
+      "preview": "Preview Image",
+      "preview_hint": "Mag-upload ng preview image para sa iyong produkto"
+    },
+    "step3": {
+      "title": "Payment Setup",
+      "description": "I-configure kung paano ka tatanggap ng bayad",
+      "info": "Direktang magbabayad sa iyo ang mga buyer gamit ang crypto. Hindi namin hawak ang iyong pondo - direkta ang bayad sa iyong wallet.",
+      "wallet": "Wallet Address",
+      "wallet_hint": "Ilagay ang iyong USDT/USDC wallet address (TRC20, BEP20, o ERC20)",
+      "qr": "Payment QR Code (Opsyonal)",
+      "qr_hint": "I-upload ang iyong wallet QR code para sa mas madaling bayad",
+      "coins": "Mga Tinatanggap na Cryptocurrency"
+    }
+  }
+}

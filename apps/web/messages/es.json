@@ -1,0 +1,259 @@
+{
+  "ServicePage": {
+    "nav": {
+      "brand": "OpenClaw"
+    },
+    "hero": {
+      "badge": "Servicio Profesional in situ · Manila",
+      "title": "Obtén tu Propio Asistente de IA Privado",
+      "subtitle": "Un \"Jarvis\" localizado que realmente entiende tus archivos y tu intención. Mucho más allá de los chatbots web."
+    },
+    "requirements": {
+      "title": "Lo que Necesitas",
+      "item1": "Una computadora Windows o Mac de repuesto",
+      "item1_desc": "Eso es todo. Nosotros nos encargamos de todo lo demás."
+    },
+    "services": {
+      "title": "Qué está Incluido",
+      "subtitle": "Tarifa de servicio única de ₱5,000",
+      "service1_title": "Instalación de Extremo a Extremo",
+      "service1_desc": "Me encargo del backend, la configuración del entorno, la base de datos y el despliegue. No necesitas conocimientos técnicos.",
+      "service2_title": "Integración de API",
+      "service2_desc": "Te guiaré en la configuración de tus claves API de OpenAI/Google para que tu IA esté conectada a los mejores modelos disponibles.",
+      "service3_title": "Ajuste Personalizado",
+      "service3_desc": "Configuré el sistema según tus necesidades específicas: análisis de negocios, escritura creativa o asistencia técnica."
+    },
+    "pricing": {
+      "label": "Tarifa de Servicio",
+      "unit": "pago único",
+      "description": "Paga solo después de ver que funciona. Los costos de uso de API (tokens) se pagan directamente a OpenAI/Google según tu consumo.",
+      "guarantee": "Paga Después del Servicio · Verlo Funcionar Primero"
+    },
+    "about": {
+      "title": "Sobre Mí",
+      "description": "Soy un Gerente de Producto veterano de 16 años (expatriado) que vive actualmente en Manila. He estado usando OpenClaw para manejar todo mi flujo de trabajo de desarrollo, construyendo sitios web y plataformas sin escribir una sola línea de código."
+    },
+    "contact": {
+      "title": "¿Listo para Mejorar tu Productividad?"
+    },
+    "footer": {
+      "text": "Deja de jugar con chatbots básicos. Obtén un asistente de IA real que entienda tu trabajo, tus archivos y tus objetivos."
+    }
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Reconstruye tus años de profundos conocimientos de la industria en habilidades digitales, transformando la sabiduría profesional en propiedad intelectual comercializable central para la era de la IA.",
+      "subtitle": "Aquí, la inteligencia personal ya no es una experiencia aislada; se convierte en un nexo global de sabiduría que agrega valor y rompe los límites del conocimiento a través de la tecnología digital.",
+      "tag1_title": "Aplicable a Todos los Agentes de IA",
+      "tag1_desc": "Construido sobre diseños de interfaz de habilidades estandarizados, asegurando que tu experiencia impulse sin problemas varios Agentes de IA principales: publica una vez, despliega en todas partes.",
+      "tag2_title": "Costos de Transacción Cero Fricción",
+      "tag2_desc": "Aprovechando una arquitectura de transacción descentralizada y minimalista, minimizamos los costos de fricción a casi cero, asegurando que el valor total de tu creación regrese a ti."
+    },
+    "howItWorks": {
+      "title": "Cómo Funciona",
+      "step1_title": "Activación de Identidad y Configuración de Billetera",
+      "step1_desc": "Activa tu identidad de experto al instante a través de Google o GitHub. Configura tu dirección de billetera Crypto o código QR para asegurar que tus ganancias sean seguras, sin fronteras y entregadas directamente a ti.",
+      "step2_title": "Encapsula tu Sabiduría de la Industria",
+      "step2_desc": "Transforma tu experiencia profesional en habilidades de IA tangibles (Prompts, Flujos de trabajo o Parámetros de Modelo). Usa nuestro editor intuitivo para establecer tu precio, describir características y subir tus activos digitales.",
+      "step3_title": "Verificación de Derechos y Circulación Global",
+      "step3_desc": "Una vez aprobado, tus habilidades entran en la biblioteca de MySkillStore. Los compradores te pagan directamente; una vez confirmado el pago, el sistema activa la entrega, realizando el verdadero valor de tu derecho de autor digital.",
+      "step4_title": "Construye tu Marca e Ingresos Pasivos",
+      "step4_desc": "Haz crecer tu reputación y establece una marca profesional de primer nivel. En este futuro impulsado por la IA, convierte tu propiedad intelectual en un 'motor de valor' que genere ingresos pasivos estables a largo plazo.",
+      "cta": "Encapsular Mis Activos Intelectuales Ahora"
+    },
+    "footer": {
+      "text": "MySkillStore empodera a todos para crear, enviar y vender habilidades exclusivas de la industria. Estamos dedicados a ayudarte a reconstruir la sabiduría fragmentada en propiedad digital sistemática a través de la tecnología de derechos de autor digitales, brindándote retornos económicos a largo plazo y sustanciales mientras lideras la revolución inteligente."
+    },
+    "nav": {
+      "brand": "MySkillStore",
+      "login": "Iniciar Sesión",
+      "dashboard": "Panel"
+    }
+  },
+  "Auth": {
+    "login": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Inicia sesión en tu cuenta para continuar",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "forgot": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar Sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUp": "Regístrate",
+      "or": "o continúa con"
+    },
+    "register": {
+      "title": "Crear Cuenta",
+      "subtitle": "Comienza a vender tus habilidades de IA hoy",
+      "username": "Nombre de usuario",
+      "confirmPassword": "Confirmar contraseña",
+      "terms": "Estoy de acuerdo con los",
+      "termsLink": "Términos de Servicio",
+      "submit": "Crear Cuenta",
+      "hasAccount": "¿Ya tienes una cuenta?",
+      "signIn": "Iniciar sesión"
+    }
+  },
+  "Dashboard": {
+    "nav": {
+      "newProduct": "Nuevo Producto"
+    },
+    "stats": {
+      "balance": "Saldo",
+      "totalSales": "Ventas Totales",
+      "purchases": "Compras"
+    },
+    "tabs": {
+      "myProducts": "Mis Productos",
+      "myOrders": "Mis Pedidos",
+      "mySales": "Historial de Ventas"
+    },
+    "products": {
+      "title": "Mis Productos",
+      "description": "Gestiona tus habilidades y productos listados",
+      "add": "Añadir Producto",
+      "sales": "Ventas",
+      "created": "Creado",
+      "edit": "Editar",
+      "view": "Ver"
+    },
+    "orders": {
+      "title": "Mis Pedidos",
+      "description": "Tu historial de compras",
+      "seller": "Vendedor",
+      "view": "Ver"
+    },
+    "sales": {
+      "title": "Historial de Ventas",
+      "description": "Tus ganancias de productos vendidos",
+      "buyer": "Comprador"
+    }
+  },
+  "ProductDetail": {
+    "nav": {
+      "dashboard": "Panel"
+    },
+    "reviews": "reseñas",
+    "sales": "ventas",
+    "description": "Descripción",
+    "oneTime": "Pago único",
+    "buyNow": "Comprar Ahora",
+    "delivery": {
+      "auto": "Entrega Instantánea",
+      "autoDesc": "El archivo se entregará automáticamente después de la confirmación del pago",
+      "manual": "Entrega Manual",
+      "manualDesc": "El vendedor te contactará vía Telegram después del pago"
+    },
+    "payment": {
+      "instruction": "Envía la cantidad exacta a la dirección de billetera a continuación, luego haz clic en confirmar:",
+      "wallet": "Dirección de Billetera",
+      "confirm": "He Realizado el Pago"
+    },
+    "trust": {
+      "secure": "Seguro",
+      "direct": "Pago Directo"
+    },
+    "seller": {
+      "title": "Sobre el Vendedor",
+      "sales": "ventas",
+      "joined": "Se unió",
+      "contact": "Contactar al Vendedor"
+    }
+  },
+  "HelpCenter": {
+    "title": "Centro de Ayuda",
+    "subtitle": "Encuentra respuestas a preguntas comunes y aprende a usar MySkillStore",
+    "q1": "¿Cómo creo una cuenta?",
+    "a1": "Haz clic en el botón \"Iniciar Sesión / Registro\" en la esquina superior derecha. Puedes registrarte con tu dirección de correo electrónico o usar GitHub/Google para un registro rápido.",
+    "q2": "¿Cómo publico una habilidad?",
+    "a2": "Después de iniciar sesión, haz clic en \"Publicar Habilidad\" en la barra de navegación. Completa los detalles de tu producto en 3 pasos: información básica, precios y entrega, y configuración de pago. Una vez enviado, nuestro equipo revisará tu habilidad en 24 horas.",
+    "q3": "¿Cómo funciona el pago?",
+    "a3": "MySkillStore utiliza pagos directos con criptomonedas (USDT/USDC). Los compradores pagan directamente a tu dirección de billetera: nunca retenemos tus fondos. Después de que el comprador informe el pago, confirmas la recepción y el sistema maneja la entrega.",
+    "q4": "¿Qué métodos de entrega están disponibles?",
+    "a4": "Dos métodos de entrega: Entrega Automática (el sistema envía automáticamente el archivo después de la confirmación del pago) y Entrega Manual (contactas al comprador vía Telegram o chat para entregar personalmente).",
+    "q5": "¿Cuánto tiempo tarda la revisión del producto?",
+    "a5": "La mayoría de los productos se revisan en 24 horas. Se te notificará una vez que tu producto sea aprobado o si se necesitan cambios.",
+    "q6": "¿Qué tipos de archivos puedo vender?",
+    "a6": "Puedes vender cualquier producto digital: prompts de IA, configuraciones de agentes, flujos de trabajo, scripts de código, activos de diseño, conjuntos de datos y más. El límite de tamaño de archivo es de 10MB por carga.",
+    "still_need_help": "¿Aún necesitas ayuda?",
+    "contact_us": "Contáctanos"
+  },
+  "AboutPage": {
+    "title": "Acerca de MySkillStore",
+    "subtitle": "Empoderando la economía del conocimiento de la era de la IA",
+    "mission_title": "Nuesa Misión",
+    "mission_desc": "Creemos que la experiencia profesional de todos tiene valor. MySkillStore está construyendo el puente entre la sabiduría humana y la capacidad de la IA: un mercado donde los profesionales de la industria pueden monetizar su conocimiento como habilidades digitales que impulsan a los agentes de IA en todo el mundo.",
+    "vision_title": "Nuestra Visión",
+    "vision_desc": "Convertirnos en el mercado C2C líder mundial para habilidades de IA, donde cada profesional pueda transformar su profundo conocimiento de la industria en una fuente sostenible de ingresos pasivos en el futuro impulsado por la IA.",
+    "why_title": "¿Por qué MySkillStore?",
+    "why1_title": "Pagos Directos",
+    "why1_desc": "Sin intermediarios. Los compradores te pagan directamente con criptomonedas. Recibes el 100% de tus ganancias.",
+    "why2_title": "Cero Riesgo de Custodia",
+    "why2_desc": "Nunca retenemos tus fondos. Los pagos van directamente del comprador a tu billetera.",
+    "why3_title": "Alcance Global",
+    "why3_desc": "Tus habilidades son accesibles para los usuarios de IA en todo el mundo, rompiendo fronteras geográficas.",
+    "why4_title": "Protección de IP",
+    "why4_desc": "Cada habilidad pasa por un proceso de revisión. Tu propiedad intelectual es respetada y protegida.",
+    "team_title": "Nuestro Equipo",
+    "team_desc": "Somos un equipo global de constructores de productos, entusiastas de la IA y defensores de blockchain con sede en Asia y más allá. Unidos por la creencia de que el conocimiento debe fluir libremente y los creadores deben ser compensados de manera justa.",
+    "stats_products": "Habilidades Listadas",
+    "stats_users": "Usuarios Activos",
+    "stats_countries": "Países",
+    "stats_payout": "Pagos a Creadores"
+  },
+  "ContactPage": {
+    "title": "Contáctanos",
+    "subtitle": "Nos encantaría saber de ti. Envíanos un mensaje y responderemos lo antes posible.",
+    "form_name": "Tu Nombre",
+    "form_email": "Dirección de Correo Electrónico",
+    "form_subject": "Asunto",
+    "form_message": "Mensaje",
+    "form_submit": "Enviar Mensaje",
+    "form_success": "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo en 24 horas.",
+    "info_title": "Otras Formas de Contactarnos",
+    "email_title": "Correo Electrónico",
+    "telegram_title": "Telegram",
+    "hours_title": "Horario Comercial",
+    "hours_value": "Lun - Vie, 9:00 AM - 6:00 PM (GMT+8)",
+    "faq_hint": "Antes de contactar, revisa nuestro",
+    "faq_link": "Centro de Ayuda",
+    "faq_hint_end": "para respuestas rápidas."
+  },
+  "CreateProduct": {
+    "title": "Crear Nuevo Producto",
+    "step": "Paso",
+    "next": "Continuar",
+    "back": "Atrás",
+    "submit": "Enviar para Revisión",
+    "step1": {
+      "title": "Información Básica",
+      "description": "Cuéntanos sobre tu habilidad o producto",
+      "productTitle": "Título del Producto",
+      "category": "Categoría",
+      "description_label": "Descripción",
+      "tags": "Etiquetas",
+      "tags_hint": "Separa las etiquetas con comas"
+    },
+    "step2": {
+      "title": "Precios y Entrega",
+      "description": "Establece tu precio y método de entrega",
+      "price": "Precio (USD)",
+      "price_hint": "Recibes el 100% - los compradores te pagan directamente",
+      "delivery": "Método de Entrega",
+      "upload": "Subir Archivo de Habilidad",
+      "upload_hint": "Arrastra y suelta o haz clic para subir",
+      "preview": "Imagen de Vista Previa",
+      "preview_hint": "Sube una imagen de vista previa para tu producto"
+    },
+    "step3": {
+      "title": "Configuración de Pago",
+      "description": "Configura cómo recibes los pagos",
+      "info": "Los compradores te pagarán directamente usando cripto. Nunca retenemos tus fondos - los pagos van directamente a tu billetera.",
+      "wallet": "Dirección de Billetera",
+      "wallet_hint": "Ingresa tu dirección de billetera USDT/USDC (TRC20, BEP20, o ERC20)",
+      "qr": "Código QR de Pago (Opcional)",
+      "qr_hint": "Sube el código QR de tu billetera para pagos más fáciles",
+      "coins": "Criptomonedas Aceptadas"
+    }
+  }
+}
