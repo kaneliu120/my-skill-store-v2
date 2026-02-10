@@ -127,7 +127,7 @@ export default function HomePageV8() {
       const response = await api.get('/products', {
         params: { status: 'approved', search: searchQuery }
       });
-      setProducts(response.data);
+      setProducts(response.data.items || response.data || []);
     } catch (error) {
       console.error('Failed to fetch products', error);
     }

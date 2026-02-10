@@ -138,7 +138,7 @@ export default function ProductsPageV8() {
         const response = await api.get('/products', {
           params: { status: 'approved' }
         });
-        setProducts(response.data);
+        setProducts(response.data.items || response.data || []);
       } catch (error) {
         console.error('Failed to fetch products', error);
       } finally {
