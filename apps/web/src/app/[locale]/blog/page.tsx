@@ -67,7 +67,7 @@ export default function BlogPage() {
     try {
       setLoading(true);
       const response = await api.get('/blog', { params: { status: 'published' } });
-      setPosts(response.data || []);
+      setPosts(response.data.items || response.data || []);
     } catch (error) {
       console.error('Failed to fetch posts:', error);
     } finally {
@@ -280,7 +280,7 @@ export default function BlogPage() {
                         </div>
                       </div>
                       <CardTitle className="text-xl line-clamp-2">
-                        <Link href="/blog/${post.slug || post.id}" className="hover:text-purple-600 transition">
+                        <Link href={`/blog/${post.slug || post.id}`} className="hover:text-purple-600 transition">
                           {post.title}
                         </Link>
                       </CardTitle>
@@ -289,7 +289,7 @@ export default function BlogPage() {
                       <p className="text-gray-600 text-sm line-clamp-3 mb-6 flex-1">
                         {post.excerpt || post.content.substring(0, 150) + '...'}
                       </p>
-                      <Link href="/blog/${post.slug || post.id}" className="w-full">
+                      <Link href={`/blog/${post.slug || post.id}`} className="w-full">
                         <Button variant="outline" className="w-full border-purple-200 text-purple-600 hover:bg-purple-50 group rounded-lg">
                           {locale === 'zh' ? '阅读文章' : 'Read Article'}
                           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition" />

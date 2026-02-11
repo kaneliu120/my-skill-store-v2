@@ -7,7 +7,8 @@ import JsonLd from '@/components/seo/JsonLd';
 
 async function getPost(idOrSlug: string) {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog/${idOrSlug}`, {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net';
+        const res = await fetch(`${apiUrl}/api/blog/${idOrSlug}`, {
             cache: 'no-store'
         });
         if (!res.ok) return null;
