@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Textarea } from '@/components/ui/textarea';
 import {
   Boxes, Shield, CheckCircle, XCircle, Clock, Package,
-  Users, ShoppingBag, Loader2
+  Users, ShoppingBag, Loader2, CreditCard, ArrowRight, Settings
 } from 'lucide-react';
 
 interface Product {
@@ -194,6 +194,72 @@ export default function AdminDashboard() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Management Modules */}
+        <div className="mb-8">
+          <div className="flex items-center gap-2 mb-4">
+            <Settings className="w-6 h-6 text-purple-600" />
+            <h2 className="text-xl font-bold text-gray-900">Management Modules</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link href={`/${locale}/admin/users`}>
+              <Card className="bg-white border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all cursor-pointer group">
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center group-hover:bg-emerald-200 transition">
+                      <Users className="w-6 h-6 text-emerald-600" />
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-1">User Management</h3>
+                  <p className="text-sm text-gray-500">Manage users, roles, and permissions</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href={`/${locale}/admin/orders`}>
+              <Card className="bg-white border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all cursor-pointer group">
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-200 transition">
+                      <ShoppingBag className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Order Management</h3>
+                  <p className="text-sm text-gray-500">Track orders, refunds, and transactions</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href={`/${locale}/admin/products`}>
+              <Card className="bg-white border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all cursor-pointer group">
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center group-hover:bg-purple-200 transition">
+                      <Package className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Product Management</h3>
+                  <p className="text-sm text-gray-500">Approve, reject, and manage products</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href={`/${locale}/admin/payments`}>
+              <Card className="bg-white border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all cursor-pointer group">
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center group-hover:bg-amber-200 transition">
+                      <CreditCard className="w-6 h-6 text-amber-600" />
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Payment Management</h3>
+                  <p className="text-sm text-gray-500">Verify payments and track revenue</p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
         </div>
 
         <Tabs defaultValue="pending" className="space-y-6">

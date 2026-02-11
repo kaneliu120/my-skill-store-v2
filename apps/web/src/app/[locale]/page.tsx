@@ -338,25 +338,25 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="pt-20 pb-10 md:pt-32 md:pb-20 px-6 bg-gradient-to-br from-white via-gray-50 to-purple-50/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-gray-900">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            {/* Left: Text - with border and matching height */}
+            <div className="text-center lg:text-left border-4 border-red-500 rounded-2xl p-8 flex flex-col justify-center">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 text-gray-900">
                 {t('hero.title')}
               </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base text-gray-600 mb-6 leading-relaxed">
                 {t('hero.subtitle')}
               </p>
 
               <div className="flex gap-4 justify-center lg:justify-start">
                 <Button
-                  className="h-12 bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 text-base font-medium shadow-lg shadow-purple-200"
+                  className="h-11 bg-purple-600 hover:bg-purple-700 text-white rounded-full px-7 text-sm font-medium shadow-lg shadow-purple-200"
                   onClick={handlePublishClick}
                 >
                   {t('hero.publishSkill')}
                 </Button>
                 <Link href="#explore">
-                  <Button variant="outline" className="h-12 border-2 border-purple-200 text-purple-600 hover:bg-purple-50 rounded-full px-8 text-base font-medium">
+                  <Button variant="outline" className="h-11 border-2 border-purple-200 text-purple-600 hover:bg-purple-50 rounded-full px-7 text-sm font-medium">
                     {t('hero.exploreSkills')}
                   </Button>
                 </Link>
@@ -365,8 +365,8 @@ export default function HomePage() {
 
             {/* Right: Laptop Mockup - Hidden on Mobile */}
             <div className="relative hidden lg:block">
-              <div className="bg-gradient-to-br from-purple-100/50 to-blue-100/50 rounded-3xl p-8">
-                <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl">
+              <div className="bg-gradient-to-br from-purple-100/50 to-blue-100/50 rounded-3xl p-8 h-full flex items-center">
+                <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl w-full">
                   {/* Browser Chrome */}
                   <div className="bg-gray-800 px-4 py-3 flex items-center gap-2">
                     <div className="flex gap-1.5">
@@ -381,7 +381,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   {/* Dashboard Preview */}
-                  <div className="bg-gray-900 p-4 min-h-[200px]">
+                  <div className="bg-gray-900 p-4">
                     <div className="grid grid-cols-3 gap-3 mb-4">
                       <div className="bg-purple-600/20 rounded-lg p-3">
                         <div className="text-purple-400 text-xs mb-1">{t('hero.revenue')}</div>
