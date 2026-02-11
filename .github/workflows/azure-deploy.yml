@@ -1,4 +1,4 @@
-name: Azure Docker Deployment
+name: Azure Docker Deployment (Optimized)
 
 on:
   push:
@@ -6,21 +6,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-push:
+  build-api:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
-
     - name: Login to ACR
       uses: azure/docker-login@v1
       with:
         login-server: ${{ secrets.ACR_LOGIN_SERVER }}
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
-
     - name: Build and push API image
       uses: docker/build-push-action@v5
       with:
@@ -28,7 +25,21 @@ jobs:
         file: api.Dockerfile
         push: true
         tags: ${{ secrets.ACR_LOGIN_SERVER }}/myskillstore-api:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
 
+  build-web:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    - name: Login to ACR
+      uses: azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+        username: ${{ secrets.ACR_USERNAME }}
+        password: ${{ secrets.ACR_PASSWORD }}
     - name: Build and push Web image
       uses: docker/build-push-action@v5
       with:
@@ -38,15 +49,22 @@ jobs:
         tags: ${{ secrets.ACR_LOGIN_SERVER }}/myskillstore-web:latest
         build-args: |
           NEXT_PUBLIC_API_URL=https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build-and-push
+    needs: [build-api, build-web]
     steps:
     - name: Login to Azure
       uses: azure/login@v2
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Pre-configure App Settings (to avoid double restart)
+      run: |
+        az webapp config appsettings set --resource-group skills-store-rg --name skills-store-api --settings DOCKER_REGISTRY_SERVER_URL="https://${{ secrets.ACR_LOGIN_SERVER }}" DOCKER_REGISTRY_SERVER_USERNAME="${{ secrets.ACR_USERNAME }}" DOCKER_REGISTRY_SERVER_PASSWORD="${{ secrets.ACR_PASSWORD }}" WEBSITES_PORT=10000 DOCKER_ENABLE_CI=true
+        az webapp config appsettings set --resource-group skills-store-rg --name myskillstore-web --settings DOCKER_REGISTRY_SERVER_URL="https://${{ secrets.ACR_LOGIN_SERVER }}" DOCKER_REGISTRY_SERVER_USERNAME="${{ secrets.ACR_USERNAME }}" DOCKER_REGISTRY_SERVER_PASSWORD="${{ secrets.ACR_PASSWORD }}" WEBSITES_PORT=10000 API_URL="https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net" NEXT_PUBLIC_API_URL="https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net" DOCKER_ENABLE_CI=true
 
     - name: Deploy API to Web App
       uses: azure/webapps-deploy@v3
@@ -60,13 +78,10 @@ jobs:
         app-name: 'myskillstore-web'
         images: '${{ secrets.ACR_LOGIN_SERVER }}/myskillstore-web:latest'
 
-    - name: Configure API App Settings
+    - name: Force Restart to Pull Latest (Immediate Effect)
       run: |
-        az webapp config appsettings set --resource-group skills-store-rg --name skills-store-api --settings DOCKER_REGISTRY_SERVER_URL="https://${{ secrets.ACR_LOGIN_SERVER }}" DOCKER_REGISTRY_SERVER_USERNAME="${{ secrets.ACR_USERNAME }}" DOCKER_REGISTRY_SERVER_PASSWORD="${{ secrets.ACR_PASSWORD }}" WEBSITES_PORT=10000
-
-    - name: Configure Web App Settings
-      run: |
-        az webapp config appsettings set --resource-group skills-store-rg --name myskillstore-web --settings DOCKER_REGISTRY_SERVER_URL="https://${{ secrets.ACR_LOGIN_SERVER }}" DOCKER_REGISTRY_SERVER_USERNAME="${{ secrets.ACR_USERNAME }}" DOCKER_REGISTRY_SERVER_PASSWORD="${{ secrets.ACR_PASSWORD }}" WEBSITES_PORT=10000 API_URL="https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net" NEXT_PUBLIC_API_URL="https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net"
+        az webapp restart --resource-group skills-store-rg --name skills-store-api
+        az webapp restart --resource-group skills-store-rg --name myskillstore-web
 
     - name: Logout from Azure
       run: az logout
