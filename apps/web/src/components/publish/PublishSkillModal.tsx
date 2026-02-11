@@ -44,7 +44,30 @@ export default function PublishSkillModal({ open, onOpenChange }: PublishSkillMo
     demo_url: '',
     delivery_type: 'manual',
     delivery_content: '',
+    preview_image_url: '',
   });
+  const [uploading, setUploading] = useState(false);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    const body = new FormData();
+    body.append('file', file);
+
+    try {
+      const res = await api.post('/upload?folder=products', body, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+      setFormData((prev) => ({ ...prev, preview_image_url: res.data.url }));
+    } catch (error) {
+      console.error('Upload failed:', error);
+      alert('Image upload failed');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -123,6 +146,31 @@ export default function PublishSkillModal({ open, onOpenChange }: PublishSkillMo
                 ))}
               </SelectContent>
             </Select>
+          </div>
+
+          {/* Preview Image */}
+          <div className="space-y-2">
+            <Label htmlFor="image" className="text-sm font-medium text-gray-700">
+              {isZh ? '预览图 (选填)' : 'Preview Image (Optional)'}
+            </Label>
+            <div className="flex items-center gap-4">
+              {formData.preview_image_url && (
+                <div className="w-16 h-16 rounded-lg overflow-hidden border border-gray-200">
+                  <img src={formData.preview_image_url} alt="Preview" className="w-full h-full object-cover" />
+                </div>
+              )}
+              <div className="flex-1">
+                <Input
+                  id="image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  disabled={uploading}
+                  className="h-11 cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
+                />
+              </div>
+              {uploading && <Loader2 className="w-5 h-5 animate-spin text-purple-600" />}
+            </div>
           </div>
 
           {/* Description */}
