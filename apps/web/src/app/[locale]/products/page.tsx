@@ -17,7 +17,7 @@ interface Product {
   description: string;
   price_usd: number;
   category: string;
-  preview_url: string | null;
+  preview_image_url: string | null;
   seller: {
     id: number;
     nickname?: string;
@@ -351,7 +351,7 @@ export default function ProductsPage() {
                     title={product.title}
                     price={Number(product.price_usd)}
                     author={product.seller?.nickname || product.seller?.email || 'Anonymous'}
-                    coverUrl={product.preview_url || undefined}
+                    coverUrl={product.preview_image_url || undefined}
                     category={product.category}
                   />
                 ))}

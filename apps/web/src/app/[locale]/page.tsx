@@ -20,6 +20,7 @@ interface Product {
   price_usd: number;
   seller: { nickname: string };
   category: string;
+  preview_image_url?: string;
 }
 
 export default function HomePage() {
@@ -497,6 +498,7 @@ export default function HomePage() {
                   price={Number(product.price_usd)}
                   author={product.seller?.nickname || 'Anonymous'}
                   category={product.category || 'Other'}
+                  coverUrl={product.preview_image_url}
                 />
               ))
             ) : (
