@@ -1,4 +1,4 @@
-name: Azure Docker Deployment (Optimized)
+name: Azure Docker Deployment (Zero Downtime)
 
 on:
   push:
@@ -52,7 +52,7 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
-  deploy:
+  deploy-to-staging:
     runs-on: ubuntu-latest
     needs: [build-api, build-web]
     steps:
@@ -61,27 +61,24 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Pre-configure App Settings (to avoid double restart)
-      run: |
-        az webapp config appsettings set --resource-group skills-store-rg --name skills-store-api --settings DOCKER_REGISTRY_SERVER_URL="https://${{ secrets.ACR_LOGIN_SERVER }}" DOCKER_REGISTRY_SERVER_USERNAME="${{ secrets.ACR_USERNAME }}" DOCKER_REGISTRY_SERVER_PASSWORD="${{ secrets.ACR_PASSWORD }}" WEBSITES_PORT=10000 DOCKER_ENABLE_CI=true
-        az webapp config appsettings set --resource-group skills-store-rg --name myskillstore-web --settings DOCKER_REGISTRY_SERVER_URL="https://${{ secrets.ACR_LOGIN_SERVER }}" DOCKER_REGISTRY_SERVER_USERNAME="${{ secrets.ACR_USERNAME }}" DOCKER_REGISTRY_SERVER_PASSWORD="${{ secrets.ACR_PASSWORD }}" WEBSITES_PORT=10000 API_URL="https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net" NEXT_PUBLIC_API_URL="https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net" DOCKER_ENABLE_CI=true
-
-    - name: Deploy API to Web App
+    - name: Deploy API to Staging Slot
       uses: azure/webapps-deploy@v3
       with:
         app-name: 'skills-store-api'
+        slot-name: 'staging'
         images: '${{ secrets.ACR_LOGIN_SERVER }}/myskillstore-api:latest'
 
-    - name: Deploy Web to Web App
+    - name: Deploy Web to Staging Slot
       uses: azure/webapps-deploy@v3
       with:
         app-name: 'myskillstore-web'
+        slot-name: 'staging'
         images: '${{ secrets.ACR_LOGIN_SERVER }}/myskillstore-web:latest'
 
-    - name: Force Restart to Pull Latest (Immediate Effect)
+    - name: Swap Staging to Production
       run: |
-        az webapp restart --resource-group skills-store-rg --name skills-store-api
-        az webapp restart --resource-group skills-store-rg --name myskillstore-web
+        az webapp deployment slot swap --resource-group skills-store-rg --name skills-store-api --slot staging --target-slot production
+        az webapp deployment slot swap --resource-group skills-store-rg --name myskillstore-web --slot staging --target-slot production
 
     - name: Logout from Azure
       run: az logout
