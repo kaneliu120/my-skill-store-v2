@@ -25,8 +25,6 @@ jobs:
         file: api.Dockerfile
         push: true
         tags: ${{ secrets.ACR_LOGIN_SERVER }}/myskillstore-api:latest
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
 
   build-web:
     runs-on: ubuntu-latest
@@ -49,8 +47,6 @@ jobs:
         tags: ${{ secrets.ACR_LOGIN_SERVER }}/myskillstore-web:latest
         build-args: |
           NEXT_PUBLIC_API_URL=https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
 
   deploy-to-staging:
     runs-on: ubuntu-latest
