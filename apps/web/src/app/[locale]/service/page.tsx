@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Monitor, Key, Settings, CheckCircle, MessageCircle, Mail, Phone } from 'lucide-react';

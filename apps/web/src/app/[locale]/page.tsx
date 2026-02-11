@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { Boxes, DollarSign, FileEdit, Brain, Globe, TrendingUp, Search, User, ChevronDown, Check, Plus, Minus, Menu, X, Wallet, BookOpen } from 'lucide-react';
 import ProductCard from '@/components/product/ProductCard';

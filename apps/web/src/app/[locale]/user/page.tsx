@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { useEffect, useState } from 'react';
 import api from '@/lib/api';
 import { Button } from '@/components/ui/button';

@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Boxes, ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';

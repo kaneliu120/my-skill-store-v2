@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Boxes, Wallet, Shield, Globe, Lock, Users, Package, MapPin, DollarSign } from 'lucide-react';
 
 export default function AboutPage() {

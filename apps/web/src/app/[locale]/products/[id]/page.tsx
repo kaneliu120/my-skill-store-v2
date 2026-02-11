@@ -4,7 +4,8 @@ import JsonLd from '@/components/seo/JsonLd';
 
 async function getProduct(id: string) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`, {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net';
+    const res = await fetch(`${apiUrl}/api/products/${id}`, {
       cache: 'no-store' // Ensure we get fresh data
     });
     if (!res.ok) return null;

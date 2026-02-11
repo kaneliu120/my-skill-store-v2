@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import api from '@/lib/api';
 import { useAuth } from '@/components/auth/AuthContext';
 import ProductCard from '@/components/product/ProductCard';

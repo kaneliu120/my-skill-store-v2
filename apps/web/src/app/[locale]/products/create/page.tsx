@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/auth/AuthContext';
 import { Button } from '@/components/ui/button';
