@@ -1,4 +1,4 @@
-name: Build and Validate
+name: 构建与验证
 
 on:
   push:
@@ -16,21 +16,38 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Use Node.js ${{ matrix.node-version }}
+
+    - name: 配置 Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
-    - name: Install Dependencies
+
+    - name: 安装依赖
       run: npm ci
-      
-    - name: Build Backend (API)
+
+    - name: 后端代码检查 (API)
+      run: npx eslint . --max-warnings 0
+      working-directory: apps/api
+      continue-on-error: true
+
+    - name: 前端代码检查 (Web)
+      run: npx eslint . --max-warnings 0
+      working-directory: apps/web
+      continue-on-error: true
+
+    - name: 后端测试 (API)
+      run: npm test --workspace=apps/api --if-present
+      continue-on-error: true
+
+    - name: 构建后端 (API)
       run: npm run build --workspace=apps/api
-      
-    - name: Build Frontend (Web)
+
+    - name: 构建前端 (Web)
       run: npm run build --workspace=apps/web
       env:
-        # 构建期间可能需要环境变量，这里给默认值防止报错
-        NEXT_PUBLIC_API_URL: http://localhost:3001/api 
+        NEXT_PUBLIC_API_URL: http://localhost:3001/api
+
+    - name: 依赖安全审计
+      run: npm audit --audit-level=high
+      continue-on-error: true

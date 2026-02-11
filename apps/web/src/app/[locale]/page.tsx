@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Boxes, DollarSign, FileEdit, Brain, Globe, TrendingUp, Search, User, ChevronDown, Check, Plus, Minus, Menu, X, Wallet, BookOpen } from 'lucide-react';
 import ProductCard from '@/components/product/ProductCard';
 import BlogSection from '@/components/blog/BlogSection';
+import PublishSkillModal from '@/components/publish/PublishSkillModal';
 import { Input } from '@/components/ui/input';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
@@ -32,13 +33,16 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [mobileLangOpen, setMobileLangOpen] = useState(false);
+  const [publishModalOpen, setPublishModalOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
   const handlePublishClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (requireAuth(() => router.push(`/${locale}/products/create`))) {
-      router.push(`/${locale}/products/create`);
+    if (!isLoggedIn) {
+      openAuthModal('login');
+      return;
     }
+    setPublishModalOpen(true);
   };
 
   const fetchProducts = async (searchQuery = '') => {
@@ -198,6 +202,13 @@ export default function HomePage() {
             >
               {t('nav.publishSkill')}
             </a>
+            <Link
+              href={`/${locale}/blog`}
+              className="hover:text-purple-600 transition"
+              onClick={() => trackEvent({ event_name: 'click_nav_blog', element_id: 'nav_blog' })}
+            >
+              {t('nav.blog')}
+            </Link>
             <Link href="#faq" className="hover:text-purple-600 transition">
               {t('nav.faq')}
             </Link>
@@ -337,8 +348,8 @@ export default function HomePage() {
       <section className="pt-20 pb-10 md:pt-32 md:pb-20 px-6 bg-gradient-to-br from-white via-gray-50 to-purple-50/30">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            {/* Left: Text - with border and matching height */}
-            <div className="text-center lg:text-left border-4 border-red-500 rounded-2xl p-8 flex flex-col justify-center">
+            {/* Left: Text */}
+            <div className="text-center lg:text-left flex flex-col justify-center">
               <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 text-gray-900">
                 {t('hero.title')}
               </h1>
@@ -418,7 +429,7 @@ export default function HomePage() {
       {/* Features Section */}
       <section className="py-20 px-6 bg-gray-100/50">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <div className="w-24 h-24 mx-auto mb-6 bg-purple-50 rounded-2xl flex items-center justify-center">
@@ -432,7 +443,22 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Feature 2 */}
+            {/* Feature 2 - Security Guarantee */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div className="w-24 h-24 mx-auto mb-6 bg-green-50 rounded-2xl flex items-center justify-center">
+                <BookOpen className="w-12 h-12 text-green-500" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-4 text-gray-900">
+                {locale === 'zh' ? '安全保障' : 'Security Guarantee'}
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                {locale === 'zh'
+                  ? '根据AI平台对代码进行审计，确保技能安全'
+                  : 'Code audited by AI platform to ensure skill security and safety'}
+              </p>
+            </div>
+
+            {/* Feature 3 */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <div className="w-24 h-24 mx-auto mb-6 bg-purple-50 rounded-2xl flex items-center justify-center">
                 <DollarSign className="w-12 h-12 text-purple-500" />
@@ -675,6 +701,9 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Publish Skill Modal */}
+      <PublishSkillModal open={publishModalOpen} onOpenChange={setPublishModalOpen} />
     </div>
   );
 }
