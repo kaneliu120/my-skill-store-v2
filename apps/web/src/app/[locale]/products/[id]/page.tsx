@@ -6,10 +6,23 @@ async function getProduct(id: string) {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net';
     const res = await fetch(`${apiUrl}/api/products/${id}`, {
-      cache: 'no-store' // Ensure we get fresh data
+      cache: 'no-store'
     });
-    if (!res.ok) return null;
-    return res.json();
+    
+    if (!res.ok) {
+        console.error(`Product fetch failed: ${res.status} ${res.statusText}`);
+        return null;
+    }
+    
+    const text = await res.text();
+    if (!text) return null;
+    
+    try {
+        return JSON.parse(text);
+    } catch (e) {
+        console.error('JSON parse error in getProduct:', e);
+        return null;
+    }
   } catch (error) {
     console.error('Failed to fetch product', error);
     return null;

@@ -8,11 +8,29 @@ import JsonLd from '@/components/seo/JsonLd';
 async function getPost(idOrSlug: string) {
     try {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://skills-store-api-bjbddhaeathndkap.southeastasia-01.azurewebsites.net';
+        console.log(`Fetching post from: ${apiUrl}/api/blog/${idOrSlug}`);
         const res = await fetch(`${apiUrl}/api/blog/${idOrSlug}`, {
             cache: 'no-store'
         });
-        if (!res.ok) return null;
-        return res.json();
+        
+        if (!res.ok) {
+            console.error(`Fetch failed with status: ${res.status} ${res.statusText}`);
+            const text = await res.text();
+            console.error(`Response body: ${text.substring(0, 200)}`);
+            return null;
+        }
+        
+        const text = await res.text();
+        if (!text) {
+             console.error('Empty response body');
+             return null;
+        }
+        try {
+            return JSON.parse(text);
+        } catch (e) {
+            console.error('JSON parse error:', e, 'Body:', text.substring(0, 200));
+            return null;
+        }
     } catch (error) {
         console.error('Failed to fetch post', error);
         return null;
