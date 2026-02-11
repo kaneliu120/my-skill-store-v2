@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import { useRouter } from 'next/navigation';
+import { Link, useRouter } from '@/i18n/navigation';
 import api from '@/lib/api';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -41,17 +40,24 @@ export default function ProductDetailClient({ product, locale }: { product: Prod
     const router = useRouter();
 
     // product is passed as prop
-    const { isLoggedIn, openAuthModal } = useAuth();
+    const { isLoggedIn, requireAuth } = useAuth();
     const [buying, setBuying] = useState(false);
     const [copied, setCopied] = useState(false);
 
     const handleBuy = async () => {
         if (!product) return;
-        if (!isLoggedIn) {
-            openAuthModal('login');
-            return;
-        }
 
+        const authorized = requireAuth(async () => {
+            // This part runs after successful login from modal
+            await performOrder();
+        });
+
+        if (authorized) {
+            await performOrder();
+        }
+    };
+
+    const performOrder = async () => {
         trackEvent({
             event_name: 'click_buy_now',
             element_id: 'buy_now_btn',
@@ -61,7 +67,7 @@ export default function ProductDetailClient({ product, locale }: { product: Prod
         setBuying(true);
         try {
             const res = await api.post('/orders', { product_id: Number(product.id) });
-            router.push(`/${locale}/orders/${res.data.id}`);
+            router.push(`/orders/${res.data.id}`);
         } catch (err) {
             console.error('Failed to create order', err);
             alert('Failed to create order');
