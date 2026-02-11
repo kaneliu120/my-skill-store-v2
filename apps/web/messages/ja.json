@@ -83,7 +83,8 @@
       "searchPlaceholder": "スキルを検索...",
       "loginRegister": "ログイン / 登録",
       "login": "ログイン",
-      "dashboard": "ダッシュボード"
+      "dashboard": "ダッシュボード",
+      "profile": "プロフィール"
     },
     "sections": {
       "latestArrivals": "最新スキル",
@@ -212,7 +213,8 @@
   },
   "ProductDetail": {
     "nav": {
-      "dashboard": "ダッシュボード"
+      "dashboard": "ダッシュボード",
+      "profile": "プロフィール"
     },
     "reviews": "レビュー",
     "sales": "販売数",

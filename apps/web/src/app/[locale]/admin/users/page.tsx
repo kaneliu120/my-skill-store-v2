@@ -305,7 +305,7 @@ export default function UsersManagement() {
                       <div className="flex items-center gap-2 ml-4">
                         <Select
                           value={user.role}
-                          onValueChange={(value: string) => handleChangeRole(user.id, value)}
+                          onValueChange={(value) => handleChangeRole(user.id, value)}
                           disabled={user.role === 'admin'}
                         >
                           <SelectTrigger className="w-[120px] h-9">

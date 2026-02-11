@@ -87,7 +87,8 @@
       "searchPlaceholder": "Buscar habilidades...",
       "loginRegister": "Iniciar Sesión / Registrarse",
       "login": "Iniciar Sesión",
-      "dashboard": "Panel"
+      "dashboard": "Panel",
+      "profile": "Perfil"
     },
     "sections": {
       "latestArrivals": "Últimas Llegadas",
@@ -216,7 +217,8 @@
   },
   "ProductDetail": {
     "nav": {
-      "dashboard": "Panel"
+      "dashboard": "Panel",
+      "profile": "Perfil"
     },
     "reviews": "reseñas",
     "sales": "ventas",

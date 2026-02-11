@@ -87,7 +87,8 @@
       "searchPlaceholder": "기술 검색...",
       "loginRegister": "로그인 / 등록",
       "login": "로그인",
-      "dashboard": "대시보드"
+      "dashboard": "대시보드",
+      "profile": "프로필"
     },
     "sections": {
       "latestArrivals": "최신 도착",
@@ -216,7 +217,8 @@
   },
   "ProductDetail": {
     "nav": {
-      "dashboard": "Dashboard"
+      "dashboard": "Dashboard",
+      "profile": "프로필"
     },
     "reviews": "reviews",
     "sales": "sales",

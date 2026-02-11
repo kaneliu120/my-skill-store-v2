@@ -87,7 +87,8 @@
       "searchPlaceholder": "Search skills...",
       "loginRegister": "Login / Register",
       "login": "Login",
-      "dashboard": "Dashboard"
+      "dashboard": "Dashboard",
+      "profile": "Profile"
     },
     "sections": {
       "latestArrivals": "Latest Arrivals",

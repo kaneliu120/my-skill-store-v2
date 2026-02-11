@@ -87,7 +87,8 @@
       "searchPlaceholder": "搜索技能...",
       "loginRegister": "登录 / 注册",
       "login": "登录",
-      "dashboard": "控制台"
+      "dashboard": "控制台",
+      "profile": "个人中心"
     },
     "sections": {
       "latestArrivals": "最新上架",
@@ -216,7 +217,8 @@
   },
   "ProductDetail": {
     "nav": {
-      "dashboard": "控制台"
+      "dashboard": "控制台",
+      "profile": "个人中心"
     },
     "reviews": "评价",
     "sales": "销量",

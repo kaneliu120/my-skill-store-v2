@@ -81,24 +81,45 @@ export default function CreateProductPage() {
     }
   };
 
+  if (!isLoggedIn) {
+    return null; // Will redirect to login via useEffect
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/user" className="text-gray-500 hover:text-gray-900 transition">
+            <Link href={`/${locale}`} className="text-gray-500 hover:text-gray-900 transition flex items-center gap-2">
               <ArrowLeft className="w-5 h-5" />
+              <span className="text-sm hidden sm:inline">{isZh ? '返回首页' : 'Back to Home'}</span>
             </Link>
+            <div className="h-4 w-[1px] bg-gray-200 mx-2 hidden sm:block" />
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
                 <Boxes className="w-5 h-5 text-white" />
               </div>
-              <h1 className="text-lg font-semibold text-gray-900">{t('title')}</h1>
+              <Link href={`/${locale}`} className="text-lg font-bold text-gray-900">
+                MySkillStore
+              </Link>
             </div>
           </div>
+
+          <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
+            <Link href={`/${locale}`} className="hover:text-purple-600 transition">
+              {isZh ? '首页' : 'Home'}
+            </Link>
+            <Link href={`/${locale}/products`} className="hover:text-purple-600 transition">
+              {isZh ? '技能探索' : 'Explore'}
+            </Link>
+            <span className="text-purple-600 font-medium border-b-2 border-purple-600 pb-5 -mb-5">
+              {isZh ? '技能发布' : 'Publish Skill'}
+            </span>
+          </div>
+
           <Badge variant="outline" className="border-purple-200 text-purple-600 bg-purple-50">
-            {t('step')} {step}/3
+            {isZh ? '步骤' : 'Step'} {step}/3
           </Badge>
         </div>
       </nav>

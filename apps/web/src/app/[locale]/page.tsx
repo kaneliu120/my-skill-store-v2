@@ -217,20 +217,18 @@ export default function HomePage() {
               />
             </div>
             {isLoggedIn ? (
-              <>
-                <Link href="/user">
-                  <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-lg h-10 px-4 text-sm hidden sm:flex">
-                    {t('nav.dashboard')}
-                  </Button>
-                </Link>
-                <Link href="/user">
-                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center border-2 border-purple-200">
+              <Link href={`/${locale}/user`}>
+                <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition cursor-pointer">
+                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center border-2 border-purple-200">
                     <span className="text-purple-600 font-semibold text-sm">
                       {(user?.nickname || user?.email || 'U')[0].toUpperCase()}
                     </span>
                   </div>
-                </Link>
-              </>
+                  <span className="text-sm font-medium text-gray-700 hidden sm:inline">
+                    {user?.nickname || user?.email?.split('@')[0] || t('nav.profile')}
+                  </span>
+                </div>
+              </Link>
             ) : (
               <>
                 <Button
