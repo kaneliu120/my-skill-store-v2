@@ -42,6 +42,8 @@ export default function PublishSkillModal({ open, onOpenChange }: PublishSkillMo
     description: '',
     price: '',
     demo_url: '',
+    delivery_type: 'manual',
+    delivery_content: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -56,7 +58,7 @@ export default function PublishSkillModal({ open, onOpenChange }: PublishSkillMo
       await api.post('/products', {
         ...formData,
         price_usd: parseFloat(formData.price),
-        status: 'pending',
+        status: 'pending_review',
       });
 
       // Success - close modal and redirect
@@ -158,6 +160,41 @@ export default function PublishSkillModal({ open, onOpenChange }: PublishSkillMo
                 className="pl-9 h-11"
               />
             </div>
+          </div>
+
+          {/* Delivery Type */}
+          <div className="space-y-2">
+            <Label htmlFor="delivery_type" className="text-sm font-medium text-gray-700">
+              {isZh ? '交付方式' : 'Delivery Type'} <span className="text-red-500">*</span>
+            </Label>
+            <Select
+              required
+              value={formData.delivery_type}
+              onValueChange={(value) => setFormData({ ...formData, delivery_type: value })}
+            >
+              <SelectTrigger className="h-11">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="manual">{isZh ? '手动交付' : 'Manual Delivery'}</SelectItem>
+                <SelectItem value="auto_hosted">{isZh ? '自动托管' : 'Auto-hosted'}</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Delivery Content */}
+          <div className="space-y-2">
+            <Label htmlFor="delivery_content" className="text-sm font-medium text-gray-700">
+              {isZh ? '交付内容 / 自动发货密钥' : 'Delivery Content / Key'} <span className="text-red-500">*</span>
+            </Label>
+            <Textarea
+              id="delivery_content"
+              required
+              placeholder={isZh ? '如果是自动托管，请输入发货密钥或下载链接。如果是手动，请输入联系方式或说明。' : 'For auto-hosted, enter the key or link. For manual, enter instructions.'}
+              value={formData.delivery_content}
+              onChange={(e) => setFormData({ ...formData, delivery_content: e.target.value })}
+              className="h-20"
+            />
           </div>
 
           {/* Demo URL */}
