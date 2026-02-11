@@ -30,18 +30,18 @@ export default function HelpCenterPage() {
             <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
               <Boxes className="w-5 h-5 text-white" />
             </div>
-            <Link href={`/${locale}`} className="text-lg font-bold text-gray-900">
+            <Link href="/" className="text-lg font-bold text-gray-900">
               MySkillStore
             </Link>
           </div>
           <div className="flex items-center gap-4 text-sm">
-            <Link href={`/${locale}`} className="text-gray-600 hover:text-purple-600 transition">
+            <Link href="/" className="text-gray-600 hover:text-purple-600 transition">
               {isZh ? '首页' : 'Home'}
             </Link>
-            <Link href={`/${locale}/about`} className="text-gray-600 hover:text-purple-600 transition">
+            <Link href="/about" className="text-gray-600 hover:text-purple-600 transition">
               {isZh ? '关于我们' : 'About'}
             </Link>
-            <Link href={`/${locale}/contact`} className="text-gray-600 hover:text-purple-600 transition">
+            <Link href="/contact" className="text-gray-600 hover:text-purple-600 transition">
               {isZh ? '联系我们' : 'Contact'}
             </Link>
           </div>
@@ -92,7 +92,7 @@ export default function HelpCenterPage() {
           <div className="text-center mt-16 p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
             <MessageCircle className="w-10 h-10 text-purple-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-900 mb-2">{t('still_need_help')}</h3>
-            <Link href={`/${locale}/contact`}>
+            <Link href="/contact">
               <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 mt-4">
                 {t('contact_us')}
               </Button>

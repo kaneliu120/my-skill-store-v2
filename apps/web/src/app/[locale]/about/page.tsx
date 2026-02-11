@@ -32,18 +32,18 @@ export default function AboutPage() {
             <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
               <Boxes className="w-5 h-5 text-white" />
             </div>
-            <Link href={`/${locale}`} className="text-lg font-bold text-gray-900">
+            <Link href="/" className="text-lg font-bold text-gray-900">
               MySkillStore
             </Link>
           </div>
           <div className="flex items-center gap-4 text-sm">
-            <Link href={`/${locale}`} className="text-gray-600 hover:text-purple-600 transition">
+            <Link href="/" className="text-gray-600 hover:text-purple-600 transition">
               {isZh ? '首页' : 'Home'}
             </Link>
-            <Link href={`/${locale}/help`} className="text-gray-600 hover:text-purple-600 transition">
+            <Link href="/help" className="text-gray-600 hover:text-purple-600 transition">
               {isZh ? '帮助中心' : 'Help Center'}
             </Link>
-            <Link href={`/${locale}/contact`} className="text-gray-600 hover:text-purple-600 transition">
+            <Link href="/contact" className="text-gray-600 hover:text-purple-600 transition">
               {isZh ? '联系我们' : 'Contact'}
             </Link>
           </div>

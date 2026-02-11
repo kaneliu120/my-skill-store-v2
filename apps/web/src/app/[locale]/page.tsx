@@ -167,7 +167,8 @@ export default function HomePage() {
                   {languages.map(lang => (
                     <Link
                       key={lang.code}
-                      href={`/${lang.code}`}
+                      href="/"
+                      locale={lang.code}
                       className={`flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 ${locale === lang.code ? 'text-purple-600 bg-purple-50' : 'text-gray-700'}`}
                       onClick={() => setLangOpen(false)}
                     >
@@ -204,7 +205,7 @@ export default function HomePage() {
               {t('nav.publishSkill')}
             </a>
             <Link
-              href={`/${locale}/blog`}
+              href="/blog"
               className="hover:text-purple-600 transition"
               onClick={() => trackEvent({ event_name: 'click_nav_blog', element_id: 'nav_blog' })}
             >
@@ -229,7 +230,7 @@ export default function HomePage() {
               />
             </div>
             {isLoggedIn ? (
-              <Link href={`/${locale}/user`}>
+              <Link href="/user">
                 <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition cursor-pointer">
                   <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center border-2 border-purple-200">
                     <span className="text-purple-600 font-semibold text-sm">
@@ -284,16 +285,16 @@ export default function HomePage() {
               <a href="#" onClick={(e) => { handlePublishClick(e); setMobileMenuOpen(false); }} className="text-gray-600 py-2 border-b border-gray-100">
                 {t('nav.publishSkill')}
               </a>
-              <Link href={`/${locale}/blog`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/blog" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.blog')}
               </Link>
               <Link href="#faq" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.faq')}
               </Link>
-              <Link href={`/${locale}/about`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/about" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.aboutUs')}
               </Link>
-              <Link href={`/${locale}/contact`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/contact" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.contactUs')}
               </Link>
             </div>
@@ -313,7 +314,8 @@ export default function HomePage() {
                   {languages.map(lang => (
                     <Link
                       key={lang.code}
-                      href={`/${lang.code}`}
+                      href="/"
+                      locale={lang.code}
                       className={`flex items-center gap-2 px-3 py-2 text-sm rounded-lg border ${locale === lang.code ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-100 text-gray-600'}`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -591,7 +593,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href={`/${locale}/blog`}>
+            <Link href="/blog">
               <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 rounded-full px-8">
                 {t('sections.readMore')}
               </Button>
@@ -639,7 +641,7 @@ export default function HomePage() {
             <p className="text-gray-500 mb-4">
               {t('sections.stillQuestions')}
             </p>
-            <Link href={`/${locale}/contact`}>
+            <Link href="/contact">
               <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 rounded-full px-8">
                 {t('sections.contactUs')}
               </Button>
@@ -677,7 +679,7 @@ export default function HomePage() {
             <div>
               <h4 className="font-bold text-white mb-4">{t('footer.resources')}</h4>
               <div className="space-y-2 text-sm">
-                <Link href={`/${locale}/blog`} className="block text-gray-400 hover:text-purple-400 transition">{t('footer.blog')}</Link>
+                <Link href="/blog" className="block text-gray-400 hover:text-purple-400 transition">{t('footer.blog')}</Link>
                 <Link href="#faq" className="block text-gray-400 hover:text-purple-400 transition">{t('footer.helpCenter')}</Link>
                 <Link href="#" className="block text-gray-400 hover:text-purple-400 transition">{t('footer.developerDocs')}</Link>
               </div>
@@ -686,8 +688,8 @@ export default function HomePage() {
             <div>
               <h4 className="font-bold text-white mb-4">{t('footer.about')}</h4>
               <div className="space-y-2 text-sm">
-                <Link href={`/${locale}/about`} className="block text-gray-400 hover:text-purple-400 transition">{t('footer.aboutUs')}</Link>
-                <Link href={`/${locale}/contact`} className="block text-gray-400 hover:text-purple-400 transition">{t('footer.contact')}</Link>
+                <Link href="/about" className="block text-gray-400 hover:text-purple-400 transition">{t('footer.aboutUs')}</Link>
+                <Link href="/contact" className="block text-gray-400 hover:text-purple-400 transition">{t('footer.contact')}</Link>
               </div>
             </div>
           </div>

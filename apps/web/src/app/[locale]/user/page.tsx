@@ -342,7 +342,7 @@ export default function UserDashboard() {
                 ) : (
                   <div className="space-y-4">
                     {purchases.map(order => (
-                      <Link key={order.id} href={`/${locale}/orders/${order.id}`}>
+                      <Link key={order.id} href="/orders/${order.id}">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-purple-200 transition gap-4">
                           <div className="flex-1">
                             <div className="flex items-center gap-3 flex-wrap">
@@ -379,7 +379,7 @@ export default function UserDashboard() {
                   <div className="space-y-4">
                     {sales.map(sale => (
                       <div key={sale.id} className="relative block group">
-                        <Link href={`/${locale}/orders/${sale.id}`}>
+                        <Link href="/orders/${sale.id}">
                           <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-purple-200 transition cursor-pointer gap-4">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 flex-wrap">

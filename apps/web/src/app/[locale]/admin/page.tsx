@@ -137,7 +137,7 @@ export default function AdminDashboard() {
               Admin
             </Badge>
           </div>
-          <Link href={`/${locale}/user`}>
+          <Link href="/user">
             <Button variant="outline" size="sm" className="rounded-lg">
               User Dashboard
             </Button>
@@ -203,7 +203,7 @@ export default function AdminDashboard() {
             <h2 className="text-xl font-bold text-gray-900">Management Modules</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href={`/${locale}/admin/users`}>
+            <Link href="/admin/users">
               <Card className="bg-white border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all cursor-pointer group">
                 <CardContent className="pt-6">
                   <div className="flex items-center justify-between mb-3">
@@ -217,7 +217,7 @@ export default function AdminDashboard() {
                 </CardContent>
               </Card>
             </Link>
-            <Link href={`/${locale}/admin/orders`}>
+            <Link href="/admin/orders">
               <Card className="bg-white border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all cursor-pointer group">
                 <CardContent className="pt-6">
                   <div className="flex items-center justify-between mb-3">
@@ -231,7 +231,7 @@ export default function AdminDashboard() {
                 </CardContent>
               </Card>
             </Link>
-            <Link href={`/${locale}/admin/products`}>
+            <Link href="/admin/products">
               <Card className="bg-white border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all cursor-pointer group">
                 <CardContent className="pt-6">
                   <div className="flex items-center justify-between mb-3">
@@ -245,7 +245,7 @@ export default function AdminDashboard() {
                 </CardContent>
               </Card>
             </Link>
-            <Link href={`/${locale}/admin/payments`}>
+            <Link href="/admin/payments">
               <Card className="bg-white border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all cursor-pointer group">
                 <CardContent className="pt-6">
                   <div className="flex items-center justify-between mb-3">

@@ -140,7 +140,7 @@ export default function ProductsPage() {
               <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
                 <Boxes className="w-5 h-5 text-white" />
               </div>
-              <Link href={`/${locale}`} className="text-lg font-bold text-gray-900">
+              <Link href="/" className="text-lg font-bold text-gray-900">
                 {t('nav.brand')}
               </Link>
             </div>
@@ -176,11 +176,11 @@ export default function ProductsPage() {
 
           {/* Center: Nav Links */}
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
-            <Link href={`/${locale}`} className="hover:text-purple-600 transition">
+            <Link href="/" className="hover:text-purple-600 transition">
               {t('nav.home')}
             </Link>
             <Link
-              href={`/${locale}/products`}
+              href="/products"
               className="text-purple-600 font-medium border-b-2 border-purple-600 pb-5 -mb-5"
             >
               {t('nav.explore')}
@@ -192,7 +192,7 @@ export default function ProductsPage() {
             >
               {t('nav.publishSkill')}
             </a>
-            <Link href={`/${locale}#faq`} className="hover:text-purple-600 transition">
+            <Link href="#faq" className="hover:text-purple-600 transition">
               {t('nav.faq')}
             </Link>
           </div>
@@ -200,7 +200,7 @@ export default function ProductsPage() {
           {/* Right: User Section */}
           <div className="flex items-center gap-4">
             {isLoggedIn ? (
-              <Link href={`/${locale}/user`}>
+              <Link href="/user">
                 <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition cursor-pointer">
                   <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center border-2 border-purple-200">
                     <span className="text-purple-600 font-semibold text-sm">
@@ -236,16 +236,16 @@ export default function ProductsPage() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-gray-200 bg-white px-6 py-4 space-y-4 shadow-lg max-h-[calc(100vh-64px)] overflow-y-auto">
             <div className="flex flex-col space-y-4">
-              <Link href={`/${locale}`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.home')}
               </Link>
-              <Link href={`/${locale}/products`} className="text-gray-900 font-medium py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/products" className="text-gray-900 font-medium py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.explore')}
               </Link>
               <a href="#" onClick={(e) => { handlePublishClick(e); setMobileMenuOpen(false); }} className="text-gray-600 py-2 border-b border-gray-100">
                 {t('nav.publishSkill')}
               </a>
-              <Link href={`/${locale}#faq`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="#faq" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.faq')}
               </Link>
             </div>

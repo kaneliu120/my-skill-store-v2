@@ -109,7 +109,7 @@ export default function BlogPage() {
               <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
                 <Boxes className="w-5 h-5 text-white" />
               </div>
-              <Link href={`/${locale}`} className="text-lg font-bold text-gray-900">
+              <Link href="/" className="text-lg font-bold text-gray-900">
                 {t('nav.brand')}
               </Link>
             </div>
@@ -145,10 +145,10 @@ export default function BlogPage() {
 
           {/* Center: Nav Links */}
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
-            <Link href={`/${locale}`} className="hover:text-purple-600 transition">
+            <Link href="/" className="hover:text-purple-600 transition">
               {t('nav.home')}
             </Link>
-            <Link href={`/${locale}/products`} className="hover:text-purple-600 transition">
+            <Link href="/products" className="hover:text-purple-600 transition">
               {t('nav.explore')}
             </Link>
             <a
@@ -159,7 +159,7 @@ export default function BlogPage() {
               {t('nav.publishSkill')}
             </a>
             <Link
-              href={`/${locale}/blog`}
+              href="/blog"
               className="text-purple-600 font-medium border-b-2 border-purple-600 pb-5 -mb-5"
             >
               {t('nav.blog')}
@@ -169,7 +169,7 @@ export default function BlogPage() {
           {/* Right: User Section */}
           <div className="flex items-center gap-4">
             {isLoggedIn ? (
-              <Link href={`/${locale}/user`}>
+              <Link href="/user">
                 <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition cursor-pointer">
                   <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center border-2 border-purple-200">
                     <span className="text-purple-600 font-semibold text-sm">
@@ -197,16 +197,16 @@ export default function BlogPage() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-gray-200 bg-white px-6 py-4 space-y-4 shadow-lg max-h-[calc(100vh-64px)] overflow-y-auto">
             <div className="flex flex-col space-y-4">
-              <Link href={`/${locale}`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.home')}
               </Link>
-              <Link href={`/${locale}/products`} className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/products" className="text-gray-600 py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.explore')}
               </Link>
               <a href="#" onClick={(e) => { handlePublishClick(e); setMobileMenuOpen(false); }} className="text-gray-600 py-2 border-b border-gray-100">
                 {t('nav.publishSkill')}
               </a>
-              <Link href={`/${locale}/blog`} className="text-gray-900 font-medium py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/blog" className="text-gray-900 font-medium py-2 border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>
                 {t('nav.blog')}
               </Link>
             </div>
@@ -280,7 +280,7 @@ export default function BlogPage() {
                         </div>
                       </div>
                       <CardTitle className="text-xl line-clamp-2">
-                        <Link href={`/${locale}/blog/${post.slug || post.id}`} className="hover:text-purple-600 transition">
+                        <Link href="/blog/${post.slug || post.id}" className="hover:text-purple-600 transition">
                           {post.title}
                         </Link>
                       </CardTitle>
@@ -289,7 +289,7 @@ export default function BlogPage() {
                       <p className="text-gray-600 text-sm line-clamp-3 mb-6 flex-1">
                         {post.excerpt || post.content.substring(0, 150) + '...'}
                       </p>
-                      <Link href={`/${locale}/blog/${post.slug || post.id}`} className="w-full">
+                      <Link href="/blog/${post.slug || post.id}" className="w-full">
                         <Button variant="outline" className="w-full border-purple-200 text-purple-600 hover:bg-purple-50 group rounded-lg">
                           {locale === 'zh' ? '阅读文章' : 'Read Article'}
                           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition" />

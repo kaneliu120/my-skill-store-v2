@@ -57,7 +57,7 @@ export default function AdminBlogPage({ params }: { params: { locale: string } }
                     <h1 className="text-2xl font-bold text-gray-900">Blog Management</h1>
                     <p className="text-gray-500">Manage your blog posts and articles.</p>
                 </div>
-                <Link href={`/${locale}/admin/blog/editor`}>
+                <Link href="/admin/blog/editor">
                     <Button className="bg-purple-600 hover:bg-purple-700 gap-2">
                         <Plus className="w-4 h-4" /> New Post
                     </Button>
@@ -103,7 +103,7 @@ export default function AdminBlogPage({ params }: { params: { locale: string } }
                                             >
                                                 {post.is_published ? <FileText className="w-4 h-4 text-gray-400" /> : <Globe className="w-4 h-4 text-green-600" />}
                                             </Button>
-                                            <Link href={`/${locale}/admin/blog/editor?id=${post.id}`}>
+                                            <Link href="/admin/blog/editor?id=${post.id}">
                                                 <Button variant="ghost" size="sm">
                                                     <Edit className="w-4 h-4 text-blue-600" />
                                                 </Button>

@@ -64,7 +64,7 @@ export default function BlogSection({ locale }: { locale: string }) {
                             <span>{new Date(post.published_at).toLocaleDateString()}</span>
                         </div>
                         <CardTitle className="text-lg line-clamp-2">
-                            <Link href={`/${locale}/blog/${post.slug || post.id}`} className="hover:text-purple-600 transition">
+                            <Link href={`/blog/${post.slug || post.id}`} className="hover:text-purple-600 transition">
                                 {post.title}
                             </Link>
                         </CardTitle>
@@ -73,7 +73,7 @@ export default function BlogSection({ locale }: { locale: string }) {
                         <p className="text-gray-600 text-sm line-clamp-3 mb-4 flex-1">
                             {post.excerpt || post.content.substring(0, 100) + '...'}
                         </p>
-                        <Link href={`/${locale}/blog/${post.slug || post.id}`} className="mt-auto">
+                        <Link href={`/blog/${post.slug || post.id}`} className="mt-auto">
                             <Button variant="link" className="p-0 h-auto text-purple-600 hover:text-purple-700 font-medium">
                                 Read More <ArrowRight className="w-4 h-4 ml-1" />
                             </Button>
